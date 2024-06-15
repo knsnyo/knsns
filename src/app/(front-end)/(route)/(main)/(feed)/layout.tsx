@@ -1,5 +1,5 @@
 import { Container } from '@mui/material'
-import { ILayoutProps } from 'app/_type/layout'
+import { ILayoutProps } from 'src/_type/layout'
 
 const Layout = (props: ILayoutProps) => {
 	return (

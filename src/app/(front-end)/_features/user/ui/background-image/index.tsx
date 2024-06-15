@@ -1,5 +1,5 @@
 const BackgroundImage: React.FC = () => {
-	return <img src='https://picsum.photos/600/300' width='100%' />
+	return <img src='https://picsum.photos/600/300' width='100%' alt='' />
 }
 
 export default BackgroundImage

@@ -18,6 +18,7 @@ const Card: React.FC = () => {
 				</Stack>
 				<Typography>Content</Typography>
 				<img
+					alt=''
 					src='https://picsum.photos/100/200'
 					width={200}
 					height={250}

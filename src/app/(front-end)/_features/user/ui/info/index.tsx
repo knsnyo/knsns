@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Stack, Typography } from '@mui/material'
 
 import Button from 'src/app/(front-end)/__shared/button'
@@ -24,6 +25,7 @@ const Info: React.FC = () => {
 				>
 					<img
 						src='https://picsum.photos/300'
+						alt=''
 						width={100}
 						height={100}
 						style={{
