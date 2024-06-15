@@ -1,4 +1,5 @@
 import { Typography } from '@mui/material'
+import React from 'react'
 import Feature from 'src/app/(front-end)/_features'
 
 const Page: React.FC = () => {
