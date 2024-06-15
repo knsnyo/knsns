@@ -6,7 +6,6 @@ const Page: React.FC = () => {
 		<>
 			<Typography>계정을 선택해주세요.</Typography>
 			<Feature.Auth.UI.GoogleButton />
-			<Feature.Auth.UI.FacebookButton />
 		</>
 	)
 }

@@ -1,7 +1,12 @@
+'use client'
+
 import { Typography } from '@mui/material'
+import useLogic from 'src/app/(front-end)/_features/auth/ui/google-button/logic'
 
 const GoogleButton: React.FC = () => {
-	return <Typography>Google Button</Typography>
+	const { handler } = useLogic()
+
+	return <Typography onClick={handler.login}>Google Button</Typography>
 }
 
 export default GoogleButton

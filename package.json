@@ -1,12 +1,12 @@
 {
 	"private": true,
 	"scripts": {
-		"dev": "next dev",
+		"dev": "next dev -p 7469",
 		"build": "next build",
 		"start": "next start",
 		"test": "jest --watch",
 		"test:ci": "jest --ci",
-		"storybook": "storybook dev -p 6006",
+		"storybook": "storybook dev -p 6974",
 		"build-storybook": "storybook build",
 		"format": "prettier --check --ignore-path .gitignore .",
 		"format:fix": "prettier --write --ignore-path .gitignore .",

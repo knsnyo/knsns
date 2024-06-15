@@ -10,10 +10,4 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof Indicator>
 
-export const Primary: Story = {
-	args: { text: 'primary' }
-}
-
-export const Secondary: Story = {
-	args: { text: 'secondary' }
-}
+export const Primary: Story = {}
