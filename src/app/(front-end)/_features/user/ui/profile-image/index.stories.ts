@@ -8,7 +8,7 @@ const meta = {
 } satisfies Meta<typeof ProfileImage>
 
 export default meta
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof ProfileImage>
 
 export const Primary: Story = {
 	args: {}

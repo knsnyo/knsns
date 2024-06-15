@@ -8,7 +8,7 @@ const meta = {
 } satisfies Meta<typeof Birthday>
 
 export default meta
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof Birthday>
 
 export const Primary: Story = {
 	args: {}

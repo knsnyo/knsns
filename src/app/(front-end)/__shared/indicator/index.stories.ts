@@ -8,7 +8,7 @@ const meta = {
 } satisfies Meta<typeof Indicator>
 
 export default meta
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof Indicator>
 
 export const Primary: Story = {
 	args: { text: 'primary' }
