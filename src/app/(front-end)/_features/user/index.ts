@@ -1,5 +1,5 @@
-import Card from 'src/app/(front-end)/_features/user/ui/card'
-import Info from 'src/app/(front-end)/_features/user/ui/info'
+import Card from 'src/app/(front-end)/_features/User/ui/card'
+import Info from 'src/app/(front-end)/_features/User/ui/info'
 
 const UI = { Info, Card }
 

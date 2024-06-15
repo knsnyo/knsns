@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import Nickname from 'src/app/(front-end)/_features/user/ui/nickname'
+import Nickname from 'src/app/(front-end)/_features/User/ui/nickname'
 
 const meta = {
 	title: '[User] Background Image',

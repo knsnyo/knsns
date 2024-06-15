@@ -1,5 +1,5 @@
 import config from 'src/_firebase/config'
-import Feed from 'src/app/(front-end)/_features/feed'
+import Feed from 'src/app/(front-end)/_features/Feed'
 
 const Page: React.FC = () => {
 	console.log(config)

@@ -2,13 +2,13 @@
 import { Stack, Typography } from '@mui/material'
 
 import Button from 'src/app/(front-end)/__shared/button'
-import BackgroundImage from 'src/app/(front-end)/_features/user/ui/background-image'
-import Birthday from 'src/app/(front-end)/_features/user/ui/birthday'
-import CreatedAt from 'src/app/(front-end)/_features/user/ui/created-at'
-import Intro from 'src/app/(front-end)/_features/user/ui/intro'
-import Link from 'src/app/(front-end)/_features/user/ui/link'
-import Nickname from 'src/app/(front-end)/_features/user/ui/nickname'
-import Tagname from 'src/app/(front-end)/_features/user/ui/tagname'
+import BackgroundImage from 'src/app/(front-end)/_features/User/ui/background-image'
+import Birthday from 'src/app/(front-end)/_features/User/ui/birthday'
+import CreatedAt from 'src/app/(front-end)/_features/User/ui/created-at'
+import Intro from 'src/app/(front-end)/_features/User/ui/intro'
+import Link from 'src/app/(front-end)/_features/User/ui/link'
+import Nickname from 'src/app/(front-end)/_features/User/ui/nickname'
+import Tagname from 'src/app/(front-end)/_features/User/ui/tagname'
 
 const Info: React.FC = () => {
 	return (

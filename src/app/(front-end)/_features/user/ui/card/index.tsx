@@ -1,9 +1,9 @@
 import { Stack } from '@mui/material'
 import Button from 'src/app/(front-end)/__shared/button'
-import Intro from 'src/app/(front-end)/_features/user/ui/intro'
-import Nickname from 'src/app/(front-end)/_features/user/ui/nickname'
-import ProfileImage from 'src/app/(front-end)/_features/user/ui/profile-image'
-import Tagname from 'src/app/(front-end)/_features/user/ui/tagname'
+import Intro from 'src/app/(front-end)/_features/User/ui/intro'
+import Nickname from 'src/app/(front-end)/_features/User/ui/nickname'
+import ProfileImage from 'src/app/(front-end)/_features/User/ui/profile-image'
+import Tagname from 'src/app/(front-end)/_features/User/ui/tagname'
 
 const Card: React.FC = () => {
 	return (

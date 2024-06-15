@@ -1,6 +1,6 @@
-import Auth from 'src/app/(front-end)/_features/auth'
-import Feed from 'src/app/(front-end)/_features/feed'
-import User from 'src/app/(front-end)/_features/user'
+import Auth from 'src/app/(front-end)/_features/Auth'
+import Feed from 'src/app/(front-end)/_features/Feed'
+import User from 'src/app/(front-end)/_features/User'
 
 const Feature = { Auth, Feed, User }
 

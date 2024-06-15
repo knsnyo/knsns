@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import Tagname from 'src/app/(front-end)/_features/user/ui/tagname'
+import Tagname from 'src/app/(front-end)/_features/User/ui/tagname'
 
 const meta = {
 	title: '[User] Tagname',

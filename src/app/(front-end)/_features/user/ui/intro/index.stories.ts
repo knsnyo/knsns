@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import Intro from 'src/app/(front-end)/_features/user/ui/intro'
+import Intro from 'src/app/(front-end)/_features/User/ui/intro'
 
 const meta = {
 	title: '[User] Intro',
