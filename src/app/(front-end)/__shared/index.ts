@@ -1,6 +1,6 @@
-import withOAuthUser from 'src/app/(front-end)/__shared/hoc/withOAuthUser'
+import withAuthRouting from 'src/app/(front-end)/__shared/hoc/withAuthRouting'
 
-const HOC = { withOAuthUser }
+const HOC = { withAuthRouting }
 const Shared = { HOC }
 
 export default Shared

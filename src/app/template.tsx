@@ -7,4 +7,4 @@ const Template: React.FC<ILayoutProps> = (props) => {
 	return props.children
 }
 
-export default Shared.HOC.withOAuthUser(Template)
+export default Shared.HOC.withAuthRouting(Template)

@@ -5,7 +5,9 @@ import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
 import config from 'src/_firebase/config'
 
-const withOAuthUser = <T extends object>(Component: React.ComponentType<T>) => {
+const withAuthRouting = <T extends object>(
+	Component: React.ComponentType<T>
+) => {
 	const Container = (props: T) => {
 		const pathname = usePathname()
 		const router = useRouter()
@@ -29,4 +31,4 @@ const withOAuthUser = <T extends object>(Component: React.ComponentType<T>) => {
 	return Container
 }
 
-export default withOAuthUser
+export default withAuthRouting
