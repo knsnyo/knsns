@@ -1,5 +1,5 @@
-import Auth from 'src/app/(front-end)/_features/auth';
+import Auth from 'src/app/(front-end)/_features/auth'
 
-const Feature = { Auth };
+const Feature = { Auth }
 
-export default Feature;
+export default Feature

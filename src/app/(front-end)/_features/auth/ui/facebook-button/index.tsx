@@ -1,7 +1,7 @@
-import { Typography } from '@mui/material';
+import { Typography } from '@mui/material'
 
 const FacebookButton: React.FC = () => {
-  return <Typography>Facebook Button</Typography>;
-};
+	return <Typography>Facebook Button</Typography>
+}
 
-export default FacebookButton;
+export default FacebookButton

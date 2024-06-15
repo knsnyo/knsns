@@ -1,7 +1,7 @@
-import { Typography } from '@mui/material';
+import { Typography } from '@mui/material'
 
 const Intro: React.FC = () => {
-  return <Typography>Intro</Typography>;
-};
+	return <Typography>Intro</Typography>
+}
 
-export default Intro;
+export default Intro

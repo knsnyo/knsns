@@ -1,3 +1,3 @@
 export interface IButtonProps {
-  text: string;
+	text: string
 }

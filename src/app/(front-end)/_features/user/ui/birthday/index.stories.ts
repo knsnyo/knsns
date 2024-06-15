@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import Birthday from 'src/app/(front-end)/_features/user/ui/birthday';
+import type { Meta, StoryObj } from '@storybook/react'
+import Birthday from 'src/app/(front-end)/_features/user/ui/birthday'
 
 const meta = {
-  title: '[User] Birthday',
-  component: Birthday,
-  parameters: { layout: 'centered' },
-} satisfies Meta<typeof Birthday>;
+	title: '[User] Birthday',
+	component: Birthday,
+	parameters: { layout: 'centered' }
+} satisfies Meta<typeof Birthday>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
-  args: {},
-};
+	args: {}
+}

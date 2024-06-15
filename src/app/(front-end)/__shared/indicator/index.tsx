@@ -1,7 +1,7 @@
-import { CircularProgress } from '@mui/material';
+import { CircularProgress } from '@mui/material'
 
 const Indicator: React.FC = () => {
-  return <CircularProgress sx={{ color: '#e4e4e4' }} />;
-};
+	return <CircularProgress sx={{ color: '#e4e4e4' }} />
+}
 
-export default Indicator;
+export default Indicator

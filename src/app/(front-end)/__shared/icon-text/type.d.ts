@@ -1,4 +1,4 @@
 export interface IIconTextProps {
-  text: string;
-  icon: SvgIconComponent;
+	text: string
+	icon: SvgIconComponent
 }

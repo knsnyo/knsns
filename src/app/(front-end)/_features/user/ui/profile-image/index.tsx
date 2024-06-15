@@ -1,7 +1,7 @@
-import { Avatar } from '@mui/material';
+import { Avatar } from '@mui/material'
 
 const ProfileImage: React.FC = () => {
-  return <Avatar src='https://picsum.photos/200' />;
-};
+	return <Avatar src='https://picsum.photos/200' />
+}
 
-export default ProfileImage;
+export default ProfileImage
