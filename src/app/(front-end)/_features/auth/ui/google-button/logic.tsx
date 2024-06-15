@@ -6,7 +6,8 @@ const useLogic = () => {
 		const provider = new GoogleAuthProvider()
 		try {
 			const { user } = await signInWithPopup(config, provider)
-			// session?
+
+			localStorage.setItem('knsns-user', JSON.stringify(user.providerData[0]))
 		} catch (error) {
 			//
 		}
