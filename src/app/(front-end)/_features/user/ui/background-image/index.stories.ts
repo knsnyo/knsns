@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import Nickname from 'src/app/(front-end)/_features/User/ui/nickname'
+import BackgroundImage from 'src/app/(front-end)/_features/User/ui/background-image'
 
 const meta = {
 	title: '[User] Background Image',
-	component: Nickname,
+	component: BackgroundImage,
 	parameters: { layout: 'centered' }
-} satisfies Meta<typeof Nickname>
+} satisfies Meta<typeof BackgroundImage>
 
 export default meta
-type Story = StoryObj<typeof Nickname>
+type Story = StoryObj<typeof BackgroundImage>
 
 export const Primary: Story = {
 	args: {}

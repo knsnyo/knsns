@@ -1,8 +1,8 @@
-import { Button as MuiButton } from '@mui/material'
+import * as MUI from '@mui/material'
 import { IButtonProps } from 'src/app/(front-end)/__shared/button/type'
 
 const Button: React.FC<IButtonProps> = (props) => {
-	return <MuiButton sx={{ height: 30 }}>{props.text}</MuiButton>
+	return <MUI.Button sx={{ height: 30 }}>{props.text}</MUI.Button>
 }
 
 export default Button
