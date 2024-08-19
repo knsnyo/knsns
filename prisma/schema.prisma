@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("NEXT_PUBLIC_DATABASE_URL")
+}
+
+model User {
+  id  String @id @default(auto()) @map("_id") @db.ObjectId
+  uid String
+  
+  email String
+  displayName String
+  photoUrl String
+  providerId String
+
+  Feed Feed[]
+}
+
+model Feed {
+  id  String @id @default(auto()) @map("_id") @db.ObjectId
+
+  authorId String
+  author User @relation(fields: [authorId], references: [id])
+
+  content String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}

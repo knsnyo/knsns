@@ -8,9 +8,11 @@ const Layout: React.FC<ILayoutProps> = (props) => {
 				display: 'flex',
 				flexDirection: 'column',
 				height: '100vh',
-				paddingX: 0
+				paddingX: 0,
+				'&.MuiContainer-root': {
+					paddingX: 0
+				}
 			}}
-			maxWidth='sm'
 		>
 			{props.children}
 		</Container>
