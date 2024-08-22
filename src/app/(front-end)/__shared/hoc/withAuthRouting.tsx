@@ -1,6 +1,6 @@
 'use client'
 
-import { User, onAuthStateChanged } from 'firebase/auth'
+import * as FirebaseAuth from 'firebase/auth'
 import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
 import config from 'src/_firebase/config'
@@ -11,10 +11,10 @@ const withAuthRouting = <T extends object>(
 	const Container = (props: T) => {
 		const pathname = usePathname()
 		const router = useRouter()
-		const [user, setUser] = React.useState<User | null>()
+		const [user, setUser] = React.useState<FirebaseAuth.User | null>(null)
 
 		React.useEffect(() => {
-			onAuthStateChanged(config, (currentUser) => {
+			FirebaseAuth.onAuthStateChanged(config, (currentUser) => {
 				setUser(currentUser)
 			})
 			if (user === null && pathname !== '/auth') {
