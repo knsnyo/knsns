@@ -1,8 +1,16 @@
 import gql from 'graphql-tag'
+import feed from './feed'
 
 const typeDefs = gql`
+	type Response {
+		text: String
+	}
+
+	${feed}
+
 	type Query {
-		hello: String
+		hello: Response
+		feed: Feed
 	}
 `
 
