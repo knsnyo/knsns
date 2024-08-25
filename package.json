@@ -10,7 +10,8 @@
 		"build-storybook": "storybook build",
 		"format": "prettier --check --ignore-path .gitignore .",
 		"format:fix": "prettier --write --ignore-path .gitignore .",
-		"lint": "next lint"
+		"lint": "next lint",
+		"prisma:migrate": "prisma db push"
 	},
 	"dependencies": {
 		"@apollo/client": "^3.11.4",

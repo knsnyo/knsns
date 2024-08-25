@@ -1,16 +1,17 @@
 import { Feed } from '@prisma/client'
-import prisma from 'src/app/(back-end)/_config/prisma'
+import prisma from 'src/_third-party/prisma'
+import service from 'src/app/(back-end)/api/_service'
 
 const resolvers = {
 	Query: {
-		hello: () => {
-			return { text: 'bye' }
-		},
 		feed: async (): Promise<Feed | null> => {
 			const feed = await prisma.feed.findFirst()
 
 			return feed
 		}
+	},
+	Mutation: {
+		createFeed: service.feed.create
 	}
 }
 

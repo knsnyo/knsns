@@ -3,7 +3,7 @@
 import * as FirebaseAuth from 'firebase/auth'
 import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
-import config from 'src/_firebase/config'
+import config from 'src/_third-party/_firebase/config'
 
 const withAuthRouting = <T extends object>(
 	Component: React.ComponentType<T>
@@ -23,6 +23,8 @@ const withAuthRouting = <T extends object>(
 			if (user && pathname === '/auth') {
 				router.replace('/')
 			}
+
+			// eslint-disable-next-line react-hooks/exhaustive-deps
 		}, [user])
 
 		return <Component {...props} />

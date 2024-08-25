@@ -13,8 +13,6 @@ const Page: React.FC = () => {
 		}
 	`)
 
-	console.log(data)
-
 	return (
 		<>
 			<AppBar />
