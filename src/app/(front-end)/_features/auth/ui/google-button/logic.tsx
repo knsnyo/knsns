@@ -1,13 +1,11 @@
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import * as FirebaseAuth from 'firebase/auth'
 import config from 'src/_third-party/_firebase/config'
 
 const useLogic = () => {
 	const login = async () => {
-		const provider = new GoogleAuthProvider()
+		const provider = new FirebaseAuth.GoogleAuthProvider()
 		try {
-			const { user } = await signInWithPopup(config, provider)
-
-			localStorage.setItem('knsns-user', JSON.stringify(user.providerData[0]))
+			await FirebaseAuth.signInWithRedirect(config, provider)
 		} catch (error) {
 			//
 		}
