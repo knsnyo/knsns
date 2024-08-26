@@ -1,6 +1,6 @@
-import HOC from 'src/app/(front-end)/__shared/hoc'
+import Provider from 'src/app/(front-end)/__shared/provider'
 import Hooks from './hooks'
 
-const Shared = { HOC, Hooks }
+const Shared = { Hooks, Provider }
 
 export default Shared

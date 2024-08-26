@@ -1,42 +1,28 @@
-/**
- * 2024.08.25
- * https://ko.react.dev/reference/react/useContext
- */
-
 'use client'
 
-import { onAuthStateChanged } from 'firebase/auth'
+import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
-import config from 'src/_third-party/_firebase/config'
-import {
-	TAuth,
-	TContext
-} from 'src/app/(front-end)/__shared/provider/auth/type'
+import { TSession } from 'src/_type/session'
 
-const INIT_CONTEXT: TContext = {
-	user: null
+const Session = React.createContext(null as TSession)
+
+interface IProps extends React.PropsWithChildren {
+	uid: TSession
 }
 
-export const AuthContext = React.createContext(INIT_CONTEXT)
-
-const AuthProvider: React.FC<React.PropsWithChildren> = (props) => {
-	const [user, setUser] = React.useState<TAuth>(null)
+const AuthProvider: React.FC<IProps> = (props) => {
+	const router = useRouter()
+	const pathname = usePathname()
 
 	React.useEffect(() => {
-		onAuthStateChanged(config, (currentUser) => {
-			setUser(currentUser)
-			console.log(currentUser)
-		})
+		if (props.uid && pathname === '/auth') {
+			router.replace('/')
+		} else if (!props.uid && pathname !== '/auth') {
+			router.replace('/auth')
+		}
+	}, [])
 
-		console.log('auth-provider', user)
-	}, [user])
-
-	return (
-		// eslint-disable-next-line react/jsx-no-constructed-context-values
-		<AuthContext.Provider value={{ user }}>
-			{props.children}
-		</AuthContext.Provider>
-	)
+	return <Session.Provider value={props.uid}>{props.children}</Session.Provider>
 }
 
 export default AuthProvider

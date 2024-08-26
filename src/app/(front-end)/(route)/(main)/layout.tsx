@@ -1,7 +1,6 @@
 import { Container } from '@mui/material'
-import { ILayoutProps } from 'src/_type/layout'
 
-const Layout: React.FC<ILayoutProps> = (props) => {
+const Layout: React.FC<React.PropsWithChildren> = (props) => {
 	return (
 		<Container
 			sx={{

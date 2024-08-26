@@ -1,16 +1,12 @@
-import * as FirebaseAuth from 'firebase/auth'
-import config from 'src/_third-party/_firebase/config'
+import FirebaseAuth from 'src/_third-party/_firebase/auth'
 
 const useLogic = () => {
 	const login = async () => {
-		const provider = new FirebaseAuth.GoogleAuthProvider()
-		try {
-			await FirebaseAuth.signInWithRedirect(config, provider)
-		} catch (error) {
-			//
-		}
-	}
+		const uid = await FirebaseAuth.Google.signIn()
+		if (!uid) return
 
+		await FirebaseAuth.Session.create(uid)
+	}
 	return {
 		handler: { login }
 	}

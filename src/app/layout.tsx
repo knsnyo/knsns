@@ -1,22 +1,24 @@
 import { CssBaseline } from '@mui/material'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
+import { cookies } from 'next/headers'
 import React from 'react'
-import { ILayoutProps } from 'src/_type/layout'
-import AuthProvider from 'src/app/(front-end)/__shared/provider/auth'
-import ApolloClientProvider from 'src/app/(front-end)/__shared/provider/graphql'
+import FirebaseAuth from 'src/_third-party/_firebase/auth'
+import Shared from 'src/app/(front-end)/__shared'
 
-const RootLayout: React.FC<ILayoutProps> = (props) => {
+const RootLayout: React.FC<React.PropsWithChildren> = (props) => {
+	const session = cookies().get(FirebaseAuth.Session.key)?.value || null
+
 	return (
 		<html lang='en'>
 			<body>
-				<AuthProvider>
-					<AppRouterCacheProvider>
-						<ApolloClientProvider>
+				<AppRouterCacheProvider>
+					<Shared.Provider.Auth uid={session}>
+						<Shared.Provider.Graphql>
 							<CssBaseline />
 							{props.children}
-						</ApolloClientProvider>
-					</AppRouterCacheProvider>
-				</AuthProvider>
+						</Shared.Provider.Graphql>
+					</Shared.Provider.Auth>
+				</AppRouterCacheProvider>
 			</body>
 		</html>
 	)
