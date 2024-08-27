@@ -2,7 +2,7 @@
 
 import * as MUI from '@mui/material'
 import FirebaseAuth from 'src/_third-party/_firebase/auth'
-import { IAppBarProps } from 'src/app/(front-end)/__shared/appbar/type'
+import type { IAppBarProps } from 'src/app/(front-end)/__shared/appbar/type'
 
 const AppBar: React.FC<IAppBarProps> = (props) => {
 	const logout = () => {

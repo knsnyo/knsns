@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import WriteForm from 'src/app/(front-end)/_features/Write/ui/form'
+import Form from 'src/app/(front-end)/_features/Write/ui/form'
 
 const meta = {
 	title: '[Write] Form',
-	component: WriteForm,
+	component: Form,
 	parameters: { layout: 'centered' }
-} satisfies Meta<typeof WriteForm>
+} satisfies Meta<typeof Form>
 
 export default meta
-type Story = StoryObj<typeof WriteForm>
+type Story = StoryObj<typeof Form>
 
 export const Primary: Story = {
 	args: {}

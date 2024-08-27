@@ -1,12 +1,21 @@
+'use client'
+
 import { EditRounded } from '@mui/icons-material'
 import { Fab } from '@mui/material'
+import useLogic from 'src/app/(front-end)/_features/Write/ui/button/logic'
 
-const WriteFAB: React.FC = () => {
+const FAB: React.FC = () => {
+	const { handler } = useLogic()
+
 	return (
-		<Fab color='default'>
+		<Fab
+			color='primary'
+			sx={{ position: 'absolute', bottom: 16, right: 16 }}
+			onClick={handler.navigateWritePage}
+		>
 			<EditRounded />
 		</Fab>
 	)
 }
 
-export default WriteFAB
+export default FAB

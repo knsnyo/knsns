@@ -1,11 +1,11 @@
-import AppBar from 'src/app/(front-end)/__shared/appbar'
-import WriteForm from 'src/app/(front-end)/_features/Write/ui/form'
+import Shared from 'src/app/(front-end)/__shared'
+import Feature from 'src/app/(front-end)/_features'
 
 const Page: React.FC = (props) => {
 	return (
 		<>
-			<AppBar text='글쓰기' />
-			<WriteForm />
+			<Shared.UI.AppBar text='글쓰기' />
+			<Feature.Write.UI.Form />
 		</>
 	)
 }

@@ -6,7 +6,7 @@ import Button from 'src/app/(front-end)/__shared/button'
 import ProfileImage from 'src/app/(front-end)/_features/User/ui/profile-image'
 import useLogic from 'src/app/(front-end)/_features/Write/ui/form/logic'
 
-const WriteForm: React.FC = (props) => {
+const Form: React.FC = () => {
 	const { value, handler } = useLogic()
 
 	return (
@@ -30,4 +30,4 @@ const WriteForm: React.FC = (props) => {
 	)
 }
 
-export default WriteForm
+export default Form

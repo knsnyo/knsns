@@ -1,16 +1,11 @@
-import { EditRounded } from '@mui/icons-material'
-import { Fab } from '@mui/material'
-import Link from 'next/link'
-import AppBar from 'src/app/(front-end)/__shared/appbar'
+import Shared from 'src/app/(front-end)/__shared'
+import Feature from 'src/app/(front-end)/_features'
 
 const Page: React.FC = () => {
 	return (
 		<>
-			<AppBar />
-			<Fab size='small' sx={{ position: 'absolute', bottom: 16, right: 16 }}>
-				<EditRounded />
-			</Fab>
-			<Link href='/feed/1'>check</Link>
+			<Shared.UI.AppBar />
+			<Feature.Write.UI.FAB />
 		</>
 	)
 }

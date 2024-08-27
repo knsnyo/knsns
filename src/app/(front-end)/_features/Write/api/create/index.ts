@@ -1,10 +1,21 @@
-import { IWriteBody } from 'src/app/(front-end)/_features/Write/api/type'
+import type { IFeedInput } from 'src/_type/input/feed'
 
-const create = async (body: IWriteBody) => {
-	const response = await fetch(`/api/feed`, {
+const query = `
+	mutation CreateFeed($input: FeedInput!) {
+		createFeed(input: $input) {
+			authorId
+			content
+		}
+	}
+`
+const create = async (input: IFeedInput): Promise<boolean> => {
+	const response = await fetch('/api/graphql', {
 		method: 'POST',
-		body: JSON.stringify(body)
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({ query, variables: { input } })
 	})
+
+	return response.ok
 }
 
 export default create

@@ -1,4 +1,4 @@
-export type FeedInput = {
+export interface IFeedInput {
 	authorId: string
 	content: string
 }

@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import WriteFAB from 'src/app/(front-end)/_features/Write/ui/button'
+import FAB from 'src/app/(front-end)/_features/Write/ui/button'
 
 const meta = {
 	title: '[Write] FAB',
-	component: WriteFAB,
+	component: FAB,
 	parameters: { layout: 'centered' }
-} satisfies Meta<typeof WriteFAB>
+} satisfies Meta<typeof FAB>
 
 export default meta
-type Story = StoryObj<typeof WriteFAB>
+type Story = StoryObj<typeof FAB>
 
 export const Primary: Story = {
 	args: {}
