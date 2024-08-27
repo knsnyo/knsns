@@ -9,7 +9,7 @@ const useLogic = () => {
 
 	return {
 		handler: {
-			navigateWritePage
+			navigate: navigateWritePage
 		}
 	}
 }

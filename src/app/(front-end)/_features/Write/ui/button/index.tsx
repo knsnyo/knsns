@@ -11,7 +11,7 @@ const FAB: React.FC = () => {
 		<Fab
 			color='primary'
 			sx={{ position: 'absolute', bottom: 16, right: 16 }}
-			onClick={handler.navigateWritePage}
+			onClick={handler.navigate}
 		>
 			<EditRounded />
 		</Fab>

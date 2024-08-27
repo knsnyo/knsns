@@ -7,6 +7,12 @@ const feed = `
     updatedAt: String
 	}
 
+  type InfiniteFeed {
+    hasNext: Boolean!
+    items: [Feed!]!
+    lastId: String!
+  }
+
   input FeedInput {
     authorId: String
     content: String
@@ -14,6 +20,7 @@ const feed = `
 
   type Query {
 		feed: Feed
+    feeds: InfiniteFeed
 	}
 
 	type Mutation {
