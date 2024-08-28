@@ -1,6 +1,6 @@
 import React from 'react'
 
-const useInput = (): [
+export const useInput = (): [
 	string,
 	React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>
 ] => {
@@ -14,5 +14,3 @@ const useInput = (): [
 
 	return [value, handleValue]
 }
-
-export default useInput

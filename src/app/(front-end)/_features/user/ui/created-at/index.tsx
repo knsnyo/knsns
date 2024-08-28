@@ -1,10 +1,11 @@
 import { CalendarMonthRounded } from '@mui/icons-material'
-import IconText from 'src/app/(front-end)/__shared/icon-text'
+import Shared from 'src/app/(front-end)/__shared'
 
-const CreatedAt: React.FC = () => {
+export const CreatedAt: React.FC = () => {
 	return (
-		<IconText text='가입일자: 1999.08.29' icon={<CalendarMonthRounded />} />
+		<Shared.UI.IconText
+			text='가입일자: 1999.08.29'
+			icon={<CalendarMonthRounded />}
+		/>
 	)
 }
-
-export default CreatedAt

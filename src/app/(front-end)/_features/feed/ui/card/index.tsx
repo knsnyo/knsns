@@ -1,10 +1,10 @@
 import { MoreHorizRounded } from '@mui/icons-material'
 import { Stack, Typography } from '@mui/material'
-import Nickname from 'src/app/(front-end)/_features/User/ui/nickname'
-import ProfileImage from 'src/app/(front-end)/_features/User/ui/profile-image'
-import Tagname from 'src/app/(front-end)/_features/User/ui/tagname'
+import { Nickname } from 'src/app/(front-end)/_features/User/ui/nickname'
+import { ProfileImage } from 'src/app/(front-end)/_features/User/ui/profile-image'
+import { Tagname } from 'src/app/(front-end)/_features/User/ui/tagname'
 
-const Card: React.FC = () => {
+export const Card: React.FC = () => {
 	return (
 		<Stack direction='row' gap={1} minWidth={290}>
 			<ProfileImage />
@@ -28,5 +28,3 @@ const Card: React.FC = () => {
 		</Stack>
 	)
 }
-
-export default Card

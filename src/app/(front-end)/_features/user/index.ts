@@ -1,6 +1,3 @@
-import Card from 'src/app/(front-end)/_features/User/ui/card'
-import Info from 'src/app/(front-end)/_features/User/ui/info'
+import { UI } from 'src/app/(front-end)/_features/User/ui'
 
-const UI = { Info, Card }
-
-export default { UI }
+export const User = { UI }

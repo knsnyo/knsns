@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import CreatedAt from 'src/app/(front-end)/_features/User/ui/created-at'
+import { CreatedAt } from 'src/app/(front-end)/_features/User/ui/created-at'
 
 const meta = {
 	title: '[User] CreatedAt',

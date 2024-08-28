@@ -2,7 +2,7 @@ import React from 'react'
 import FirebaseAuth from 'src/_third-party/_firebase/auth'
 import type { TSession } from 'src/_type/session'
 
-const useUserSession = (session: TSession) => {
+export const useUserSession = (session: TSession) => {
 	const [uid, setUid] = React.useState<TSession>(session)
 
 	React.useEffect(() => {
@@ -17,5 +17,3 @@ const useUserSession = (session: TSession) => {
 
 	return uid
 }
-
-export default useUserSession

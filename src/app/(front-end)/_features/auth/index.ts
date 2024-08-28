@@ -1,5 +1,3 @@
-import GoogleButton from 'src/app/(front-end)/_features/Auth/ui/google-button'
+import { UI } from 'src/app/(front-end)/_features/Auth/ui'
 
-const UI = { GoogleButton }
-
-export default { UI }
+export const Auth = { UI }

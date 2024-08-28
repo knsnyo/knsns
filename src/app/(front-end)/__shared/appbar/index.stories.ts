@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import AppBar from 'src/app/(front-end)/__shared/appbar'
+import { AppBar } from 'src/app/(front-end)/__shared/appbar'
 
 const meta = {
 	title: '[Common] AppBar',

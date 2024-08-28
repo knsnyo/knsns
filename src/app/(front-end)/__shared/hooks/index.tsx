@@ -1,7 +1,7 @@
-import useInput from './useInput'
+import { useUserSession } from 'src/app/(front-end)/__shared/hooks/useUserSession'
+import { useInput } from './useInput'
 
-const Hooks = {
-	useInput
+export const Hooks = {
+	useInput,
+	useUserSession
 }
-
-export default Hooks

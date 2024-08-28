@@ -1,6 +1,6 @@
 import { Feed } from '@prisma/client'
 import { NextResponse } from 'next/server'
-import prisma from 'src/_third-party/prisma'
+import { prisma } from 'src/_third-party/prisma'
 import { Infinite } from 'src/_type/infinite'
 import type { IFeedInput } from 'src/_type/input/feed'
 

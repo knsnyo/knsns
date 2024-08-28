@@ -1,16 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Stack, Typography } from '@mui/material'
+import Shared from 'src/app/(front-end)/__shared'
 
-import Button from 'src/app/(front-end)/__shared/button'
-import BackgroundImage from 'src/app/(front-end)/_features/User/ui/background-image'
-import Birthday from 'src/app/(front-end)/_features/User/ui/birthday'
-import CreatedAt from 'src/app/(front-end)/_features/User/ui/created-at'
-import Intro from 'src/app/(front-end)/_features/User/ui/intro'
-import Link from 'src/app/(front-end)/_features/User/ui/link'
-import Nickname from 'src/app/(front-end)/_features/User/ui/nickname'
-import Tagname from 'src/app/(front-end)/_features/User/ui/tagname'
+import { BackgroundImage } from 'src/app/(front-end)/_features/User/ui/background-image'
+import { Birthday } from 'src/app/(front-end)/_features/User/ui/birthday'
+import { CreatedAt } from 'src/app/(front-end)/_features/User/ui/created-at'
+import { Intro } from 'src/app/(front-end)/_features/User/ui/intro'
+import { Link } from 'src/app/(front-end)/_features/User/ui/link'
+import { Nickname } from 'src/app/(front-end)/_features/User/ui/nickname'
+import { Tagname } from 'src/app/(front-end)/_features/User/ui/tagname'
 
-const Info: React.FC = () => {
+export const Info: React.FC = () => {
 	return (
 		<Stack>
 			<Stack>
@@ -35,7 +35,7 @@ const Info: React.FC = () => {
 							bottom: 10
 						}}
 					/>
-					<Button text='프로필 수정' />
+					<Shared.UI.Button text='프로필 수정' />
 				</Stack>
 			</Stack>
 			<br />
@@ -59,5 +59,3 @@ const Info: React.FC = () => {
 		</Stack>
 	)
 }
-
-export default Info

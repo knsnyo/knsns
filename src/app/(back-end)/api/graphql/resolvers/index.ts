@@ -1,6 +1,6 @@
 import service from 'src/app/(back-end)/api/_service'
 
-const resolvers = {
+export const resolvers = {
 	Query: {
 		feed: service.feed.getFeedById,
 		feeds: service.feed.getFeeds
@@ -9,5 +9,3 @@ const resolvers = {
 		createFeed: service.feed.create
 	}
 }
-
-export default resolvers

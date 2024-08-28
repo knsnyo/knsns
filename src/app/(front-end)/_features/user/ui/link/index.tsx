@@ -1,8 +1,13 @@
 import { LinkRounded } from '@mui/icons-material'
-import IconText from 'src/app/(front-end)/__shared/icon-text'
+import Shared from 'src/app/(front-end)/__shared'
 
 const Link: React.FC = () => {
-	return <IconText text='https://velog.io/@knsnyo' icon={<LinkRounded />} />
+	return (
+		<Shared.UI.IconText
+			text='https://velog.io/@knsnyo'
+			icon={<LinkRounded />}
+		/>
+	)
 }
 
 export default Link

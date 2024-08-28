@@ -1,5 +1,5 @@
 import gql from 'graphql-tag'
-import feed from './feed'
+import { feed } from './feed'
 
 const typeDefs = gql`
 	${feed}

@@ -2,20 +2,20 @@
 
 import { Stack, TextField } from '@mui/material'
 import React from 'react'
-import Button from 'src/app/(front-end)/__shared/button'
-import ProfileImage from 'src/app/(front-end)/_features/User/ui/profile-image'
-import useLogic from 'src/app/(front-end)/_features/Write/ui/form/logic'
+import Shared from 'src/app/(front-end)/__shared'
+import Feature from 'src/app/(front-end)/_features'
+import { useLogic } from 'src/app/(front-end)/_features/Write/ui/form/logic'
 
-const Form: React.FC = () => {
+export const Form: React.FC = () => {
 	const { value, handler } = useLogic()
 
 	return (
 		<Stack padding={2}>
 			<Stack direction='row' justifyContent='flex-end'>
-				<Button text='글쓰기' onClick={handler.submit} />
+				<Shared.UI.Button text='글쓰기' onClick={handler.submit} />
 			</Stack>
 			<Stack direction='row' gap={1}>
-				<ProfileImage />
+				<Feature.User.UI.ProfileImage />
 				<TextField
 					variant='standard'
 					fullWidth
@@ -29,5 +29,3 @@ const Form: React.FC = () => {
 		</Stack>
 	)
 }
-
-export default Form

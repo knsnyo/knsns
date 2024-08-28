@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation'
 import Shared from 'src/app/(front-end)/__shared'
 import create from 'src/app/(front-end)/_features/Write/api/create'
 
-const useLogic = (feed?: Feed) => {
+export const useLogic = (feed?: Feed) => {
 	const router = useRouter()
 
 	const [content, setContent] = Shared.Hooks.useInput()
@@ -25,5 +25,3 @@ const useLogic = (feed?: Feed) => {
 		}
 	}
 }
-
-export default useLogic

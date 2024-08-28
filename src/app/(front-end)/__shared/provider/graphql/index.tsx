@@ -8,8 +8,8 @@ const client = new ApolloClient({
 	connectToDevTools: true
 })
 
-const ApolloClientProvider: React.FC<React.PropsWithChildren> = (props) => {
+export const ApolloClientProvider: React.FC<React.PropsWithChildren> = (
+	props
+) => {
 	return <ApolloProvider client={client}>{props.children}</ApolloProvider>
 }
-
-export default ApolloClientProvider

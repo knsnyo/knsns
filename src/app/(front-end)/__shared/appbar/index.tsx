@@ -4,7 +4,7 @@ import * as MUI from '@mui/material'
 import FirebaseAuth from 'src/_third-party/_firebase/auth'
 import type { IAppBarProps } from 'src/app/(front-end)/__shared/appbar/type'
 
-const AppBar: React.FC<IAppBarProps> = (props) => {
+export const AppBar: React.FC<IAppBarProps> = (props) => {
 	const logout = () => {
 		FirebaseAuth.Google.signOut()
 		FirebaseAuth.Session.remove()
@@ -18,5 +18,3 @@ const AppBar: React.FC<IAppBarProps> = (props) => {
 		</MUI.AppBar>
 	)
 }
-
-export default AppBar

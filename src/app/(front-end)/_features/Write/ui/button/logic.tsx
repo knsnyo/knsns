@@ -1,6 +1,6 @@
 import { useRouter } from 'next/navigation'
 
-const useLogic = () => {
+export const useLogic = () => {
 	const router = useRouter()
 
 	const navigateWritePage = () => {
@@ -13,5 +13,3 @@ const useLogic = () => {
 		}
 	}
 }
-
-export default useLogic

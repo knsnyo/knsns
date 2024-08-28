@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import ProfileImage from 'src/app/(front-end)/_features/User/ui/profile-image'
+import { ProfileImage } from 'src/app/(front-end)/_features/User/ui/profile-image'
 
 const meta = {
 	title: '[User] Profile-Image',

@@ -1,7 +1,7 @@
 'use client'
 
 import { gql, useQuery } from '@apollo/client'
-import { AppBar } from '@mui/material'
+import Shared from 'src/app/(front-end)/__shared'
 import Feature from 'src/app/(front-end)/_features'
 
 const Page: React.FC = () => {
@@ -9,13 +9,14 @@ const Page: React.FC = () => {
 		query {
 			feed {
 				content
+				createdAt
 			}
 		}
 	`)
 
 	return (
 		<>
-			<AppBar />
+			<Shared.UI.AppBar />
 			<Feature.Feed.UI.Card />
 		</>
 	)

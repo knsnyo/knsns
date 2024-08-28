@@ -1,6 +1,6 @@
 import FirebaseAuth from 'src/_third-party/_firebase/auth'
 
-const useLogic = () => {
+export const useLogic = () => {
 	const login = async () => {
 		const uid = await FirebaseAuth.Google.signIn()
 		if (!uid) return
@@ -11,5 +11,3 @@ const useLogic = () => {
 		handler: { login }
 	}
 }
-
-export default useLogic

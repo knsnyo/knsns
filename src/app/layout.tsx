@@ -2,7 +2,7 @@ import { CssBaseline } from '@mui/material'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
 import { cookies } from 'next/headers'
 import React from 'react'
-import FirebaseAuth from 'src/_third-party/_firebase/auth'
+import { FirebaseAuth } from 'src/_third-party/_firebase/auth'
 import Shared from 'src/app/(front-end)/__shared'
 
 const RootLayout: React.FC<React.PropsWithChildren> = (props) => {

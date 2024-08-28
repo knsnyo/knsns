@@ -1,4 +1,4 @@
-const feed = `
+export const feed = `
 	type Feed {
 		id: String
     authorId: String
@@ -27,5 +27,3 @@ const feed = `
 		createFeed(input: FeedInput!): Feed
 	}
 `
-
-export default feed

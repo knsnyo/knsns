@@ -10,7 +10,7 @@ interface IProps extends React.PropsWithChildren {
 	uid: TSession
 }
 
-const AuthProvider: React.FC<IProps> = (props) => {
+export const AuthProvider: React.FC<IProps> = (props) => {
 	const router = useRouter()
 	const pathname = usePathname()
 
@@ -24,5 +24,3 @@ const AuthProvider: React.FC<IProps> = (props) => {
 
 	return <Session.Provider value={props.uid}>{props.children}</Session.Provider>
 }
-
-export default AuthProvider

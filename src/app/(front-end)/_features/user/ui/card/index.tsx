@@ -1,11 +1,12 @@
 import { Stack } from '@mui/material'
-import Button from 'src/app/(front-end)/__shared/button'
-import Intro from 'src/app/(front-end)/_features/User/ui/intro'
-import Nickname from 'src/app/(front-end)/_features/User/ui/nickname'
-import ProfileImage from 'src/app/(front-end)/_features/User/ui/profile-image'
-import Tagname from 'src/app/(front-end)/_features/User/ui/tagname'
+import Shared from 'src/app/(front-end)/__shared'
 
-const Card: React.FC = () => {
+import { Intro } from 'src/app/(front-end)/_features/User/ui/intro'
+import { Nickname } from 'src/app/(front-end)/_features/User/ui/nickname'
+import { ProfileImage } from 'src/app/(front-end)/_features/User/ui/profile-image'
+import { Tagname } from 'src/app/(front-end)/_features/User/ui/tagname'
+
+export const Card: React.FC = () => {
 	return (
 		<Stack direction='row' gap={1}>
 			<ProfileImage />
@@ -14,9 +15,7 @@ const Card: React.FC = () => {
 				<Tagname />
 				<Intro />
 			</Stack>
-			<Button text='팔로우하기' />
+			<Shared.UI.Button text='팔로우하기' />
 		</Stack>
 	)
 }
-
-export default Card

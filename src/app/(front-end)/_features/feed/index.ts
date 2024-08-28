@@ -1,5 +1,3 @@
-import Card from 'src/app/(front-end)/_features/Feed/ui/card'
+import { UI } from 'src/app/(front-end)/_features/Feed/ui'
 
-const UI = { Card }
-
-export default { UI }
+export const Feed = { UI }

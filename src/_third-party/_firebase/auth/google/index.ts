@@ -1,9 +1,7 @@
-import signInWithGoogle from 'src/_third-party/_firebase/auth/google/sign-in'
-import signOutWithGoogle from 'src/_third-party/_firebase/auth/google/sign-out'
+import { signIn } from 'src/_third-party/_firebase/auth/google/sign-in'
+import { signOut } from 'src/_third-party/_firebase/auth/google/sign-out'
 
-const Google = {
-	signIn: signInWithGoogle,
-	signOut: signOutWithGoogle
+export const Google = {
+	signIn,
+	signOut
 }
-
-export default Google

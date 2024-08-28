@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import Form from 'src/app/(front-end)/_features/Write/ui/form'
+import { Form } from 'src/app/(front-end)/_features/Write/ui/form'
 
 const meta = {
 	title: '[Write] Form',
