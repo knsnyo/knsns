@@ -9,11 +9,11 @@ datasource db {
 
 model User {
   id  String @id @default(auto()) @map("_id") @db.ObjectId
-  uid String
+  uid String @unique
   
-  email String
+  email String?
   displayName String
-  photoUrl String
+  photoUrl String?
   providerId String
 
   Feed Feed[]

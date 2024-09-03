@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
-import type { TSession } from 'src/_type/session'
+import type { TSession } from 'src/__type/session'
 
 const Session = React.createContext(null as TSession)
 

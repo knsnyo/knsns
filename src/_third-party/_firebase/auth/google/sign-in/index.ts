@@ -1,5 +1,5 @@
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
-import config from 'src/_third-party/_firebase/config'
+import { config } from 'src/_third-party/_firebase/config'
 
 export const signIn = async () => {
 	const provider = new GoogleAuthProvider()
@@ -10,7 +10,7 @@ export const signIn = async () => {
 			throw new Error('Google Sign In Failed')
 		}
 
-		return result.user.uid
+		return result.user
 	} catch (error) {
 		//
 	}

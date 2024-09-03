@@ -1,4 +1,4 @@
-import config from 'src/_third-party/_firebase/config'
+import { config } from 'src/_third-party/_firebase/config'
 
 export const signOut = async () => {
 	try {

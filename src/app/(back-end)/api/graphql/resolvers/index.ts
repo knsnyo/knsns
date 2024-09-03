@@ -1,4 +1,4 @@
-import service from 'src/app/(back-end)/api/_service'
+import { service } from 'src/app/(back-end)/api/_service'
 
 export const resolvers = {
 	Query: {
@@ -6,6 +6,7 @@ export const resolvers = {
 		feeds: service.feed.getFeeds
 	},
 	Mutation: {
-		createFeed: service.feed.create
+		createFeed: service.feed.create,
+		createUser: service.user.create
 	}
 }

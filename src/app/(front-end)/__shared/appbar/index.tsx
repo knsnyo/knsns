@@ -1,7 +1,7 @@
 'use client'
 
 import * as MUI from '@mui/material'
-import FirebaseAuth from 'src/_third-party/_firebase/auth'
+import { FirebaseAuth } from 'src/_third-party/_firebase/auth'
 import type { IAppBarProps } from 'src/app/(front-end)/__shared/appbar/type'
 
 export const AppBar: React.FC<IAppBarProps> = (props) => {

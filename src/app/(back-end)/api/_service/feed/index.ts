@@ -1,14 +1,14 @@
 import { Feed } from '@prisma/client'
 import { NextResponse } from 'next/server'
+import { Infinite } from 'src/__type/infinite'
+import type { IFeedInput } from 'src/__type/input/feed'
 import { prisma } from 'src/_third-party/prisma'
-import { Infinite } from 'src/_type/infinite'
-import type { IFeedInput } from 'src/_type/input/feed'
 
 const create = async (
 	_: any,
-	args: { input: IFeedInput }
+	{ input }: { input: IFeedInput }
 ): Promise<NextResponse> => {
-	await prisma.feed.create({ data: args.input })
+	await prisma.feed.create({ data: input })
 
 	return NextResponse.json({}, { status: 201 })
 }
@@ -29,10 +29,8 @@ const getFeedById = async (): Promise<Feed> => {
 	return feed!
 }
 
-const feed = {
+export const feed = {
 	create,
 	getFeeds,
 	getFeedById
 }
-
-export default feed

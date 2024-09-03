@@ -1,11 +1,21 @@
-import FirebaseAuth from 'src/_third-party/_firebase/auth'
+import { FirebaseAuth } from 'src/_third-party/_firebase/auth'
+import { api } from 'src/app/(front-end)/_features/Auth/api'
 
 export const useLogic = () => {
 	const login = async () => {
-		const uid = await FirebaseAuth.Google.signIn()
-		if (!uid) return
+		const user = await FirebaseAuth.Google.signIn()
+		if (!user) return
 
-		await FirebaseAuth.Session.create(uid)
+		await FirebaseAuth.Session.create(user.uid)
+		await api.create({
+			uid: user.uid,
+			displayName: user.displayName ?? 'RANDOM_NICKNAME',
+			providerId: user.providerId,
+			email: user?.email || null,
+			photoUrl: user?.photoURL || null
+		})
+
+		// graphql 부르기
 	}
 	return {
 		handler: { login }

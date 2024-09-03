@@ -3,7 +3,7 @@
 import { Stack, TextField } from '@mui/material'
 import React from 'react'
 import Shared from 'src/app/(front-end)/__shared'
-import Feature from 'src/app/(front-end)/_features'
+import { User } from 'src/app/(front-end)/_features/User'
 import { useLogic } from 'src/app/(front-end)/_features/Write/ui/form/logic'
 
 export const Form: React.FC = () => {
@@ -15,7 +15,7 @@ export const Form: React.FC = () => {
 				<Shared.UI.Button text='글쓰기' onClick={handler.submit} />
 			</Stack>
 			<Stack direction='row' gap={1}>
-				<Feature.User.UI.ProfileImage />
+				<User.UI.ProfileImage />
 				<TextField
 					variant='standard'
 					fullWidth
