@@ -8,7 +8,7 @@ const query = `
 		}
 	}
 `
-const create = async (input: IFeedInput): Promise<boolean> => {
+export const create = async (input: IFeedInput): Promise<boolean> => {
 	const response = await fetch('/api/graphql', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
@@ -17,5 +17,3 @@ const create = async (input: IFeedInput): Promise<boolean> => {
 
 	return response.ok
 }
-
-export default create

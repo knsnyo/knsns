@@ -1,7 +1,7 @@
 import { Feed } from '@prisma/client'
 import { useRouter } from 'next/navigation'
 import Shared from 'src/app/(front-end)/__shared'
-import create from 'src/app/(front-end)/_features/Write/api/create'
+import { api } from 'src/app/(front-end)/_features/Write/api'
 
 export const useLogic = (feed?: Feed) => {
 	const router = useRouter()
@@ -11,7 +11,7 @@ export const useLogic = (feed?: Feed) => {
 	const submit = async () => {
 		const { uid } = JSON.parse(localStorage.getItem('knsns-user')!)
 
-		const result = await create({ authorId: uid, content })
+		const result = await api.create({ authorId: uid, content })
 		if (!result) return window.alert('retry this...')
 
 		router.replace('/')

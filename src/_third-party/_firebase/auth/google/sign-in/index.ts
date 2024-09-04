@@ -3,6 +3,9 @@ import { config } from 'src/_third-party/_firebase/config'
 
 export const signIn = async () => {
 	const provider = new GoogleAuthProvider()
+	provider.addScope('profile')
+	provider.addScope('email')
+
 	try {
 		const result = await signInWithPopup(config, provider)
 

@@ -14,10 +14,14 @@ const create = async (
 }
 
 const getFeeds = async (): Promise<Infinite<Feed>> => {
-	const items = await prisma.feed.findMany({ take: 10 })
+	const items = await prisma.feed.findMany({
+		take: 10,
+		where: false ? { id: { gt: '' } } : undefined,
+		orderBy: { createdAt: 'desc' }
+	})
 
 	return {
-		hasNext: false,
+		hasNext: items.length === 10,
 		items,
 		lastId: items.at(-1)!.id
 	}

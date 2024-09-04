@@ -7,7 +7,7 @@ const Page: React.FC = (props) => {
 	return (
 		<>
 			<Shared.UI.AppBar text='글쓰기' />
-			<Feature.Write.UI.FAB />
+			<Feature.Write.UI.Form />
 		</>
 	)
 }

@@ -1,7 +1,5 @@
-import create from 'src/app/(front-end)/_features/Write/api/create'
+import { create } from 'src/app/(front-end)/_features/Write/api/create'
 
-const API = {
+export const api = {
 	create
 }
-
-export default API

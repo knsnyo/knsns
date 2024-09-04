@@ -14,8 +14,10 @@ const RootLayout: React.FC<React.PropsWithChildren> = (props) => {
 				<AppRouterCacheProvider>
 					<Shared.Provider.Auth uid={session}>
 						<Shared.Provider.Graphql>
-							<CssBaseline />
-							{props.children}
+							<Shared.Provider.Theme>
+								<CssBaseline />
+								{props.children}
+							</Shared.Provider.Theme>
 						</Shared.Provider.Graphql>
 					</Shared.Provider.Auth>
 				</AppRouterCacheProvider>
