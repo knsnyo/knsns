@@ -3,6 +3,7 @@ import type { IDetail } from 'src/__type/detail'
 const query = `
 	query GetUser($input: Detail!) {
 		user(input: $input) {
+			uid
 			email
 			displayName
 			photoUrl

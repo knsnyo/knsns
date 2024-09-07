@@ -8,7 +8,8 @@ export interface IUserInput {
 
 export interface IUserUpdateInput {
 	uid: string
-	tagname: string
-	intro: string
-	link: string
+	displayName: string
+	tagname?: string
+	intro?: string
+	link?: string
 }

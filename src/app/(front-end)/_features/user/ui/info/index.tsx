@@ -5,7 +5,6 @@ import { Stack, Typography } from '@mui/material'
 import Shared from 'src/app/(front-end)/__shared'
 
 import { BackgroundImage } from 'src/app/(front-end)/_features/User/ui/background-image'
-import { Birthday } from 'src/app/(front-end)/_features/User/ui/birthday'
 import { CreatedAt } from 'src/app/(front-end)/_features/User/ui/created-at'
 import useLogic from 'src/app/(front-end)/_features/User/ui/info/logic'
 import { Intro } from 'src/app/(front-end)/_features/User/ui/intro'
@@ -45,9 +44,9 @@ export const Info: React.FC = () => {
 				<Intro>{value.user?.intro}</Intro>
 				<br />
 				<Stack direction='row' gap={2} flexWrap='wrap'>
-					<Link>{value.user?.link}</Link>
-					<Birthday />
-					<CreatedAt>1999.09.09</CreatedAt>
+					{value.user?.link && <Link>{value.user?.link}</Link>}
+					{/* <Birthday /> */}
+					{value.user?.createdAt && <CreatedAt>1999.09.09</CreatedAt>}
 				</Stack>
 				<br />
 				<Stack direction='row' gap={2}>

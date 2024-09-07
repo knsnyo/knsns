@@ -23,7 +23,12 @@ export const Form: React.FC = () => {
 					alignItems='end'
 				>
 					<ProfileImage src={value.user?.photoUrl ?? undefined} />
-					<Shared.UI.Button variant='contained' text='수정하기' />
+					<Shared.UI.Button
+						variant='contained'
+						text='수정하기'
+						disabled={!value.isValid}
+						onClick={handler.submit}
+					/>
 				</Stack>
 			</Stack>
 			<br />

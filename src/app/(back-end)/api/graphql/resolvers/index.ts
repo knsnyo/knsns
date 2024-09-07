@@ -8,6 +8,7 @@ export const resolvers = {
 	},
 	Mutation: {
 		createFeed: service.feed.create,
-		createUser: service.user.create
+		createUser: service.user.create,
+		updateUser: service.user.update
 	}
 }

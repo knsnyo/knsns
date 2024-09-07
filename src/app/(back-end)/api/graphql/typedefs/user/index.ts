@@ -22,8 +22,17 @@ export const user = `
 		providerId: String!
 	}
 
+	input UserUpdateInput {
+		uid: String!
+		displayName: String!
+		tagname: String
+		intro: String
+		link: String
+	}
+
 	type Mutation {
 		createUser(input: UserInput!): User
+		updateUser(input: UserUpdateInput!): User
 	}
 	
 	type Query {
