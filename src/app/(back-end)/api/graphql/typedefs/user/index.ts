@@ -12,6 +12,7 @@ export const user = `
 		intro: String
 		link: String
 		backgroundImage: String
+		createdAt: Date
 	}
 
 	input UserInput {

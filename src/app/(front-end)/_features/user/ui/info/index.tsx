@@ -46,7 +46,9 @@ export const Info: React.FC = () => {
 				<Stack direction='row' gap={2} flexWrap='wrap'>
 					{value.user?.link && <Link>{value.user?.link}</Link>}
 					{/* <Birthday /> */}
-					{value.user?.createdAt && <CreatedAt>1999.09.09</CreatedAt>}
+					{value.user?.createdAt && (
+						<CreatedAt>{Shared.Utils.yyyyMMdd(value.user.createdAt)}</CreatedAt>
+					)}
 				</Stack>
 				<br />
 				<Stack direction='row' gap={2}>
