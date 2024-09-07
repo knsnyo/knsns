@@ -1,5 +1,6 @@
-import { CircularProgress } from '@mui/material'
+import { CircularProgress, useTheme } from '@mui/material'
 
 export const Indicator: React.FC = () => {
-	return <CircularProgress sx={{ color: '#e4e4e4' }} />
+	const theme = useTheme()
+	return <CircularProgress sx={{ color: theme.palette.divider }} />
 }

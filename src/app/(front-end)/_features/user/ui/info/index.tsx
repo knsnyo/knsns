@@ -11,6 +11,7 @@ import useLogic from 'src/app/(front-end)/_features/User/ui/info/logic'
 import { Intro } from 'src/app/(front-end)/_features/User/ui/intro'
 import { Link } from 'src/app/(front-end)/_features/User/ui/link'
 import { Nickname } from 'src/app/(front-end)/_features/User/ui/nickname'
+import { ProfileImage } from 'src/app/(front-end)/_features/User/ui/profile-image'
 import { Tagname } from 'src/app/(front-end)/_features/User/ui/tagname'
 
 export const Info: React.FC = () => {
@@ -28,18 +29,7 @@ export const Info: React.FC = () => {
 					height={60}
 					alignItems='end'
 				>
-					<img
-						src='https://picsum.photos/300'
-						alt=''
-						width={100}
-						height={100}
-						style={{
-							zIndex: 2,
-							borderRadius: 100,
-							position: 'relative',
-							bottom: 10
-						}}
-					/>
+					<ProfileImage src={value.user?.photoUrl ?? undefined} />
 					<Shared.UI.Button
 						text='프로필 수정'
 						variant='contained'

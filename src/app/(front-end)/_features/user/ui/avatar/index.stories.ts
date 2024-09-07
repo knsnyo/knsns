@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ProfileImage } from 'src/app/(front-end)/_features/User/ui/profile-image'
+import { Avatar } from 'src/app/(front-end)/_features/User/ui/avatar'
 
 const meta = {
 	title: '[User] Profile-Image',
-	component: ProfileImage,
+	component: Avatar,
 	parameters: { layout: 'centered' }
-} satisfies Meta<typeof ProfileImage>
+} satisfies Meta<typeof Avatar>
 
 export default meta
-type Story = StoryObj<typeof ProfileImage>
+type Story = StoryObj<typeof Avatar>
 
 export const Primary: Story = {
 	args: {}

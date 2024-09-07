@@ -1,13 +1,13 @@
 import { MoreHorizRounded } from '@mui/icons-material'
 import { Stack, Typography } from '@mui/material'
+import { Avatar } from 'src/app/(front-end)/_features/User/ui/avatar'
 import { Nickname } from 'src/app/(front-end)/_features/User/ui/nickname'
-import { ProfileImage } from 'src/app/(front-end)/_features/User/ui/profile-image'
 import { Tagname } from 'src/app/(front-end)/_features/User/ui/tagname'
 
 export const Card: React.FC = () => {
 	return (
 		<Stack direction='row' gap={1} minWidth={290}>
-			<ProfileImage />
+			<Avatar />
 			<Stack direction='column' width='100%'>
 				<Stack direction='row' justifyContent='space-between'>
 					<Stack direction='row' gap={1}>

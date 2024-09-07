@@ -8,7 +8,8 @@ const theme = MUI.createTheme({
 		primary: colors.purple,
 		warning: colors.yellow,
 		error: colors.red,
-		success: colors.green
+		success: colors.green,
+		grey: colors.grey
 	}
 })
 

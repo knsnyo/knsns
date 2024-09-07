@@ -1,5 +1,5 @@
 import { Image } from '@mui/icons-material'
-import { Avatar } from '@mui/material'
+import { Box } from '@mui/material'
 
 export const ProfileImage: React.FC<
 	React.DetailedHTMLProps<
@@ -7,13 +7,34 @@ export const ProfileImage: React.FC<
 		HTMLImageElement
 	>
 > = (props) => {
-	if (!props?.src) {
+	if (!props.src) {
 		return (
-			<Avatar>
-				<Image sx={{ fontSize: 40 }} />
-			</Avatar>
+			<Box
+				width={100}
+				height={100}
+				display='flex'
+				justifyContent='center'
+				alignItems='center'
+				border='1px solid #d4d4d4'
+				borderRadius='100%'
+			>
+				<Image sx={{ fontSize: 40 }} color='disabled' />
+			</Box>
 		)
 	}
 
-	return <Avatar src='https://picsum.photos/200' />
+	return (
+		<img
+			src='https://picsum.photos/300'
+			alt=''
+			width={100}
+			height={100}
+			style={{
+				zIndex: 2,
+				borderRadius: 100,
+				position: 'relative',
+				bottom: 10
+			}}
+		/>
+	)
 }
