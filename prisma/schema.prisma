@@ -16,7 +16,15 @@ model User {
   photoUrl String?
   providerId String
 
+  tagname String?
+  intro String?
+  link String?
+  backgroundImage String?
+
   Feed Feed[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
 }
 
 model Feed {

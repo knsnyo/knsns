@@ -1,0 +1,3 @@
+interface IQuery {
+	lastId?: string
+}

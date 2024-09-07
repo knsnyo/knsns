@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Indicator } from 'src/app/(front-end)/__shared/indicator'
+import { Indicator } from 'src/app/(front-end)/__shared/ui/indicator'
 
 const meta = {
 	title: '[Common] Indicator',

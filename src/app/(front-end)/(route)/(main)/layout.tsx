@@ -1,21 +1,7 @@
-import { Container } from '@mui/material'
+import Shared from 'src/app/(front-end)/__shared'
 
 const Layout: React.FC<React.PropsWithChildren> = (props) => {
-	return (
-		<Container
-			sx={{
-				display: 'flex',
-				flexDirection: 'column',
-				height: '100vh',
-				paddingX: 0,
-				'&.MuiContainer-root': {
-					paddingX: 0
-				}
-			}}
-		>
-			{props.children}
-		</Container>
-	)
+	return <Shared.UI.Container>{props.children}</Shared.UI.Container>
 }
 
 export default Layout

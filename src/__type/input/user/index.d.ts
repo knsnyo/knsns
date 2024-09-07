@@ -5,3 +5,10 @@ export interface IUserInput {
 	photoUrl?: string | null
 	providerId: string
 }
+
+export interface IUserUpdateInput {
+	uid: string
+	tagname: string
+	intro: string
+	link: string
+}

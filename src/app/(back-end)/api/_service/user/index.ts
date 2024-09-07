@@ -1,22 +1,47 @@
+import { User } from '@prisma/client'
 import { User as FirebaseUser } from 'firebase/auth'
+import type { IDetail } from 'src/__type/detail'
+import type { IUserUpdateInput } from 'src/__type/input/user'
 import { prisma } from 'src/_third-party/prisma'
 
-const create = async (_: any, { input }: { input: FirebaseUser }) => {
+const create = async (
+	_: any,
+	{ input }: { input: FirebaseUser }
+): Promise<void> => {
 	try {
 		const data = {
 			uid: input.uid,
 			displayName: input.displayName ?? 'RANDOM_DISPLAY_NAME',
 			email: input.email,
 			photoUrl: input.photoURL,
-			providerId: input.providerId
+			providerId: input.providerId,
+			tagname: input.displayName
 		}
 
 		await prisma.user.create({ data })
 	} catch (error) {
-		console.error(error)
+		//
 	}
 }
 
+const get = async (
+	_: any,
+	{ input }: { input: IDetail }
+): Promise<User | null> => {
+	const data = await prisma.user.findUnique({ where: { uid: input.id } })
+
+	return data
+}
+
+const update = async (
+	_: any,
+	{ input }: { input: IUserUpdateInput }
+): Promise<void> => {
+	await prisma.user.update({ where: { uid: input.uid }, data: input })
+}
+
 export const user = {
-	create
+	create,
+	get,
+	update
 }
