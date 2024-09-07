@@ -10,7 +10,7 @@ export const Avatar: React.FC<
 	if (!props?.src) {
 		return (
 			<MUI.Avatar>
-				<Image sx={{ fontSize: 40 }} color='disabled' />
+				<Image sx={{ fontSize: 20 }} color='disabled' />
 			</MUI.Avatar>
 		)
 	}
