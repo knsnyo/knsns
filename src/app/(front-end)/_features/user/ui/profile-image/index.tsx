@@ -17,6 +17,7 @@ export const ProfileImage: React.FC<
 				alignItems='center'
 				border='1px solid #d4d4d4'
 				borderRadius='100%'
+				bgcolor='white'
 			>
 				<Image sx={{ fontSize: 40 }} color='disabled' />
 			</Box>
@@ -25,7 +26,7 @@ export const ProfileImage: React.FC<
 
 	return (
 		<img
-			src='https://picsum.photos/300'
+			src={props.src}
 			alt=''
 			width={100}
 			height={100}

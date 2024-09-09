@@ -2,6 +2,7 @@ import { User } from '@prisma/client'
 import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
 import { IUserUpdateInput } from 'src/__type/input/user'
+import Shared from 'src/app/(front-end)/__shared'
 import { api } from 'src/app/(front-end)/_features/User/api'
 
 const useLogic = () => {
@@ -30,21 +31,42 @@ const useLogic = () => {
 		})
 	}
 
+	const handleImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
+		console.log('click')
+		const name = await Shared.api.upload(e)
+
+		if (!name) return
+		setUser((prev) => {
+			if (!prev) return prev
+
+			return {
+				...prev,
+				[e.target.name as 'photoUrl' | 'backgroundImage']: name
+			}
+		})
+	}
+
 	const submit = async () => {
 		const body: IUserUpdateInput = {
 			uid: user!.uid,
 			displayName: user!.displayName,
-			tagname: user?.tagname ?? '',
-			intro: user?.intro ?? '',
-			link: user?.link ?? ''
+			tagname: user?.tagname || null,
+			intro: user?.intro || null,
+			link: user?.link || null,
+			photoUrl: user?.photoUrl || null,
+			backgroundImage: user?.backgroundImage || null
 		}
+
 		const result = await api.change(body)
 		if (!result) return window.alert('retry this...')
 
 		router.back()
 	}
 
-	return { value: { user, isValid }, handler: { form: handleForm, submit } }
+	return {
+		value: { user, isValid },
+		handler: { form: handleForm, submit, image: handleImage }
+	}
 }
 
 export default useLogic

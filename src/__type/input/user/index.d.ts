@@ -9,7 +9,9 @@ export interface IUserInput {
 export interface IUserUpdateInput {
 	uid: string
 	displayName: string
-	tagname?: string
-	intro?: string
-	link?: string
+	tagname: string | null
+	intro: string | null
+	link: string | null
+	photoUrl: string | null
+	backgroundImage: string | null
 }

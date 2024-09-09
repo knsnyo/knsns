@@ -15,6 +15,7 @@ export const BackgroundImage: React.FC<
 				display='flex'
 				justifyContent='center'
 				alignItems='center'
+				borderBottom='1px solid #e4e4e4'
 			>
 				<Image sx={{ fontSize: 40 }} color='disabled' />
 			</Box>

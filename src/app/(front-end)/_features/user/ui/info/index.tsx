@@ -19,13 +19,13 @@ export const Info: React.FC = () => {
 	return (
 		<Stack>
 			<Stack>
-				<BackgroundImage />
+				<BackgroundImage src={value.user?.backgroundImage ?? undefined} />
 				<Stack
 					direction='row'
 					justifyContent='space-between'
 					paddingX={3}
 					position='relative'
-					height={60}
+					height={50}
 					alignItems='end'
 				>
 					<ProfileImage src={value.user?.photoUrl ?? undefined} />

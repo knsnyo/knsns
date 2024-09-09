@@ -8,7 +8,6 @@ export const create = async (uid: string) => {
 	cookies().set(key, uid, {
 		httpOnly: true,
 		secure: true,
-		maxAge: 60 * 60 * 24, // 60초 60분 24시간 => 1일
 		path: '/'
 	})
 

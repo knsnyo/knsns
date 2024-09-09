@@ -29,6 +29,8 @@ export const user = `
 		tagname: String
 		intro: String
 		link: String
+		photoUrl: String
+		backgroundImage: String
 	}
 
 	type Mutation {
