@@ -5,9 +5,11 @@ const query = `
 		createFeed(input: $input) {
 			authorId
 			content
+			image
 		}
 	}
 `
+
 export const create = async (input: IFeedInput): Promise<boolean> => {
 	const response = await fetch('/api/graphql', {
 		method: 'POST',

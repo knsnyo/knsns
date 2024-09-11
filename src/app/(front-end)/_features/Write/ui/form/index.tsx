@@ -1,6 +1,7 @@
 'use client'
 
-import { Stack, TextField } from '@mui/material'
+import { UploadFile } from '@mui/icons-material'
+import { Box, Stack, TextField } from '@mui/material'
 import React from 'react'
 import Shared from 'src/app/(front-end)/__shared'
 import { User } from 'src/app/(front-end)/_features/User'
@@ -26,6 +27,32 @@ export const Form: React.FC = () => {
 					InputProps={{ disableUnderline: true }}
 				/>
 			</Stack>
+			<label htmlFor='write-image'>
+				{value.image !== '' ? (
+					<Box padding={5}>
+						<img src={value.image} width='100%' alt='write-image' />
+					</Box>
+				) : (
+					<Box
+						width='100vw'
+						maxWidth='100%'
+						display='flex'
+						justifyContent='center'
+						alignItems='center'
+						height={100}
+					>
+						<UploadFile />
+					</Box>
+				)}
+				<input
+					type='file'
+					id='write-image'
+					name='image'
+					accept='image/*'
+					style={{ display: 'none' }}
+					onChange={handler.image}
+				/>
+			</label>
 		</Stack>
 	)
 }

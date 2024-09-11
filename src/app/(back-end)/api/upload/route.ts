@@ -17,14 +17,21 @@ export const POST = async (req: NextRequest) => {
 	}
 
 	const buffer = Buffer.from(await file.arrayBuffer())
+
+	// directory 없으면 만들기
 	if (!fs.existsSync(UPLOAD_DIR)) {
 		fs.mkdirSync(UPLOAD_DIR)
 	}
 
-	fs.writeFileSync(path.resolve(UPLOAD_DIR, (body.file as File).name), buffer)
+	// 현재 시간을 이용해 파일 이름을 생성
+	const timestamp = new Date().toISOString().replace(/[:.-]/g, '_') // 시간 포맷: YYYYMMDD_HHMMSS
+	const extension = (body.file as File).name.split('.').pop() // 파일 확장자 추출
+	const newFileName = `${timestamp}.${extension}` // 새로운 파일 이름: timestamp + 확장자
+
+	fs.writeFileSync(path.resolve(UPLOAD_DIR, newFileName), buffer)
 
 	return NextResponse.json({
 		success: true,
-		name: (body.file as File).name
+		name: newFileName
 	})
 }

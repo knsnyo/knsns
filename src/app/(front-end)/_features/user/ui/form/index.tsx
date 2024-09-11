@@ -2,6 +2,7 @@
 
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/anchor-is-valid */
+
 import { Stack, TextField } from '@mui/material'
 import Shared from 'src/app/(front-end)/__shared'
 import { BackgroundImage } from 'src/app/(front-end)/_features/User/ui/background-image'

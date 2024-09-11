@@ -22,7 +22,7 @@ export const BottomNavigation: React.FC = () => {
 				maxWidth: 600,
 				margin: 'auto'
 			}}
-			elevation={2}
+			elevation={0}
 		>
 			<MUI.BottomNavigation showLabels onChange={handler.index}>
 				<MUI.BottomNavigationAction label='feed' icon={<HomeOutlined />} />

@@ -32,7 +32,6 @@ const useLogic = () => {
 	}
 
 	const handleImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
-		console.log('click')
 		const name = await Shared.api.upload(e)
 
 		if (!name) return
