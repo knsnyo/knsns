@@ -1,8 +1,8 @@
 import { MoreHorizRounded } from '@mui/icons-material'
 import { Stack, Typography } from '@mui/material'
-import { Avatar } from 'src/app/(front-end)/_features/User/ui/avatar'
-import { Nickname } from 'src/app/(front-end)/_features/User/ui/nickname'
-import { Tagname } from 'src/app/(front-end)/_features/User/ui/tagname'
+import { Avatar } from '../../../User/ui/avatar'
+import { Nickname } from '../../../User/ui/nickname'
+import { Tagname } from '../../../User/ui/tagname'
 
 export const Card: React.FC = () => {
 	return (

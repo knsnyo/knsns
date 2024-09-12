@@ -2,9 +2,10 @@
 
 import { ArrowBackIosNewOutlined } from '@mui/icons-material'
 import * as MUI from '@mui/material'
-import { FirebaseAuth } from 'src/_third-party/_firebase/auth'
-import useLogic from 'src/app/(front-end)/__shared/ui/appbar/logic'
-import { IAppBarProps } from 'src/app/(front-end)/__shared/ui/appbar/type'
+
+import { FirebaseAuth } from 'third-party/_firebase/auth'
+import useLogic from './logic'
+import type { IAppBarProps } from './type'
 
 export const AppBar: React.FC<IAppBarProps> = (props) => {
 	const { handler } = useLogic()

@@ -1,5 +1,5 @@
-import { feed } from 'src/app/(back-end)/api/_service/feed'
-import { user } from 'src/app/(back-end)/api/_service/user'
+import { feed } from './feed'
+import { user } from './user'
 
 export const service = {
 	feed,

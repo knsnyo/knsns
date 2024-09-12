@@ -1,5 +1,5 @@
-import { FAB } from 'src/app/(front-end)/_features/Write/ui/button'
-import { Form } from 'src/app/(front-end)/_features/Write/ui/form'
+import { FAB } from './button'
+import { Form } from './form'
 
 export const UI = {
 	FAB,

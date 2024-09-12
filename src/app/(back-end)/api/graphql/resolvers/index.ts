@@ -1,4 +1,4 @@
-import { service } from 'src/app/(back-end)/api/_service'
+import { service } from '../../_service'
 
 export const resolvers = {
 	Query: {

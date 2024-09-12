@@ -14,10 +14,10 @@
 		"isolatedModules": true,
 		"jsx": "preserve",
 		"incremental": true,
-		"baseUrl": ".",
 		"types": ["@testing-library/jest-dom"],
 		"paths": {
-			"src/*": ["./src/*"]
+			"type/*": ["./src/__type/*"],
+			"third-party/*": ["./src/_third-party/*"]
 		},
 		"plugins": [
 			{

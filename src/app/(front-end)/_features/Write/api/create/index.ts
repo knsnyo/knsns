@@ -1,4 +1,4 @@
-import type { IFeedInput } from 'src/__type/input/feed'
+import type { IFeedInput } from 'type/input/feed'
 
 const query = `
 	mutation CreateFeed($input: FeedInput!) {

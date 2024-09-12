@@ -1,6 +1,6 @@
 import React from 'react'
-import type { TSession } from 'src/__type/session'
-import { FirebaseAuth } from 'src/_third-party/_firebase/auth'
+import { FirebaseAuth } from 'third-party/_firebase/auth'
+import type { TSession } from 'type/session'
 
 export const useUserSession = (session: TSession) => {
 	const [uid, setUid] = React.useState<TSession>(session)

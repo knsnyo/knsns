@@ -1,8 +1,9 @@
 import { User } from '@prisma/client'
 import { User as FirebaseUser } from 'firebase/auth'
-import type { IDetail } from 'src/__type/detail'
-import type { IUserUpdateInput } from 'src/__type/input/user'
-import { prisma } from 'src/_third-party/prisma'
+
+import type { IDetail } from 'type/detail'
+import type { IUserUpdateInput } from 'type/input/user'
+import { prisma } from '../../_prisma'
 
 const create = async (
 	_: any,

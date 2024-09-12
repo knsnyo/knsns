@@ -1,11 +1,7 @@
 import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
-import { Session } from 'src/app/(front-end)/__shared/provider/auth'
-import {
-	BOTTOM_NAV_URL,
-	INDEX_MAP,
-	URL_MAP
-} from 'src/app/(front-end)/__shared/ui/bottom-navigation/constant'
+import { Session } from '../../provider/auth'
+import { BOTTOM_NAV_URL, INDEX_MAP, URL_MAP } from './constant'
 
 const useLogic = () => {
 	const pathname = usePathname()

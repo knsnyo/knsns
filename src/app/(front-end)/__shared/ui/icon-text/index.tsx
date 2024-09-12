@@ -1,6 +1,6 @@
 import { Stack, Typography } from '@mui/material'
 import React from 'react'
-import { IIconTextProps } from 'src/app/(front-end)/__shared/ui/icon-text/type'
+import type { IIconTextProps } from './type'
 
 export const IconText: React.FC<IIconTextProps> = (props) => {
 	return (

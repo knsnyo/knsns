@@ -1,3 +1,3 @@
-import { UI } from 'src/app/(front-end)/_features/Write/ui'
+import { UI } from './ui'
 
 export const Write = { UI }

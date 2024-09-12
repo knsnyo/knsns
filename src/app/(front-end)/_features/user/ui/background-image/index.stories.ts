@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { BackgroundImage } from 'src/app/(front-end)/_features/User/ui/background-image'
+import { BackgroundImage } from '.'
 
 const meta = {
 	title: '[User] Background Image',

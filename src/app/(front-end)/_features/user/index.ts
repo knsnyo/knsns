@@ -1,3 +1,3 @@
-import { UI } from 'src/app/(front-end)/_features/User/ui'
+import { UI } from './ui'
 
 export const User = { UI }

@@ -1,4 +1,4 @@
-import Feature from 'src/app/(front-end)/_features'
+import Feature from '../../../../_features'
 
 const Page: React.FC = () => {
 	return <Feature.User.UI.Form />

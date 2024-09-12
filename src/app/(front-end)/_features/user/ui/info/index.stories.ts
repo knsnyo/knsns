@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Info } from 'src/app/(front-end)/_features/User/ui/info'
+import { Info } from '.'
 
 const meta = {
 	title: '[User] Info',

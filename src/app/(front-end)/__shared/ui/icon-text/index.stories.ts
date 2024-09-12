@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { IconText } from 'src/app/(front-end)/__shared/ui/icon-text'
+import { IconText } from '.'
 
 const meta = {
 	title: '[Common] IconText',

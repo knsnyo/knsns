@@ -2,7 +2,7 @@
 
 import { EditRounded } from '@mui/icons-material'
 import { Fab } from '@mui/material'
-import { useLogic } from 'src/app/(front-end)/_features/Write/ui/button/logic'
+import { useLogic } from './logic'
 
 export const FAB: React.FC = () => {
 	const { handler } = useLogic()

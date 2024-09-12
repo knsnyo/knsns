@@ -1,4 +1,4 @@
-import type { IDetail } from 'src/__type/detail'
+import type { IDetail } from 'type/detail'
 
 const query = `
 	query GetUser($input: Detail!) {

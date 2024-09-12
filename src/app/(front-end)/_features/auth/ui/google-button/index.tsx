@@ -1,7 +1,7 @@
 'use client'
 
 import { Typography } from '@mui/material'
-import { useLogic } from 'src/app/(front-end)/_features/Auth/ui/google-button/logic'
+import { useLogic } from './logic'
 
 export const GoogleButton: React.FC = () => {
 	const { handler } = useLogic()

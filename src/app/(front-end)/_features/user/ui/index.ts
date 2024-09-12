@@ -1,6 +1,6 @@
-import { Avatar } from 'src/app/(front-end)/_features/User/ui/avatar'
-import { Card } from 'src/app/(front-end)/_features/User/ui/card'
-import { Form } from 'src/app/(front-end)/_features/User/ui/form'
-import { Info } from 'src/app/(front-end)/_features/User/ui/info'
+import { Avatar } from './avatar'
+import { Card } from './card'
+import { Form } from './form'
+import { Info } from './info'
 
 export const UI = { Info, Card, Avatar, Form }

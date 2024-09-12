@@ -1,8 +1,8 @@
 'use client'
 
 import { gql, useQuery } from '@apollo/client'
-import Shared from 'src/app/(front-end)/__shared'
-import Feature from 'src/app/(front-end)/_features'
+import Shared from '../../../../../__shared'
+import Feature from '../../../../../_features'
 
 const Page: React.FC = () => {
 	const { data } = useQuery(gql`

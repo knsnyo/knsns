@@ -1,7 +1,8 @@
 import { Feed } from '@prisma/client'
-import { Infinite } from 'src/__type/infinite'
-import type { IFeedInput } from 'src/__type/input/feed'
-import { prisma } from 'src/_third-party/prisma'
+
+import type { Infinite } from 'type/infinite'
+import type { IFeedInput } from 'type/input/feed'
+import { prisma } from '../../_prisma'
 
 const create = async (
 	_: any,

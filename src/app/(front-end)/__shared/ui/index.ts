@@ -1,9 +1,9 @@
-import { AppBar } from 'src/app/(front-end)/__shared/ui/appbar'
-import { BottomNavigation } from 'src/app/(front-end)/__shared/ui/bottom-navigation'
-import { Button } from 'src/app/(front-end)/__shared/ui/button'
-import { Container } from 'src/app/(front-end)/__shared/ui/container'
-import { IconText } from 'src/app/(front-end)/__shared/ui/icon-text'
-import { Indicator } from 'src/app/(front-end)/__shared/ui/indicator'
+import { AppBar } from './appbar'
+import { BottomNavigation } from './bottom-navigation'
+import { Button } from './button'
+import { Container } from './container'
+import { IconText } from './icon-text'
+import { Indicator } from './indicator'
 
 export const UI = {
 	AppBar,

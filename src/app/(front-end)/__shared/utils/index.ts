@@ -1,3 +1,3 @@
-import { yyyyMMdd } from 'src/app/(front-end)/__shared/utils/date'
+import { yyyyMMdd } from './date'
 
 export const Utils = { yyyyMMdd }

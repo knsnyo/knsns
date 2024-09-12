@@ -3,9 +3,9 @@
 import { UploadFile } from '@mui/icons-material'
 import { Box, Stack, TextField } from '@mui/material'
 import React from 'react'
-import Shared from 'src/app/(front-end)/__shared'
-import { User } from 'src/app/(front-end)/_features/User'
-import { useLogic } from 'src/app/(front-end)/_features/Write/ui/form/logic'
+import Shared from '../../../../__shared'
+import { User } from '../../../User'
+import { useLogic } from './logic'
 
 export const Form: React.FC = () => {
 	const { value, handler } = useLogic()

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { FAB } from 'src/app/(front-end)/_features/Write/ui/button'
+import { FAB } from '.'
 
 const meta = {
 	title: '[Write] FAB',

@@ -1,10 +1,9 @@
 import { Stack } from '@mui/material'
-import Shared from 'src/app/(front-end)/__shared'
-import { Avatar } from 'src/app/(front-end)/_features/User/ui/avatar'
-
-import { Intro } from 'src/app/(front-end)/_features/User/ui/intro'
-import { Nickname } from 'src/app/(front-end)/_features/User/ui/nickname'
-import { Tagname } from 'src/app/(front-end)/_features/User/ui/tagname'
+import Shared from '../../../../__shared'
+import { Avatar } from '../avatar'
+import { Intro } from '../intro'
+import { Nickname } from '../nickname'
+import { Tagname } from '../tagname'
 
 export const Card: React.FC = () => {
 	return (

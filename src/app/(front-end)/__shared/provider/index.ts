@@ -1,9 +1,6 @@
-import {
-	AuthProvider,
-	Session
-} from 'src/app/(front-end)/__shared/provider/auth'
-import { ApolloClientProvider } from 'src/app/(front-end)/__shared/provider/graphql'
-import { ThemeProvider } from 'src/app/(front-end)/__shared/provider/theme'
+import { AuthProvider, Session } from './auth'
+import { ApolloClientProvider } from './graphql'
+import { ThemeProvider } from './theme'
 
 export const Provider = {
 	Graphql: ApolloClientProvider,

@@ -1,5 +1,5 @@
-import { signIn } from 'src/_third-party/_firebase/auth/google/sign-in'
-import { signOut } from 'src/_third-party/_firebase/auth/google/sign-out'
+import { signIn } from './sign-in'
+import { signOut } from './sign-out'
 
 export const Google = {
 	signIn,

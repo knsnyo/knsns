@@ -1,6 +1,6 @@
 import { onAuthStateChanged } from 'firebase/auth'
-import { TOnAuthCallback } from 'src/_third-party/_firebase/auth/state/type'
-import { config } from 'src/_third-party/_firebase/config'
+import { config } from '../../config'
+import type { TOnAuthCallback } from './type'
 
 export const onAuth = (callback: TOnAuthCallback) => {
 	return onAuthStateChanged(config, callback)

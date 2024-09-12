@@ -1,5 +1,5 @@
 import * as MUI from '@mui/material'
-import { IButtonProps } from 'src/app/(front-end)/__shared/ui/button/type'
+import type { IButtonProps } from './type'
 
 export const Button: React.FC<IButtonProps> = ({ text, ...props }) => {
 	return (

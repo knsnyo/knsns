@@ -2,16 +2,15 @@
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Stack, Typography } from '@mui/material'
-import Shared from 'src/app/(front-end)/__shared'
-
-import { BackgroundImage } from 'src/app/(front-end)/_features/User/ui/background-image'
-import { CreatedAt } from 'src/app/(front-end)/_features/User/ui/created-at'
-import useLogic from 'src/app/(front-end)/_features/User/ui/info/logic'
-import { Intro } from 'src/app/(front-end)/_features/User/ui/intro'
-import { Link } from 'src/app/(front-end)/_features/User/ui/link'
-import { Nickname } from 'src/app/(front-end)/_features/User/ui/nickname'
-import { ProfileImage } from 'src/app/(front-end)/_features/User/ui/profile-image'
-import { Tagname } from 'src/app/(front-end)/_features/User/ui/tagname'
+import Shared from '../../../../__shared'
+import { BackgroundImage } from '../background-image'
+import { CreatedAt } from '../created-at'
+import { Intro } from '../intro'
+import { Link } from '../link'
+import { Nickname } from '../nickname'
+import { ProfileImage } from '../profile-image'
+import { Tagname } from '../tagname'
+import useLogic from './logic'
 
 export const Info: React.FC = () => {
 	const { value, handler } = useLogic()

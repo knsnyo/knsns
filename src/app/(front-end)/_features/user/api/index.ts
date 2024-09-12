@@ -1,4 +1,4 @@
-import { change } from 'src/app/(front-end)/_features/User/api/change'
-import { get } from 'src/app/(front-end)/_features/User/api/get'
+import { change } from './change'
+import { get } from './get'
 
 export const api = { get, change }

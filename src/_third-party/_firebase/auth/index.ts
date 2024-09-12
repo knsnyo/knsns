@@ -1,6 +1,6 @@
-import { Google } from 'src/_third-party/_firebase/auth/google'
-import { Session } from 'src/_third-party/_firebase/auth/session'
-import { onAuth } from 'src/_third-party/_firebase/auth/state'
+import { Google } from './google'
+import { Session } from './session'
+import { onAuth } from './state'
 
 export const FirebaseAuth = {
 	Google,

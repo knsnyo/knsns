@@ -1,9 +1,9 @@
 import { User } from '@prisma/client'
 import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
-import { IUserUpdateInput } from 'src/__type/input/user'
-import Shared from 'src/app/(front-end)/__shared'
-import { api } from 'src/app/(front-end)/_features/User/api'
+import type { IUserUpdateInput } from 'type/input/user'
+import Shared from '../../../../__shared'
+import { api } from '../../api'
 
 const useLogic = () => {
 	const router = useRouter()

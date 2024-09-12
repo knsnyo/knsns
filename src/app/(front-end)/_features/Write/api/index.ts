@@ -1,4 +1,4 @@
-import { create } from 'src/app/(front-end)/_features/Write/api/create'
+import { create } from './create'
 
 export const api = {
 	create

@@ -1,5 +1,5 @@
 import React from 'react'
-import Shared from 'src/app/(front-end)/__shared'
+import Shared from '../../__shared'
 
 const Layout: React.FC<React.PropsWithChildren> = (props) => {
 	return (

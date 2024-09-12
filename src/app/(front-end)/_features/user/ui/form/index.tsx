@@ -4,10 +4,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 import { Stack, TextField } from '@mui/material'
-import Shared from 'src/app/(front-end)/__shared'
-import { BackgroundImage } from 'src/app/(front-end)/_features/User/ui/background-image'
-import useLogic from 'src/app/(front-end)/_features/User/ui/form/logic'
-import { ProfileImage } from 'src/app/(front-end)/_features/User/ui/profile-image'
+import Shared from '../../../../__shared'
+import { BackgroundImage } from '../background-image'
+import { ProfileImage } from '../profile-image'
+import useLogic from './logic'
 
 export const Form: React.FC = () => {
 	const { value, handler } = useLogic()

@@ -1,4 +1,4 @@
-import { IUserUpdateInput } from 'src/__type/input/user'
+import type { IUserUpdateInput } from 'type/input/user'
 
 const query = `
 	mutation UpdateUser($input: UserUpdateInput!) {

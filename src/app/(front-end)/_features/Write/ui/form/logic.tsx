@@ -1,8 +1,8 @@
 import { Feed } from '@prisma/client'
 import { useRouter } from 'next/navigation'
 import React from 'react'
-import Shared from 'src/app/(front-end)/__shared'
-import { api } from 'src/app/(front-end)/_features/Write/api'
+import Shared from '../../../../__shared'
+import { api } from '../../api'
 
 export const useLogic = (feed?: Feed) => {
 	const router = useRouter()

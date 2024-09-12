@@ -8,7 +8,7 @@ import {
 } from '@mui/icons-material'
 import * as MUI from '@mui/material'
 import React from 'react'
-import useLogic from 'src/app/(front-end)/__shared/ui/bottom-navigation/logic'
+import useLogic from './logic'
 
 export const BottomNavigation: React.FC = () => {
 	const { value, handler } = useLogic()
@@ -25,15 +25,11 @@ export const BottomNavigation: React.FC = () => {
 			}}
 			elevation={0}
 		>
-			<MUI.BottomNavigation
-				showLabels
-				onChange={handler.index}
-				value={value.index}
-			>
-				<MUI.BottomNavigationAction label='feed' icon={<HomeOutlined />} />
-				<MUI.BottomNavigationAction label='search' icon={<SearchOutlined />} />
-				<MUI.BottomNavigationAction label='alarm' icon={<Alarm />} />
-				<MUI.BottomNavigationAction label='my' icon={<PersonOutline />} />
+			<MUI.BottomNavigation onChange={handler.index} value={value.index}>
+				<MUI.BottomNavigationAction icon={<HomeOutlined />} />
+				<MUI.BottomNavigationAction icon={<SearchOutlined />} />
+				<MUI.BottomNavigationAction icon={<Alarm />} />
+				<MUI.BottomNavigationAction icon={<PersonOutline />} />
 			</MUI.BottomNavigation>
 		</MUI.Paper>
 	)

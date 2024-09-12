@@ -1,3 +1,3 @@
-import { upload } from 'src/app/(front-end)/__shared/api/upload'
+import { upload } from './upload'
 
 export const api = { upload }

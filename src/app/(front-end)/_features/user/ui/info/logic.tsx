@@ -1,7 +1,7 @@
 import { User } from '@prisma/client'
 import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
-import { api } from 'src/app/(front-end)/_features/User/api'
+import { api } from '../../api'
 
 const useLogic = () => {
 	const router = useRouter()
