@@ -1,13 +1,21 @@
-import { useRouter } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
 import { Session } from 'src/app/(front-end)/__shared/provider/auth'
-import { INDEX_MAP } from 'src/app/(front-end)/__shared/ui/bottom-navigation/constant'
+import {
+	BOTTOM_NAV_URL,
+	INDEX_MAP,
+	URL_MAP
+} from 'src/app/(front-end)/__shared/ui/bottom-navigation/constant'
 
 const useLogic = () => {
+	const pathname = usePathname()
+	const [index, setIndex] = React.useState(URL_MAP[pathname as BOTTOM_NAV_URL])
 	const uid = React.useContext(Session)
 	const router = useRouter()
 
 	const updateIndex = (event: React.SyntheticEvent, newValue: number) => {
+		setIndex(newValue)
+
 		switch (newValue) {
 			case INDEX_MAP.home:
 				return router.push('/')
@@ -21,9 +29,8 @@ const useLogic = () => {
 	}
 
 	return {
-		handler: {
-			index: updateIndex
-		}
+		value: { index },
+		handler: { index: updateIndex }
 	}
 }
 

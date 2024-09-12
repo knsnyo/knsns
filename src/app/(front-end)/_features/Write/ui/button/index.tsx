@@ -10,7 +10,14 @@ export const FAB: React.FC = () => {
 	return (
 		<Fab
 			color='primary'
-			sx={{ position: 'absolute', bottom: 64, right: 32 }}
+			sx={{
+				position: 'absolute',
+				bottom: 28,
+				left: 0,
+				right: 0,
+				marginLeft: 'auto',
+				marginRight: 'auto'
+			}}
 			onClick={handler.navigate}
 		>
 			<EditRounded />

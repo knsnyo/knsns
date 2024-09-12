@@ -1,6 +1,7 @@
 'use client'
 
 import {
+	Alarm,
 	HomeOutlined,
 	PersonOutline,
 	SearchOutlined
@@ -10,7 +11,7 @@ import React from 'react'
 import useLogic from 'src/app/(front-end)/__shared/ui/bottom-navigation/logic'
 
 export const BottomNavigation: React.FC = () => {
-	const { handler } = useLogic()
+	const { value, handler } = useLogic()
 
 	return (
 		<MUI.Paper
@@ -24,9 +25,14 @@ export const BottomNavigation: React.FC = () => {
 			}}
 			elevation={0}
 		>
-			<MUI.BottomNavigation showLabels onChange={handler.index}>
+			<MUI.BottomNavigation
+				showLabels
+				onChange={handler.index}
+				value={value.index}
+			>
 				<MUI.BottomNavigationAction label='feed' icon={<HomeOutlined />} />
 				<MUI.BottomNavigationAction label='search' icon={<SearchOutlined />} />
+				<MUI.BottomNavigationAction label='alarm' icon={<Alarm />} />
 				<MUI.BottomNavigationAction label='my' icon={<PersonOutline />} />
 			</MUI.BottomNavigation>
 		</MUI.Paper>
