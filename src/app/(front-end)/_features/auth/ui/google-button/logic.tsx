@@ -1,5 +1,5 @@
-import { FirebaseAuth } from 'src/_third-party/_firebase/auth'
-import { api } from 'src/app/(front-end)/_features/Auth/api'
+import { FirebaseAuth } from 'third-party/_firebase/auth'
+import { api } from '../../api'
 
 export const useLogic = () => {
 	const login = async () => {

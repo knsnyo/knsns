@@ -1,3 +1,3 @@
-import { UI } from 'src/app/(front-end)/_features/Feed/ui'
+import { UI } from './ui'
 
 export const Feed = { UI }
