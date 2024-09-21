@@ -14,8 +14,6 @@ export const useLogic = () => {
 			email: user?.email || null,
 			photoUrl: user?.photoURL || null
 		})
-
-		// graphql 부르기
 	}
 	return {
 		handler: { login }
