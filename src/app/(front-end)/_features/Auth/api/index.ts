@@ -1,5 +1,5 @@
-import { create } from './create'
+import { createUserGQL } from './create'
 
 export const api = {
-	create
+	createUserGQL
 }

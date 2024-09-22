@@ -18,19 +18,7 @@ const useLogic = () => {
 
 	const isValid = user && user.uid && user.displayName
 
-	const body: IUserUpdateInput = {
-		uid: user!.uid,
-		displayName: user!.displayName,
-		tagname: user?.tagname || null,
-		intro: user?.intro || null,
-		link: user?.link || null,
-		photoUrl: user?.photoUrl || null,
-		backgroundImage: user?.backgroundImage || null
-	}
-
-	const [change, value] = useMutation(api.changeUserGQL, {
-		variables: { input: body }
-	})
+	const [change, value] = useMutation(api.changeUserGQL)
 
 	const handleForm = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setUser((prev) => {
@@ -58,13 +46,22 @@ const useLogic = () => {
 	}
 
 	const submit = async () => {
-		change()
+		const input: IUserUpdateInput = {
+			uid: user!.uid,
+			displayName: user!.displayName,
+			tagname: user?.tagname || null,
+			intro: user?.intro || null,
+			link: user?.link || null,
+			photoUrl: user?.photoUrl || null,
+			backgroundImage: user?.backgroundImage || null
+		}
+
+		change({ variables: { input } })
 		while (value.loading);
 		if (value.error) return window.alert('retry this...')
 
 		router.back()
 	}
-	console.log(value)
 
 	return {
 		value: { user, isValid },

@@ -1,6 +1,6 @@
-import type { IUserInput } from 'type/input/user'
+import gql from 'graphql-tag'
 
-const query = `
+export const createUserGQL = gql`
 	mutation CreateUser($input: UserInput!) {
 		createUser(input: $input) {
 			uid
@@ -11,11 +11,3 @@ const query = `
 		}
 	}
 `
-
-export const create = async (input: IUserInput) => {
-	await fetch('/api/graphql', {
-		method: 'POST',
-		headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify({ query, variables: { input } })
-	})
-}
