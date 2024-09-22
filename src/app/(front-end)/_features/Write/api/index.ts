@@ -1,5 +1,5 @@
-import { create } from './create'
+import { useWrite } from './create'
 
 export const api = {
-	create
+	useWrite
 }

@@ -15,5 +15,5 @@ export const Avatar: React.FC<
 		)
 	}
 
-	return <MUI.Avatar src='https://picsum.photos/200' />
+	return <MUI.Avatar src={props.src} />
 }

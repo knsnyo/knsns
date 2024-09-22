@@ -36,7 +36,6 @@ export const Form: React.FC = () => {
 				>
 					<label htmlFor='photo-url'>
 						<ProfileImage src={value.user?.photoUrl ?? undefined} />
-
 						<input
 							type='file'
 							id='photo-url'

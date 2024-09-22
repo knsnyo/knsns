@@ -16,7 +16,7 @@ export const Form: React.FC = () => {
 				<Shared.UI.Button text='글쓰기' onClick={handler.submit} />
 			</Stack>
 			<Stack direction='row' gap={1}>
-				<User.UI.Avatar />
+				<User.UI.Avatar src={value?.user?.photoUrl} />
 				<TextField
 					variant='standard'
 					fullWidth

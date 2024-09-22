@@ -1,6 +1,8 @@
+import { useMutation } from '@apollo/client'
+import gql from 'graphql-tag'
 import type { IFeedInput } from 'type/input/feed'
 
-const query = `
+const query = gql`
 	mutation CreateFeed($input: FeedInput!) {
 		createFeed(input: $input) {
 			authorId
@@ -10,12 +12,12 @@ const query = `
 	}
 `
 
-export const create = async (input: IFeedInput): Promise<boolean> => {
-	const response = await fetch('/api/graphql', {
-		method: 'POST',
-		headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify({ query, variables: { input } })
-	})
+export const useWrite = () => {
+	const [change, { loading, error }] = useMutation(query)
 
-	return response.ok
+	const mutation = (input: IFeedInput) => {
+		change({ variables: { input } })
+	}
+
+	return { loading, error, mutation }
 }
