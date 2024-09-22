@@ -51,6 +51,7 @@ export const Form: React.FC = () => {
 						text='수정하기'
 						disabled={!value.isValid}
 						onClick={handler.submit}
+						loading={value.loading}
 					/>
 				</Stack>
 			</Stack>

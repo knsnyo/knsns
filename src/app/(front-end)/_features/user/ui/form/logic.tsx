@@ -1,5 +1,3 @@
-import { useMutation } from '@apollo/client'
-import { useQuery } from '@apollo/client/react/hooks/useQuery'
 import { User } from '@prisma/client'
 import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
@@ -10,15 +8,13 @@ import { api } from '../../api'
 const useLogic = () => {
 	const router = useRouter()
 	const id = usePathname().split('/')!.at(-2)!
-	const { data } = useQuery(api.getUserGQL, {
-		variables: { input: { id } }
-	})
+	const { data } = api.useGetUser(id)
 
 	const [user, setUser] = React.useState<User | null>(data?.user)
 
 	const isValid = user && user.uid && user.displayName
 
-	const [change, value] = useMutation(api.changeUserGQL)
+	const { loading, error, mutation } = api.useChangeUser()
 
 	const handleForm = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setUser((prev) => {
@@ -56,15 +52,15 @@ const useLogic = () => {
 			backgroundImage: user?.backgroundImage || null
 		}
 
-		change({ variables: { input } })
-		while (value.loading);
-		if (value.error) return window.alert('retry this...')
+		mutation(input)
+		while (loading);
+		if (error) return window.alert('retry this...')
 
 		router.back()
 	}
 
 	return {
-		value: { user, isValid },
+		value: { user, isValid, loading },
 		handler: { form: handleForm, submit, image: handleImage }
 	}
 }

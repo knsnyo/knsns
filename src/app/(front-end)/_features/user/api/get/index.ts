@@ -1,6 +1,7 @@
+import { useQuery } from '@apollo/client/react/hooks/useQuery'
 import gql from 'graphql-tag'
 
-export const getUserGQL = gql`
+const query = gql`
 	query GetUser($input: Detail!) {
 		user(input: $input) {
 			uid
@@ -17,3 +18,11 @@ export const getUserGQL = gql`
 		}
 	}
 `
+
+export const useGetUser = (id: string) => {
+	const { loading, data, error } = useQuery(query, {
+		variables: { input: { id } }
+	})
+
+	return { loading, data, error }
+}

@@ -1,6 +1,8 @@
+import { useMutation } from '@apollo/client'
 import gql from 'graphql-tag'
+import { IUserInput } from 'type/input/user'
 
-export const createUserGQL = gql`
+const query = gql`
 	mutation CreateUser($input: UserInput!) {
 		createUser(input: $input) {
 			uid
@@ -11,3 +13,13 @@ export const createUserGQL = gql`
 		}
 	}
 `
+
+export const useLogin = () => {
+	const [change, { loading, error }] = useMutation(query)
+
+	const mutation = (input: IUserInput) => {
+		change({ variables: { input } })
+	}
+
+	return { loading, error, mutation }
+}

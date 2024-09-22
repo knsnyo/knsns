@@ -1,7 +1,7 @@
-import { changeUserGQL } from './change'
-import { getUserGQL } from './get'
+import { useChangeUser } from './change'
+import { useGetUser } from './get'
 
 export const api = {
-	getUserGQL,
-	changeUserGQL
+	useGetUser,
+	useChangeUser
 }

@@ -1,8 +1,8 @@
-import ReduxProvider from './_provider'
-import { useAppDispatch, useAppSelector } from './hooks'
+// import ReduxProvider from './_provider'
+// import { useAppDispatch, useAppSelector } from './hooks'
 
-export const Redux = {
-	ReduxProvider,
-	useAppSelector,
-	useAppDispatch
-}
+// export const Redux = {
+// 	ReduxProvider,
+// 	useAppSelector,
+// 	useAppDispatch
+// }

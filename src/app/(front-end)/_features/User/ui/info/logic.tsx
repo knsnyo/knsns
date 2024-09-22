@@ -1,4 +1,3 @@
-import { useQuery } from '@apollo/client/react/hooks/useQuery'
 import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
 import Shared from '../../../../__shared'
@@ -10,9 +9,7 @@ const useLogic = () => {
 	const session = React.useContext(Shared.Provider.Session)
 	const isMy = id === 'my'
 
-	const { data } = useQuery(api.getUserGQL, {
-		variables: { input: { id: isMy ? session : id } }
-	})
+	const { data } = api.useGetUser(isMy ? session! : id)
 
 	const go = () => {
 		if (!isMy) return
