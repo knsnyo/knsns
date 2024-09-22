@@ -28,11 +28,13 @@ export const Info: React.FC = () => {
 					alignItems='end'
 				>
 					<ProfileImage src={value.user?.photoUrl ?? undefined} />
-					<Shared.UI.Button
-						text='프로필 수정'
-						variant='contained'
-						onClick={handler.go}
-					/>
+					{value.isMy && (
+						<Shared.UI.Button
+							text='프로필 수정'
+							variant='contained'
+							onClick={handler.go}
+						/>
+					)}
 				</Stack>
 			</Stack>
 			<br />

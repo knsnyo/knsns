@@ -1,26 +1,28 @@
-import { User } from '@prisma/client'
+import { useQuery } from '@apollo/client/react/hooks/useQuery'
 import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
+import Shared from '../../../../__shared'
 import { api } from '../../api'
 
 const useLogic = () => {
 	const router = useRouter()
 	const id = usePathname().split('/').pop()!
-	const [user, setUser] = React.useState<User | null>(null)
+	const session = React.useContext(Shared.Provider.Session)
+	const isMy = id === 'my'
+
+	const { data } = useQuery(api.getUserGQL, {
+		variables: { input: { id: isMy ? session : id } }
+	})
 
 	const go = () => {
-		router.push(`/user/${id}/edit`)
+		if (!isMy) return
+		router.push(`/user/${session}/edit`)
 	}
 
-	React.useEffect(() => {
-		;(async () => {
-			const response = await api.get({ id })
-
-			setUser(response?.user ?? null)
-		})()
-	}, [])
-
-	return { value: { user }, handler: { go } }
+	return {
+		value: { user: data?.user ?? null, isMy },
+		handler: { go }
+	}
 }
 
 export default useLogic

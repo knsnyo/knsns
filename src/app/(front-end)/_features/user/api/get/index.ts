@@ -1,6 +1,6 @@
-import type { IDetail } from 'type/detail'
+import gql from 'graphql-tag'
 
-const query = `
+export const getUserGQL = gql`
 	query GetUser($input: Detail!) {
 		user(input: $input) {
 			uid
@@ -12,20 +12,8 @@ const query = `
 			tagname
 			intro
 			link
-			
+
 			createdAt
 		}
 	}
 `
-
-export const get = async (input: IDetail) => {
-	const response = await fetch('/api/graphql', {
-		method: 'POST',
-		headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify({ query, variables: { input } })
-	})
-
-	const json = await response.json()
-
-	return json.data
-}

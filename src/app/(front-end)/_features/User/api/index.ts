@@ -1,4 +1,7 @@
-import { change } from './change'
-import { get } from './get'
+import { changeUserGQL } from './change'
+import { getUserGQL } from './get'
 
-export const api = { get, change }
+export const api = {
+	getUserGQL,
+	changeUserGQL
+}

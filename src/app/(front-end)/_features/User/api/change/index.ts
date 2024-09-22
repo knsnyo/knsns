@@ -1,19 +1,9 @@
-import type { IUserUpdateInput } from 'type/input/user'
+import gql from 'graphql-tag'
 
-const query = `
+export const changeUserGQL = gql`
 	mutation UpdateUser($input: UserUpdateInput!) {
 		updateUser(input: $input) {
 			uid
 		}
 	}
 `
-
-export const change = async (input: IUserUpdateInput) => {
-	const response = await fetch('/api/graphql', {
-		method: 'POST',
-		headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify({ query, variables: { input } })
-	})
-
-	return response.ok
-}

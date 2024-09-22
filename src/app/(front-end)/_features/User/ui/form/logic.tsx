@@ -1,3 +1,5 @@
+import { useMutation } from '@apollo/client'
+import { useQuery } from '@apollo/client/react/hooks/useQuery'
 import { User } from '@prisma/client'
 import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
@@ -8,17 +10,27 @@ import { api } from '../../api'
 const useLogic = () => {
 	const router = useRouter()
 	const id = usePathname().split('/')!.at(-2)!
-	const [user, setUser] = React.useState<User | null>(null)
+	const { data } = useQuery(api.getUserGQL, {
+		variables: { input: { id } }
+	})
+
+	const [user, setUser] = React.useState<User | null>(data?.user)
 
 	const isValid = user && user.uid && user.displayName
 
-	React.useEffect(() => {
-		;(async () => {
-			const response = await api.get({ id })
+	const body: IUserUpdateInput = {
+		uid: user!.uid,
+		displayName: user!.displayName,
+		tagname: user?.tagname || null,
+		intro: user?.intro || null,
+		link: user?.link || null,
+		photoUrl: user?.photoUrl || null,
+		backgroundImage: user?.backgroundImage || null
+	}
 
-			setUser(response?.user ?? null)
-		})()
-	}, [])
+	const [change, value] = useMutation(api.changeUserGQL, {
+		variables: { input: body }
+	})
 
 	const handleForm = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setUser((prev) => {
@@ -46,21 +58,13 @@ const useLogic = () => {
 	}
 
 	const submit = async () => {
-		const body: IUserUpdateInput = {
-			uid: user!.uid,
-			displayName: user!.displayName,
-			tagname: user?.tagname || null,
-			intro: user?.intro || null,
-			link: user?.link || null,
-			photoUrl: user?.photoUrl || null,
-			backgroundImage: user?.backgroundImage || null
-		}
-
-		const result = await api.change(body)
-		if (!result) return window.alert('retry this...')
+		change()
+		while (value.loading);
+		if (value.error) return window.alert('retry this...')
 
 		router.back()
 	}
+	console.log(value)
 
 	return {
 		value: { user, isValid },
