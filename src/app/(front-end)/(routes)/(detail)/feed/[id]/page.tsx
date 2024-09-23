@@ -1,27 +1,20 @@
 'use client'
 
-import { gql, useQuery } from '@apollo/client'
-import Shared from '../../../../__shared'
+import { IDetailPageParams } from 'type/detail-page'
 import Feature from '../../../../_features'
 
-const query = gql`
-	query {
-		feed {
-			content
-			createdAt
-		}
+const Page: React.FC<IDetailPageParams> = (props) => {
+	const { loading, error, data } = Feature.Feed.api.useGetFeed(props.params.id)
+
+	if (loading) {
+		return <></>
 	}
-`
 
-const Page: React.FC = () => {
-	const { data } = useQuery(query)
+	if (error) {
+		return <></>
+	}
 
-	return (
-		<>
-			<Shared.UI.AppBar />
-			<Feature.Feed.UI.Card />
-		</>
-	)
+	return <Feature.Feed.UI.Card feed={data.feed} />
 }
 
 export default Page

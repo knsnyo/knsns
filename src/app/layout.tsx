@@ -18,7 +18,7 @@ const RootLayout: React.FC<React.PropsWithChildren> = (props) => {
 							<Shared.Provider.Theme>
 								{/* <Feature.Redux.ReduxProvider> */}
 								<CssBaseline />
-								{props.children}
+								<Shared.UI.Container>{props.children}</Shared.UI.Container>
 								{/* </Feature.Redux.ReduxProvider> */}
 							</Shared.Provider.Theme>
 						</Shared.Provider.Graphql>

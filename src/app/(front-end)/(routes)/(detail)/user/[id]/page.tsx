@@ -14,7 +14,12 @@ const Page: React.FC<IDetailPageParams> = (props) => {
 		redirect('/my')
 	}
 
-	return <Feature.User.UI.Info />
+	return (
+		<>
+			<Shared.UI.AppBar back />
+			<Feature.User.UI.Info />
+		</>
+	)
 }
 
 export default Page
