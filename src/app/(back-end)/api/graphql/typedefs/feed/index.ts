@@ -23,7 +23,7 @@ export const feed = `
 
   type Query {
 		feed(input: Detail!): Feed
-    feeds: InfiniteFeed
+    feeds(input: IQuery): InfiniteFeed
 	}
 
 	type Mutation {

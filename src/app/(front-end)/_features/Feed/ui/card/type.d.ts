@@ -1,5 +1,5 @@
-import { Feed, User } from '@prisma/client'
+import { TFeedWithAuthor } from 'type/convolution'
 
 export interface IFeedCardProps {
-	feed: Feed & { author: User }
+	feed: TFeedWithAuthor
 }

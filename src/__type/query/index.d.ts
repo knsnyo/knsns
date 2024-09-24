@@ -1,3 +1,3 @@
-interface IQuery {
+export interface IQuery {
 	lastId?: string
 }

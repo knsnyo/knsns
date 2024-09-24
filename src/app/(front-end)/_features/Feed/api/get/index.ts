@@ -1,5 +1,6 @@
 import { useQuery } from '@apollo/client/react/hooks/useQuery'
 import gql from 'graphql-tag'
+import { TFeedWithAuthor } from 'type/convolution'
 
 const query = gql`
 	query GetFeedById($input: Detail!) {
@@ -17,7 +18,7 @@ const query = gql`
 `
 
 export const useGetFeed = (id: string) => {
-	const { loading, error, data } = useQuery(query, {
+	const { loading, error, data } = useQuery<TFeedWithAuthor>(query, {
 		variables: { input: { id } }
 	})
 

@@ -11,7 +11,7 @@ export const FAB: React.FC = () => {
 		<Fab
 			color='primary'
 			sx={{
-				position: 'absolute',
+				position: 'fixed',
 				bottom: 28,
 				left: 0,
 				right: 0,

@@ -3,6 +3,7 @@ import { Feed } from '@prisma/client'
 import { IDetail } from 'type/detail'
 import type { Infinite } from 'type/infinite'
 import type { IFeedInput } from 'type/input/feed'
+import { IQuery } from 'type/query'
 import { prisma } from '../../_prisma'
 
 const create = async (
@@ -16,14 +17,16 @@ const getFeeds = async (
 	_: any,
 	{ input }: { input: IQuery }
 ): Promise<Infinite<Feed>> => {
+	const take = 3
 	const items = await prisma.feed.findMany({
-		take: 3,
-		where: input.lastId ? { id: { gt: input.lastId } } : undefined,
-		orderBy: { createdAt: 'desc' }
+		take,
+		where: input?.lastId ? { id: { lte: input.lastId } } : undefined,
+		orderBy: { createdAt: 'desc' },
+		include: { author: true }
 	})
 
 	return {
-		hasNext: items.length === 10,
+		hasNext: items.length === take,
 		items,
 		lastId: items.at(-1)!.id
 	}
@@ -37,8 +40,6 @@ const getFeedById = async (
 		where: { id: input.id, isDeleted: false },
 		include: { author: true }
 	})
-
-	console.log(feed)
 
 	return feed!
 }

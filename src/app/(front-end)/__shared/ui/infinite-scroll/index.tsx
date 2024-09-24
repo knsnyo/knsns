@@ -18,12 +18,16 @@ const InfiniteScroll: React.FC<IInfiniteScrollProps> = (props) => {
 			},
 			{ threshold: 1 }
 		)
+		if (end.current) {
+			observer.observe(end.current)
+		}
 
 		return () => {
-			if (!end.current) return
-			observer.unobserve(end.current)
+			if (end.current) {
+				observer.unobserve(end.current)
+			}
 		}
-	}, [])
+	}, [props.data, props.hasNext])
 
 	return (
 		<Stack direction='column' alignItems='center'>
