@@ -4,6 +4,7 @@ import { IDetail } from 'type/detail'
 import type { Infinite } from 'type/infinite'
 import type { IFeedInput } from 'type/input/feed'
 import { IQuery } from 'type/query'
+import Common from '../../../_common'
 import { prisma } from '../../_prisma'
 
 const create = async (
@@ -18,9 +19,10 @@ const getFeeds = async (
 	{ input }: { input: IQuery }
 ): Promise<Infinite<Feed>> => {
 	const take = 3
+
 	const items = await prisma.feed.findMany({
 		take,
-		where: input?.lastId ? { id: { lte: input.lastId } } : undefined,
+		where: Common.utils.generateWhere(input),
 		orderBy: { createdAt: 'desc' },
 		include: { author: true }
 	})

@@ -5,6 +5,8 @@ export const common = `
 	
 	input IQuery {
 		lastId: String
+		authorId: String
+		userId: String
 	}
 
 	scalar Date

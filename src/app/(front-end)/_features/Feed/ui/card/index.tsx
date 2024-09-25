@@ -9,9 +9,9 @@ export const Card: React.FC<IFeedCardProps> = ({ feed }) => {
 	return (
 		<Stack direction='row' gap={1} padding={2} maxWidth={600} width='100%'>
 			<Avatar src={feed.author.photoUrl ?? undefined} />
-			<Stack direction='column'>
+			<Stack flex={1} direction='column'>
 				<Stack direction='row' justifyContent='space-between'>
-					<Stack direction='row' gap={1}>
+					<Stack direction='row'>
 						<Nickname>{feed.author.displayName}</Nickname>
 						<Tagname>{feed.author.tagname}</Tagname>
 					</Stack>

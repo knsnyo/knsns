@@ -1,4 +1,4 @@
-import { service } from '../../_service'
+import { service } from '../../../_service'
 
 export const resolvers = {
 	Query: {
