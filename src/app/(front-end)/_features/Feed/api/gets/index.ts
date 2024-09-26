@@ -8,7 +8,6 @@ import Common from '../../../../../_common'
 const query = gql`
 	query GetFeeds($input: IQuery) {
 		feeds(input: $input) {
-			lastId
 			hasNext
 			items {
 				id
@@ -35,7 +34,7 @@ export const useGetFeeds = (params?: IQuery) => {
 	// eslint-disable-next-line arrow-body-style
 	const fetch = async () => {
 		await fetchMore({
-			variables: { input: { lastId: data?.feeds?.lastId } },
+			variables: { input: { lastId: data?.feeds?.items?.at(-1)?.id } },
 			updateQuery(prev, { fetchMoreResult }) {
 				if (!prev) return prev
 

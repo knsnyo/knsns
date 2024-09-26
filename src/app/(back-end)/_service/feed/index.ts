@@ -29,8 +29,7 @@ const getFeeds = async (
 
 	return {
 		hasNext: items.length === take,
-		items,
-		lastId: items.at(-1)!.id
+		items
 	}
 }
 

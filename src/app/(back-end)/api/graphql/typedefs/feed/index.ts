@@ -12,7 +12,6 @@ export const feed = `
   type InfiniteFeed {
     hasNext: Boolean!
     items: [Feed!]!
-    lastId: String!
   }
 
   input FeedInput {

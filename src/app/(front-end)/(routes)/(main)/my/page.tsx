@@ -16,7 +16,7 @@ const Page: React.FC = (props) => {
 				data={value.data?.feeds.items ?? []}
 				loading={value.loading}
 				error={false}
-				hasNext={value.data?.feeds.hasNext ?? false}
+				hasNext={value.data?.feeds?.hasNext ?? false}
 				refetch={handler.fetch}
 			>
 				{value.data?.feeds.items?.map((feed) => {
