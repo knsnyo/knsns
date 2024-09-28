@@ -7,7 +7,7 @@ import { ILikeButton } from './type'
 
 const LikeButton: React.FC<ILikeButton> = (props) => {
 	const theme = useTheme()
-	const { value, handler } = useLogic()
+	const { value } = useLogic()
 
 	return (
 		<Stack
@@ -15,9 +15,7 @@ const LikeButton: React.FC<ILikeButton> = (props) => {
 			alignItems='center'
 			gap={1}
 			ref={value.hoverRef}
-			// onClick={(e) => {
-			// 	e.stopPropagation()
-			// }}
+			onClick={props.onClick}
 		>
 			<Stack
 				sx={{
@@ -30,8 +28,8 @@ const LikeButton: React.FC<ILikeButton> = (props) => {
 				}}
 				bgcolor={value.isHover ? `${props.color}1A` : undefined}
 				borderRadius='50%'
-				padding={0.5}
-				marginLeft={-0.5}
+				padding={1}
+				marginLeft={-1}
 			>
 				{props.isSelected ? (
 					<Favorite sx={{ color: props.color }} />
@@ -56,7 +54,7 @@ const LikeButton: React.FC<ILikeButton> = (props) => {
 				}}
 				fontWeight={700}
 			>
-				60
+				{props.text}
 			</Typography>
 		</Stack>
 	)

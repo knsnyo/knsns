@@ -39,6 +39,6 @@ export const user = `
 	}
 	
 	type Query {
-		user(input: Detail!): User
+		user(input: IDetail!): User
 	}
 `

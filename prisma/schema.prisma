@@ -21,7 +21,7 @@ model User {
   link String?
   backgroundImage String?
 
-  Feed Feed[]
+  feeds Feed[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
@@ -33,12 +33,29 @@ model Feed {
   isDeleted Boolean @default(false)
   isHided Boolean @default(false)
 
-  authorId String
-  author User @relation(fields: [authorId], references: [uid])
-
   content String
   image String?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
+
+  // Author
+  authorId String
+  author User @relation(fields: [authorId], references: [uid])
+
+  // Action
+  action Action?
+}
+
+model Action {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  likeUserId String[] @default([])
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  feedId String @db.ObjectId @unique
+  feed Feed @relation(fields: [feedId], references: [id])
+
 }

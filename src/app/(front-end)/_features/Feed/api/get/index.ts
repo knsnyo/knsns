@@ -3,15 +3,19 @@ import gql from 'graphql-tag'
 import { TFeedWithAuthor } from 'type/convolution'
 
 const query = gql`
-	query GetFeedById($input: Detail!) {
+	query GetFeedById($input: IDetail!) {
 		feed(input: $input) {
 			image
 			content
 			createdAt
 			author {
+				uid
 				displayName
 				tagname
 				photoUrl
+			}
+			action {
+				likeUserId
 			}
 		}
 	}

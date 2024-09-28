@@ -7,6 +7,7 @@ export const feed = `
     updatedAt: String
     image: String
     author: User
+    action: Action
 	}
 
   type InfiniteFeed {
@@ -21,7 +22,7 @@ export const feed = `
   }
 
   type Query {
-		feed(input: Detail!): Feed
+		feed(input: IDetail!): Feed
     feeds(input: IQuery): InfiniteFeed
 	}
 

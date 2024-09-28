@@ -1,6 +1,11 @@
 export const common = `
-	input Detail {
+	input IDetail {
 		id: String!
+	}
+
+	input IAction {
+		takeId: String!
+		giveId: String!
 	}
 	
 	input IQuery {

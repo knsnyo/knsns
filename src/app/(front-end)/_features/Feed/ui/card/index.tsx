@@ -1,19 +1,26 @@
+'use client'
+
 import { MoreHorizRounded } from '@mui/icons-material'
-import { Stack, Typography, useTheme } from '@mui/material'
+import { Box, Stack, Typography, useTheme } from '@mui/material'
 import { Action } from '../../../Action'
 import { Avatar } from '../../../User/ui/avatar'
 import { Nickname } from '../../../User/ui/nickname'
 import { Tagname } from '../../../User/ui/tagname'
+import useLogic from './logic'
 import { IFeedCardProps } from './type'
 
 export const Card: React.FC<IFeedCardProps> = ({ feed }) => {
 	const theme = useTheme()
+	const { handler } = useLogic(feed)
+
 	return (
 		<Stack direction='row' gap={1} padding={2} maxWidth={600} width='100%'>
-			<Avatar src={feed.author.photoUrl ?? undefined} />
+			<Box onClick={handler.nav.profile}>
+				<Avatar src={feed.author.photoUrl ?? undefined} />
+			</Box>
 			<Stack flex={1} direction='column'>
 				<Stack direction='row' justifyContent='space-between'>
-					<Stack direction='row'>
+					<Stack direction='row' onClick={handler.nav.profile}>
 						<Nickname>{feed.author.displayName}</Nickname>
 						<Tagname>{feed.author.tagname}</Tagname>
 					</Stack>
@@ -29,14 +36,10 @@ export const Card: React.FC<IFeedCardProps> = ({ feed }) => {
 				)}
 				<Stack direction='row' justifyContent='space-between' paddingY={1}>
 					<Action.UI.LikeButton
+						onClick={handler.like}
 						isSelected
 						color={theme.palette.error.main}
-						text={1}
-					/>
-					<Action.UI.LikeButton
-						isSelected={false}
-						color={theme.palette.error.main}
-						text={2}
+						text={feed.action?.likeUserId?.length ?? 0}
 					/>
 				</Stack>
 			</Stack>

@@ -9,6 +9,8 @@ export const resolvers = {
 	Mutation: {
 		createFeed: service.feed.create,
 		createUser: service.user.create,
-		updateUser: service.user.update
-	}
+		updateUser: service.user.update,
+		like: service.action.like
+	},
+	Subscription: {}
 }

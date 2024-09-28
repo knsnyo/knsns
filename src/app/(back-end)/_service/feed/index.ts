@@ -24,7 +24,7 @@ const getFeeds = async (
 		take,
 		where: Common.utils.generateWhere(input),
 		orderBy: { createdAt: 'desc' },
-		include: { author: true }
+		include: { author: true, action: true }
 	})
 
 	return {
@@ -39,7 +39,7 @@ const getFeedById = async (
 ): Promise<Feed | null> => {
 	const feed = await prisma.feed.findFirst({
 		where: { id: input.id, isDeleted: false },
-		include: { author: true }
+		include: { author: true, action: true }
 	})
 
 	return feed!

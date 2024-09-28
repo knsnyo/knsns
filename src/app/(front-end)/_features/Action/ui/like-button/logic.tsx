@@ -27,7 +27,7 @@ const useLogic = () => {
 		}
 	}, [])
 
-	return { value: { hoverRef, isHover }, handler: {} }
+	return { value: { hoverRef, isHover } }
 }
 
 export default useLogic

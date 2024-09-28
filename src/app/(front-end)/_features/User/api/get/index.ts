@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client/react/hooks/useQuery'
 import gql from 'graphql-tag'
 
 const query = gql`
-	query GetUser($input: Detail!) {
+	query GetUser($input: IDetail!) {
 		user(input: $input) {
 			uid
 			email

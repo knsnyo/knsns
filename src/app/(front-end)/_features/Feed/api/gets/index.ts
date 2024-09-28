@@ -15,9 +15,13 @@ const query = gql`
 				image
 				content
 				author {
+					uid
 					displayName
 					tagname
 					photoUrl
+				}
+				action {
+					likeUserId
 				}
 			}
 		}
