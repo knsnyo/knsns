@@ -7,7 +7,6 @@ export const Container: React.FC<React.PropsWithChildren> = (props) => {
 			sx={{
 				display: 'flex',
 				flexDirection: 'column',
-				height: '100vh',
 				paddingX: 0,
 				'&.MuiContainer-root': {
 					paddingX: 0

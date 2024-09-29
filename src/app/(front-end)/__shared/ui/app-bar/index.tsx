@@ -16,30 +16,22 @@ export const AppBar: React.FC<IAppBarProps> = (props) => {
 	}
 
 	return (
-		<MUI.AppBar
-			position='sticky'
-			sx={{
-				padding: 2,
-				display: 'flex',
-				flexDirection: 'row',
-				gap: '10px',
-				alignItems: 'center'
-			}}
-			color='primary'
-		>
-			{props?.back && (
-				<MUI.Box
-					onClick={handler.back}
-					display='flex'
-					justifyContent='center'
-					alignItems='center'
-				>
-					<ArrowBackIosNewOutlined sx={{ fontSize: 15 }} />
-				</MUI.Box>
-			)}
-			<MUI.Typography fontWeight={700} onClick={logout}>
-				{props.text ?? '쓰레기통'}
-			</MUI.Typography>
+		<MUI.AppBar position='sticky' color='primary'>
+			<MUI.Stack direction='row' alignItems='center' padding={2}>
+				{props?.back && (
+					<MUI.Box
+						onClick={handler.back}
+						display='flex'
+						justifyContent='center'
+						alignItems='center'
+					>
+						<ArrowBackIosNewOutlined sx={{ fontSize: 15 }} />
+					</MUI.Box>
+				)}
+				<MUI.Typography fontWeight={700} onClick={logout}>
+					{props.text ?? '쓰레기통'}
+				</MUI.Typography>
+			</MUI.Stack>
 		</MUI.AppBar>
 	)
 }
