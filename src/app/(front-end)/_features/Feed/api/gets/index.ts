@@ -36,7 +36,9 @@ export const useGetFeeds = (input?: IQuery) => {
 	// eslint-disable-next-line arrow-body-style
 	const fetch = async () => {
 		await fetchMore({
-			variables: { input: { lastId: data?.feeds?.items?.at(-1)?.id } },
+			variables: {
+				input: { lastId: data?.feeds?.items?.at(-1)?.id, ...input }
+			},
 			updateQuery(prev, { fetchMoreResult }) {
 				if (!prev) return prev
 
