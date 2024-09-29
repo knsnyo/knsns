@@ -16,10 +16,8 @@ const RootLayout: React.FC<React.PropsWithChildren> = (props) => {
 					<Shared.Provider.Auth uid={session}>
 						<Shared.Provider.Graphql>
 							<Shared.Provider.Theme>
-								{/* <Feature.Redux.ReduxProvider> */}
 								<CssBaseline />
 								<Shared.UI.Container>{props.children}</Shared.UI.Container>
-								{/* </Feature.Redux.ReduxProvider> */}
 							</Shared.Provider.Theme>
 						</Shared.Provider.Graphql>
 					</Shared.Provider.Auth>

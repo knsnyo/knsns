@@ -1,7 +1,7 @@
 'use client'
 
 import { MoreHorizRounded } from '@mui/icons-material'
-import { Box, Stack, Typography, useTheme } from '@mui/material'
+import { Box, Stack, Typography } from '@mui/material'
 import { Action } from '../../../Action'
 import { Avatar } from '../../../User/ui/avatar'
 import { Nickname } from '../../../User/ui/nickname'
@@ -10,8 +10,7 @@ import useLogic from './logic'
 import { IFeedCardProps } from './type'
 
 export const Card: React.FC<IFeedCardProps> = ({ feed }) => {
-	const theme = useTheme()
-	const { handler } = useLogic(feed)
+	const { value, handler } = useLogic(feed)
 
 	return (
 		<Stack direction='row' gap={1} padding={2} maxWidth={600} width='100%'>
@@ -37,10 +36,15 @@ export const Card: React.FC<IFeedCardProps> = ({ feed }) => {
 				<Stack direction='row' justifyContent='space-between' paddingY={1}>
 					<Action.UI.LikeButton
 						onClick={handler.like}
-						isSelected
-						color={theme.palette.error.main}
+						isSelected={value.like}
 						text={feed.action?.likeUserId?.length ?? 0}
 					/>
+					<Action.UI.SaveFeedButton
+						onClick={handler.save}
+						isSelected={value.save}
+						text={feed.action?.saveUserId?.length ?? 0}
+					/>
+					<Typography>Shared...</Typography>
 				</Stack>
 			</Stack>
 		</Stack>

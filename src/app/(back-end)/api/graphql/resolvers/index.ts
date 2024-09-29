@@ -10,7 +10,7 @@ export const resolvers = {
 		createFeed: service.feed.create,
 		createUser: service.user.create,
 		updateUser: service.user.update,
-		like: service.action.like
-	},
-	Subscription: {}
+		like: service.action.like,
+		save: service.action.save
+	}
 }

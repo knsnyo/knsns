@@ -4,8 +4,8 @@ import { IDetail } from 'type/detail'
 import type { Infinite } from 'type/infinite'
 import type { IFeedInput } from 'type/input/feed'
 import { IQuery } from 'type/query'
-import Common from '../../../_common'
 import { prisma } from '../../_prisma'
+import { utils } from '../../_utils'
 
 const create = async (
 	_: any,
@@ -22,9 +22,9 @@ const getFeeds = async (
 
 	const items = await prisma.feed.findMany({
 		take,
-		where: Common.utils.generateWhere(input),
 		orderBy: { createdAt: 'desc' },
-		include: { author: true, action: true }
+		include: { author: true, action: true },
+		where: utils.generateWhere(input)
 	})
 
 	return {

@@ -3,7 +3,6 @@ import gql from 'graphql-tag'
 import { TFeedWithAuthor } from 'type/convolution'
 import { Infinite } from 'type/infinite'
 import { IQuery } from 'type/query'
-import Common from '../../../../../_common'
 
 const query = gql`
 	query GetFeeds($input: IQuery) {
@@ -22,15 +21,14 @@ const query = gql`
 				}
 				action {
 					likeUserId
+					saveUserId
 				}
 			}
 		}
 	}
 `
 
-export const useGetFeeds = (params?: IQuery) => {
-	const input = Common.utils.generateWhere(params)
-
+export const useGetFeeds = (input?: IQuery) => {
 	const { loading, error, data, fetchMore } = useQuery<{
 		feeds: Infinite<TFeedWithAuthor>
 	}>(query, { variables: { input } })
@@ -45,7 +43,10 @@ export const useGetFeeds = (params?: IQuery) => {
 				return {
 					feeds: {
 						...fetchMoreResult.feeds,
-						items: [...prev.feeds.items, ...fetchMoreResult.feeds.items]
+						items: [
+							...(prev?.feeds?.items ?? []),
+							...fetchMoreResult.feeds.items
+						]
 					}
 				}
 			}

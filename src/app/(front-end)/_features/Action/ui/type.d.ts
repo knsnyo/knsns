@@ -1,5 +1,4 @@
-export interface ILikeButton {
-	color: string
+export interface IActionButtonImpl {
 	text?: string | number
 	isSelected: boolean
 	onClick: React.MouseEventHandler

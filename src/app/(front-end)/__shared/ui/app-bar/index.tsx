@@ -17,7 +17,7 @@ export const AppBar: React.FC<IAppBarProps> = (props) => {
 
 	return (
 		<MUI.AppBar position='sticky' color='primary'>
-			<MUI.Stack direction='row' alignItems='center' padding={2}>
+			<MUI.Stack direction='row' alignItems='center' padding={2} gap={1}>
 				{props?.back && (
 					<MUI.Box
 						onClick={handler.back}
