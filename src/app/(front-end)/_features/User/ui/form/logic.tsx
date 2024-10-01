@@ -52,8 +52,7 @@ const useLogic = () => {
 			backgroundImage: user?.backgroundImage || null
 		}
 
-		mutation(input)
-		while (loading);
+		await mutation(input)
 		if (error) return window.alert('retry this...')
 
 		router.back()

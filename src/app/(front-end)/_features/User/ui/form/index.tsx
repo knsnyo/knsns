@@ -48,7 +48,7 @@ export const Form: React.FC = () => {
 					<Shared.UI.Button
 						variant='contained'
 						text='수정하기'
-						disabled={!value.isValid}
+						disabled={!value.isValid || value.loading}
 						onClick={handler.submit}
 						loading={value.loading}
 					/>

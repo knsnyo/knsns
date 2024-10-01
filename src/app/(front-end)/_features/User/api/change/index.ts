@@ -1,20 +1,20 @@
 import { useMutation } from '@apollo/client'
-import gql from 'graphql-tag'
 import { IUserUpdateInput } from 'type/input/user'
-
-const query = gql`
-	mutation UpdateUser($input: UserUpdateInput!) {
-		updateUser(input: $input) {
-			uid
-		}
-	}
-`
+import { query } from '../query'
 
 export const useChangeUser = () => {
-	const [change, { loading, error }] = useMutation(query)
+	const [change, { loading, error }] = useMutation(query.changeUser)
 
-	const mutation = (input: IUserUpdateInput) => {
-		change({ variables: { input } })
+	const mutation = async (input: IUserUpdateInput) => {
+		await change({
+			variables: { input },
+			refetchQueries: [
+				{
+					query: query.getUser,
+					variables: { input: { id: input.uid } }
+				}
+			]
+		})
 	}
 
 	return { loading, error, mutation }
