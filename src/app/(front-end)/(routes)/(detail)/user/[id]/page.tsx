@@ -32,7 +32,7 @@ const Page: React.FC<IDetailPageParams> = (props) => {
 				<Tab label='내 쓰레기' />
 				<Tab label='좋아한 쓰레기' />
 				<Tab label='저장한 쓰레기' />
-				<Tab label='답장한 쓰레기' />
+				{/* <Tab label='답장한 쓰레기' /> */}
 			</Tabs>
 
 			<Shared.UI.InfiniteScroll

@@ -39,12 +39,14 @@ export const Card: React.FC<IFeedCardProps> = ({ feed }) => {
 						isSelected={value.like}
 						text={feed.action?.likeUserId?.length ?? 0}
 					/>
-					<Action.UI.SaveFeedButton
-						onClick={handler.save}
-						isSelected={value.save}
-						text={feed.action?.saveUserId?.length ?? 0}
-					/>
-					<Typography>Shared...</Typography>
+					<Stack direction='row' gap={1}>
+						<Action.UI.SaveFeedButton
+							onClick={handler.save}
+							isSelected={value.save}
+							text={feed.action?.saveUserId?.length ?? 0}
+						/>
+						<Action.UI.SharedButton isSelected={false} onClick={() => {}} />
+					</Stack>
 				</Stack>
 			</Stack>
 		</Stack>
