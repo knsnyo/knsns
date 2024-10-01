@@ -11,6 +11,7 @@ export const resolvers = {
 		createUser: service.user.create,
 		updateUser: service.user.update,
 		like: service.action.like,
-		save: service.action.save
+		save: service.action.save,
+		follow: service.action.follow
 	}
 }

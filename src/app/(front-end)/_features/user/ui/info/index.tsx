@@ -28,11 +28,21 @@ export const Info: React.FC = () => {
 					alignItems='end'
 				>
 					<ProfileImage src={value.user?.photoUrl ?? undefined} />
-					{value.isMy && (
+					{value.isMy ? (
 						<Shared.UI.Button
 							text='프로필 수정'
 							variant='contained'
-							onClick={handler.go}
+							onClick={handler.nav.go}
+						/>
+					) : (
+						<Shared.UI.Button
+							text={
+								(value.user?.follower ?? []).includes(value.my)
+									? '언팔로우'
+									: '팔로우'
+							}
+							variant='contained'
+							onClick={handler.follow}
 						/>
 					)}
 				</Stack>
@@ -54,10 +64,10 @@ export const Info: React.FC = () => {
 				<br />
 				<Stack direction='row' gap={2}>
 					<Typography>
-						<b>60</b> 팔로우 중
+						<b>{(value.user?.followed ?? []).length}</b> 팔로우 중
 					</Typography>
 					<Typography>
-						<b>60</b> 팔로워
+						<b>{(value.user?.follower ?? []).length}</b> 팔로워
 					</Typography>
 				</Stack>
 			</Stack>

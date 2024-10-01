@@ -23,7 +23,7 @@ const query = gql`
 `
 
 export const useGetFeed = (id: string) => {
-	const { loading, error, data } = useQuery<TFeedWithAuthor>(query, {
+	const { loading, error, data } = useQuery<{ feed: TFeedWithAuthor }>(query, {
 		variables: { input: { id } }
 	})
 

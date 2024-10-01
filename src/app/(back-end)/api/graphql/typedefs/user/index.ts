@@ -13,6 +13,9 @@ export const user = `
 		link: String
 		backgroundImage: String
 		createdAt: Date
+
+		follower: [Follow]
+		followed: [Follow]
 	}
 
 	input UserInput {

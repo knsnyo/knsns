@@ -10,6 +10,9 @@ datasource db {
 model User {
   id  String @id @default(auto()) @map("_id") @db.ObjectId
   uid String @unique
+
+  isDeleted Boolean @default(false)
+  isHided Boolean @default(false)
   
   email String?
   displayName String
@@ -25,6 +28,9 @@ model User {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
+
+  follower Follow[] @relation(name: "follower")
+  followed Follow[] @relation(name: "followed")
 }
 
 model Feed {
@@ -59,4 +65,20 @@ model Action {
   feedId String @db.ObjectId @unique
   feed Feed @relation(fields: [feedId], references: [id])
 
+}
+
+model Follow {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  userId String
+  user User @relation(fields: [userId], references: [uid], name: "follower")
+
+  followedUserId String
+  followedUser User @relation(fields: [followedUserId], references: [uid], name: "followed")
+
+  isDeleted Boolean @default(false)
+  isHided Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

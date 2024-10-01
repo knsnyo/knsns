@@ -9,9 +9,18 @@ export const action = `
 		updatedAt: Date
 	}
 
+	type Follow {
+		userId: String
+		followedUserId: String
+
+		createdAt: Date
+		updatedAt: Date
+	}
+
 	type Mutation {
 		like(input: IAction): Action
 		save(input: IAction): Action
+		follow(input: IAction): Follow
 	}
 
 `

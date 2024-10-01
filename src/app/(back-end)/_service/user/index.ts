@@ -29,7 +29,10 @@ const get = async (
 	_: any,
 	{ input }: { input: IDetail }
 ): Promise<User | null> => {
-	const data = await prisma.user.findUnique({ where: { uid: input.id } })
+	const data = await prisma.user.findUnique({
+		where: { uid: input.id },
+		include: { followed: true, follower: true }
+	})
 
 	return data
 }

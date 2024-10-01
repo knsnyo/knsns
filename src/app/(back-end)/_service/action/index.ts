@@ -53,4 +53,22 @@ const save = async (_: any, { input }: { input: IAction }) => {
 	})
 }
 
-export const action = { like, save }
+const follow = async (_: any, { input }: { input: IAction }) => {
+	let check = await prisma.follow.findFirst({
+		where: { userId: input.takeId, followedUserId: input.giveId }
+	})
+
+	if (!check) {
+		check = await prisma.follow.create({
+			data: { userId: input.takeId, followedUserId: input.giveId }
+		})
+		return
+	}
+
+	await prisma.follow.updateMany({
+		where: { userId: input.takeId, followedUserId: input.giveId },
+		data: { isDeleted: !check.isDeleted }
+	})
+}
+
+export const action = { like, save, follow }
