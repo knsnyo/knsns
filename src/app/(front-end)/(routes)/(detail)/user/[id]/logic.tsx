@@ -1,9 +1,9 @@
 'use client'
 
+import { Feed } from 'features'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 import { IQuery } from 'type/query'
-import Feature from '../../../../_features'
 
 const useLogic = (id: string) => {
 	const router = useRouter()
@@ -19,9 +19,7 @@ const useLogic = (id: string) => {
 		2: { saveId: id }
 	}
 
-	const { loading, error, data, fetch } = Feature.Feed.api.useGetFeeds(
-		args[tab]
-	)
+	const { loading, error, data, fetch } = Feed.api.useGetFeeds(args[tab])
 
 	return {
 		value: { loading, error, data, tab },

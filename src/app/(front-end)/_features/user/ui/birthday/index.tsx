@@ -1,5 +1,5 @@
 import { CelebrationRounded } from '@mui/icons-material'
-import Shared from '../../../../__shared'
+import Shared from 'shared'
 
 export const Birthday: React.FC = () => {
 	return (

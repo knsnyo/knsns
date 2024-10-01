@@ -1,5 +1,5 @@
 import { LinkRounded } from '@mui/icons-material'
-import Shared from '../../../../__shared'
+import Shared from 'shared'
 
 export const Link: React.FC<React.PropsWithChildren> = (props) => {
 	return (

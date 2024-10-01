@@ -1,15 +1,5 @@
-import { Action } from './Action'
-import { Auth } from './Auth'
-import { Feed } from './Feed'
-import { User } from './User'
-import { Write } from './Write'
-
-const Feature = {
-	Action,
-	Auth,
-	Feed,
-	User,
-	Write
-}
-
-export default Feature
+export { Action } from './Action'
+export { Auth } from './Auth'
+export { Feed } from './Feed'
+export { User } from './User'
+export { Write } from './Write'

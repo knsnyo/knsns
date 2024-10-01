@@ -1,10 +1,10 @@
 'use client'
 
+import { Feed } from 'features'
 import { IDetailPageParams } from 'type/detail-page'
-import Feature from '../../../../_features'
 
 const Page: React.FC<IDetailPageParams> = (props) => {
-	const { loading, error, data } = Feature.Feed.api.useGetFeed(props.params.id)
+	const { loading, error, data } = Feed.api.useGetFeed(props.params.id)
 
 	if (loading) {
 		return <></>
@@ -14,7 +14,7 @@ const Page: React.FC<IDetailPageParams> = (props) => {
 		return <></>
 	}
 
-	return <Feature.Feed.UI.Card feed={data.feed} />
+	return <Feed.UI.Card feed={data.feed} />
 }
 
 export default Page

@@ -1,8 +1,8 @@
 import { Feed } from '@prisma/client'
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import Shared from 'shared'
 import { IFeedInput } from 'type/input/feed'
-import Shared from '../../../../__shared'
 import { User } from '../../../User'
 import { api } from '../../api'
 

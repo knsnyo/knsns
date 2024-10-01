@@ -3,7 +3,7 @@
 import { UploadFile } from '@mui/icons-material'
 import { Box, Stack, TextField } from '@mui/material'
 import React from 'react'
-import Shared from '../../../../__shared'
+import Shared from 'shared'
 import { User } from '../../../User'
 import { useLogic } from './logic'
 

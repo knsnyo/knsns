@@ -1,4 +1,4 @@
-import Shared from '../../../../../__shared'
+import Shared from 'shared'
 
 const Layout: React.FC<React.PropsWithChildren> = (props) => {
 	return (

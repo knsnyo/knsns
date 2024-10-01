@@ -3,10 +3,10 @@
 import { IDetailPageParams } from 'type/detail-page'
 
 import { Box, Stack, Tab, Tabs } from '@mui/material'
+import { Feed, User } from 'features'
 import { redirect, usePathname } from 'next/navigation'
 import React from 'react'
-import Shared from '../../../../__shared'
-import Feature from '../../../../_features'
+import Shared from 'shared'
 import useLogic from './logic'
 
 const Page: React.FC<IDetailPageParams> = (props) => {
@@ -21,7 +21,7 @@ const Page: React.FC<IDetailPageParams> = (props) => {
 
 	return (
 		<Stack direction='column' gap={2}>
-			<Feature.User.UI.Info />
+			<User.UI.Info />
 
 			<Tabs
 				value={value.tab}
@@ -45,7 +45,7 @@ const Page: React.FC<IDetailPageParams> = (props) => {
 				{value.data?.feeds.items?.map((feed) => {
 					return (
 						<Box key={feed.id} onClick={handler.nav.feed(feed.id)} width='100%'>
-							<Feature.Feed.UI.Card feed={feed} />
+							<Feed.UI.Card feed={feed} />
 						</Box>
 					)
 				})}

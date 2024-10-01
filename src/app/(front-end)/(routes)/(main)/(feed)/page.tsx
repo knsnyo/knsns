@@ -1,8 +1,8 @@
 'use client'
 
 import { Box } from '@mui/material'
-import Shared from '../../../__shared'
-import Feature from '../../../_features'
+import { Feed, Write } from 'features'
+import Shared from 'shared'
 import useLogic from './logic'
 
 const Page: React.FC = () => {
@@ -19,11 +19,11 @@ const Page: React.FC = () => {
 			{value.data?.feeds.items?.map((feed) => {
 				return (
 					<Box key={feed.id} onClick={handler.nav.id(feed.id)} width='100%'>
-						<Feature.Feed.UI.Card feed={feed} />
+						<Feed.UI.Card feed={feed} />
 					</Box>
 				)
 			})}
-			<Feature.Write.UI.FAB />
+			<Write.UI.FAB />
 		</Shared.UI.InfiniteScroll>
 	)
 }

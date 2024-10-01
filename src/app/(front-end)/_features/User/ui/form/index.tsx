@@ -4,7 +4,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 import { Stack, TextField } from '@mui/material'
-import Shared from '../../../../__shared'
+import Shared from 'shared'
 import { BackgroundImage } from '../background-image'
 import { ProfileImage } from '../profile-image'
 import useLogic from './logic'

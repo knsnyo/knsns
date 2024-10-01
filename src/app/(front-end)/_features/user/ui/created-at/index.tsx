@@ -1,5 +1,5 @@
 import { CalendarMonthRounded } from '@mui/icons-material'
-import Shared from '../../../../__shared'
+import Shared from 'shared'
 
 export const CreatedAt: React.FC<React.PropsWithChildren> = (props) => {
 	return (

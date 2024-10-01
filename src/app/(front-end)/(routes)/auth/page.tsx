@@ -1,6 +1,6 @@
 import { Stack, Typography } from '@mui/material'
+import { Auth } from 'features'
 import React from 'react'
-import Feature from '../../_features'
 
 const Page: React.FC = () => {
 	return (
@@ -11,7 +11,7 @@ const Page: React.FC = () => {
 			height='100vh'
 		>
 			<Typography>계정을 선택해주세요.</Typography>
-			<Feature.Auth.UI.GoogleButton />
+			<Auth.UI.GoogleButton />
 		</Stack>
 	)
 }

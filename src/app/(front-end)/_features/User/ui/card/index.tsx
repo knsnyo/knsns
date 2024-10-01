@@ -1,5 +1,5 @@
 import { Stack } from '@mui/material'
-import Shared from '../../../../__shared'
+import Shared from 'shared'
 import { Avatar } from '../avatar'
 import { Intro } from '../intro'
 import { Nickname } from '../nickname'

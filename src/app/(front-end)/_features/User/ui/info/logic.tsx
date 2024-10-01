@@ -1,6 +1,6 @@
 import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
-import Shared from '../../../../__shared'
+import Shared from 'shared'
 import { api } from '../../api'
 
 const useLogic = () => {

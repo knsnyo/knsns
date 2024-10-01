@@ -17,7 +17,9 @@
 		"types": ["@testing-library/jest-dom"],
 		"paths": {
 			"type/*": ["./src/__type/*"],
-			"third-party/*": ["./src/_third-party/*"]
+			"third-party/*": ["./src/_third-party/*"],
+			"shared": ["./src/app/(front-end)/__shared/."],
+			"features": ["./src/app/(front-end)/_features/."]
 		},
 		"plugins": [
 			{

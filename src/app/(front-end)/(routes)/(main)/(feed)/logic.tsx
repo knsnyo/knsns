@@ -1,11 +1,11 @@
 'use client'
 
+import { Feed } from 'features'
 import { useRouter } from 'next/navigation'
-import Feature from '../../../_features'
 
 const useLogic = () => {
 	const router = useRouter()
-	const { loading, error, data, fetch } = Feature.Feed.api.useGetFeeds()
+	const { loading, error, data, fetch } = Feed.api.useGetFeeds()
 
 	return {
 		value: { loading, error, data },

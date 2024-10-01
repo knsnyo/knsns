@@ -2,8 +2,8 @@
 
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import Shared from 'shared'
 import { TFeedWithAuthor } from 'type/convolution'
-import Shared from '../../../../__shared'
 import { Action } from '../../../Action'
 
 const useLogic = (feed: TFeedWithAuthor) => {

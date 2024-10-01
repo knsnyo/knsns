@@ -1,7 +1,7 @@
-import Feature from '../../../../../_features'
+import { User } from 'features'
 
 const Page: React.FC = () => {
-	return <Feature.User.UI.Form />
+	return <User.UI.Form />
 }
 
 export default Page

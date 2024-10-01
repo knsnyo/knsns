@@ -3,8 +3,8 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
 import { cookies } from 'next/headers'
 import React from 'react'
 
+import Shared from 'shared'
 import { FirebaseAuth } from 'third-party/_firebase/auth'
-import Shared from './(front-end)/__shared'
 
 const RootLayout: React.FC<React.PropsWithChildren> = (props) => {
 	const session = cookies().get(FirebaseAuth.Session.key)?.value || null

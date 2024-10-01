@@ -2,7 +2,7 @@
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Stack, Typography } from '@mui/material'
-import Shared from '../../../../__shared'
+import Shared from 'shared'
 import { BackgroundImage } from '../background-image'
 import { CreatedAt } from '../created-at'
 import { Intro } from '../intro'
