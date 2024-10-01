@@ -2,10 +2,8 @@
 
 import { MoreHorizRounded } from '@mui/icons-material'
 import { Box, Stack, Typography } from '@mui/material'
-import { Action } from '../../../Action'
-import { Avatar } from '../../../User/ui/avatar'
-import { Nickname } from '../../../User/ui/nickname'
-import { Tagname } from '../../../User/ui/tagname'
+
+import { Action, User } from 'features'
 import useLogic from './logic'
 import { IFeedCardProps } from './type'
 
@@ -15,13 +13,13 @@ export const Card: React.FC<IFeedCardProps> = ({ feed }) => {
 	return (
 		<Stack direction='row' gap={1} padding={2} maxWidth={600} width='100%'>
 			<Box onClick={handler.nav.profile}>
-				<Avatar src={feed.author.photoUrl ?? undefined} />
+				<User.UI.Avatar src={feed.author.photoUrl ?? undefined} />
 			</Box>
 			<Stack flex={1} direction='column'>
 				<Stack direction='row' justifyContent='space-between'>
 					<Stack direction='row' onClick={handler.nav.profile}>
-						<Nickname>{feed.author.displayName}</Nickname>
-						<Tagname>{feed.author.tagname}</Tagname>
+						<User.UI.Nickname>{feed.author.displayName}</User.UI.Nickname>
+						<User.UI.Tagname>{feed.author.tagname}</User.UI.Tagname>
 					</Stack>
 					<MoreHorizRounded />
 				</Stack>

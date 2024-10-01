@@ -18,6 +18,8 @@
 		"paths": {
 			"type/*": ["./src/__type/*"],
 			"third-party/*": ["./src/_third-party/*"],
+			"prisma": ["./src/app/(back-end)/_prisma/."],
+			"service": ["./src/app/(back-end)/_service/."],
 			"shared": ["./src/app/(front-end)/__shared/."],
 			"features": ["./src/app/(front-end)/_features/."]
 		},

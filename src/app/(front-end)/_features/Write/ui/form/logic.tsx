@@ -1,9 +1,9 @@
 import { Feed } from '@prisma/client'
+import { User } from 'features'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 import Shared from 'shared'
 import { IFeedInput } from 'type/input/feed'
-import { User } from '../../../User'
 import { api } from '../../api'
 
 export const useLogic = (feed?: Feed) => {

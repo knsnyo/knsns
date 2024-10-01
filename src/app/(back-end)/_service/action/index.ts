@@ -1,5 +1,5 @@
+import { prisma } from 'prisma'
 import { IAction } from 'type/action'
-import { prisma } from '../../_prisma'
 
 const like = async (_: any, { input }: { input: IAction }) => {
 	let check = await prisma.action.findFirst({

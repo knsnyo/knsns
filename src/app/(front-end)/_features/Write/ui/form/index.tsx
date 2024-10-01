@@ -2,9 +2,9 @@
 
 import { UploadFile } from '@mui/icons-material'
 import { Box, Stack, TextField } from '@mui/material'
+import { User } from 'features'
 import React from 'react'
 import Shared from 'shared'
-import { User } from '../../../User'
 import { useLogic } from './logic'
 
 export const Form: React.FC = () => {

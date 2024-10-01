@@ -1,10 +1,10 @@
 import { Feed } from '@prisma/client'
 
+import { prisma } from 'prisma'
 import { IDetail } from 'type/detail'
 import type { Infinite } from 'type/infinite'
 import type { IFeedInput } from 'type/input/feed'
 import { IQuery } from 'type/query'
-import { prisma } from '../../_prisma'
 import { utils } from '../../_utils'
 
 const create = async (
