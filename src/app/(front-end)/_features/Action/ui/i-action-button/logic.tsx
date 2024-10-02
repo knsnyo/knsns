@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-const useLogic = () => {
+export const useLogic = () => {
 	const hoverRef = React.useRef<HTMLDivElement>(null)
 	const [isHover, setIsHover] = React.useState<boolean>(false)
 
@@ -29,5 +29,3 @@ const useLogic = () => {
 
 	return { value: { hoverRef, isHover } }
 }
-
-export default useLogic

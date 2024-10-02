@@ -1,9 +1,9 @@
 import { FileUploadOutlined } from '@mui/icons-material'
 import { useTheme } from '@mui/material'
-import ActionButton from '../i-action-button'
+import { ActionButton } from '../i-action-button'
 import { IActionButtonImpl } from '../type'
 
-const SharedButton: React.FC<IActionButtonImpl> = (props) => {
+export const SharedButton: React.FC<IActionButtonImpl> = (props) => {
 	const theme = useTheme()
 
 	return (
@@ -16,5 +16,3 @@ const SharedButton: React.FC<IActionButtonImpl> = (props) => {
 		/>
 	)
 }
-
-export default SharedButton

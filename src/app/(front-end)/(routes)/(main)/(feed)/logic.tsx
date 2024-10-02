@@ -3,7 +3,7 @@
 import { Feed } from 'features'
 import { useRouter } from 'next/navigation'
 
-const useLogic = () => {
+export const useLogic = () => {
 	const router = useRouter()
 	const { loading, error, data, fetch } = Feed.api.useGetFeeds()
 
@@ -18,5 +18,3 @@ const useLogic = () => {
 		}
 	}
 }
-
-export default useLogic

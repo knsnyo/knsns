@@ -3,7 +3,7 @@ import React from 'react'
 import { Session } from '../../provider/auth'
 import { BOTTOM_NAV_URL, INDEX_MAP, URL_MAP } from './constant'
 
-const useLogic = () => {
+export const useLogic = () => {
 	const pathname = usePathname()
 	const [index, setIndex] = React.useState(URL_MAP[pathname as BOTTOM_NAV_URL])
 	const uid = React.useContext(Session)
@@ -29,5 +29,3 @@ const useLogic = () => {
 		handler: { index: updateIndex }
 	}
 }
-
-export default useLogic

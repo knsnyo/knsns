@@ -3,7 +3,7 @@
 import { Box } from '@mui/material'
 import { Feed, Write } from 'features'
 import Shared from 'shared'
-import useLogic from './logic'
+import { useLogic } from './logic'
 
 const Page: React.FC = () => {
 	const { value, handler } = useLogic()

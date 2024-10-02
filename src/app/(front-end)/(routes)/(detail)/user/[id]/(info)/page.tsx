@@ -7,7 +7,7 @@ import { Feed, User } from 'features'
 import { redirect, usePathname } from 'next/navigation'
 import React from 'react'
 import Shared from 'shared'
-import useLogic from './logic'
+import { useLogic } from './logic'
 
 const Page: React.FC<IDetailPageParams> = (props) => {
 	const id = React.useContext(Shared.Provider.Session)

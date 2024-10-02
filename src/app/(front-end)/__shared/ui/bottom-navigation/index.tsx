@@ -8,7 +8,7 @@ import {
 } from '@mui/icons-material'
 import * as MUI from '@mui/material'
 import React from 'react'
-import useLogic from './logic'
+import { useLogic } from './logic'
 
 export const BottomNavigation: React.FC = () => {
 	const { value, handler } = useLogic()

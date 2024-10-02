@@ -1,6 +1,6 @@
 import { useRouter } from 'next/navigation'
 
-const useLogic = () => {
+export const useLogic = () => {
 	const router = useRouter()
 
 	const back = () => {
@@ -11,5 +11,3 @@ const useLogic = () => {
 		handler: { back }
 	}
 }
-
-export default useLogic

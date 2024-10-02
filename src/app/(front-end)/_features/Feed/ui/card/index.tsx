@@ -4,7 +4,7 @@ import { MoreHorizRounded } from '@mui/icons-material'
 import { Box, Stack, Typography } from '@mui/material'
 
 import { Action, User } from 'features'
-import useLogic from './logic'
+import { useLogic } from './logic'
 import { IFeedCardProps } from './type'
 
 export const Card: React.FC<IFeedCardProps> = ({ feed }) => {

@@ -5,7 +5,7 @@ import Shared from 'shared'
 import type { IUserUpdateInput } from 'type/input/user'
 import { api } from '../../api'
 
-const useLogic = () => {
+export const useLogic = () => {
 	const router = useRouter()
 	const id = usePathname().split('/')!.at(-2)!
 	const { data } = api.useGetUser(id)
@@ -63,5 +63,3 @@ const useLogic = () => {
 		handler: { form: handleForm, submit, image: handleImage }
 	}
 }
-
-export default useLogic

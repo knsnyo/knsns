@@ -7,7 +7,7 @@ import { Stack, TextField } from '@mui/material'
 import Shared from 'shared'
 import { BackgroundImage } from '../background-image'
 import { ProfileImage } from '../profile-image'
-import useLogic from './logic'
+import { useLogic } from './logic'
 
 export const Form: React.FC = () => {
 	const { value, handler } = useLogic()

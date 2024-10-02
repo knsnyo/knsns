@@ -1,10 +1,10 @@
 'use client'
 
 import { Stack, Typography, useTheme } from '@mui/material'
-import useLogic from './logic'
+import { useLogic } from './logic'
 import { IActionButton } from './type'
 
-const ActionButton: React.FC<IActionButton> = (props) => {
+export const ActionButton: React.FC<IActionButton> = (props) => {
 	const theme = useTheme()
 	const { value } = useLogic()
 
@@ -58,5 +58,3 @@ const ActionButton: React.FC<IActionButton> = (props) => {
 		</Stack>
 	)
 }
-
-export default ActionButton

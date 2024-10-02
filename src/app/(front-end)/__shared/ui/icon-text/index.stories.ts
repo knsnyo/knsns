@@ -10,4 +10,9 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof IconText>
 
-export const Primary: Story = {}
+export const Primary: Story = {
+	args: {
+		text: 'text',
+		icon: 'icon'
+	}
+}

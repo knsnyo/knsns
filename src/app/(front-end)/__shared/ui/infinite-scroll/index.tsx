@@ -4,7 +4,7 @@ import { CircularProgress, Stack } from '@mui/material'
 import React from 'react'
 import { IInfiniteScrollProps } from './type'
 
-const InfiniteScroll: React.FC<IInfiniteScrollProps> = (props) => {
+export const InfiniteScroll: React.FC<IInfiniteScrollProps> = (props) => {
 	const end = React.useRef<HTMLDivElement>(null)
 
 	React.useEffect(() => {
@@ -40,5 +40,3 @@ const InfiniteScroll: React.FC<IInfiniteScrollProps> = (props) => {
 		</Stack>
 	)
 }
-
-export default InfiniteScroll

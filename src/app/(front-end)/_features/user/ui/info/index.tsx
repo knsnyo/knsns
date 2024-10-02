@@ -10,7 +10,7 @@ import { Link } from '../link'
 import { Nickname } from '../nickname'
 import { ProfileImage } from '../profile-image'
 import { Tagname } from '../tagname'
-import useLogic from './logic'
+import { useLogic } from './logic'
 
 export const Info: React.FC = () => {
 	const { value, handler } = useLogic()

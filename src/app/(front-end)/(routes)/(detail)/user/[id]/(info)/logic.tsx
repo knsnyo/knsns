@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import React from 'react'
 import { IQuery } from 'type/query'
 
-const useLogic = (id: string) => {
+export const useLogic = (id: string) => {
 	const router = useRouter()
 	const [tab, setTab] = React.useState<number>(0)
 
@@ -33,5 +33,3 @@ const useLogic = (id: string) => {
 		}
 	}
 }
-
-export default useLogic

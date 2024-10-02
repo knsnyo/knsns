@@ -2,10 +2,10 @@
 
 import { Favorite, FavoriteBorder } from '@mui/icons-material'
 import { useTheme } from '@mui/material'
-import ActionButton from '../i-action-button'
+import { ActionButton } from '../i-action-button'
 import { IActionButtonImpl } from '../type'
 
-const LikeButton: React.FC<IActionButtonImpl> = (props) => {
+export const LikeButton: React.FC<IActionButtonImpl> = (props) => {
 	const theme = useTheme()
 
 	return (
@@ -19,5 +19,3 @@ const LikeButton: React.FC<IActionButtonImpl> = (props) => {
 		/>
 	)
 }
-
-export default LikeButton

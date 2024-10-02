@@ -4,7 +4,7 @@ import React from 'react'
 import Shared from 'shared'
 import { api } from '../../api'
 
-const useLogic = () => {
+export const useLogic = () => {
 	const router = useRouter()
 	const id = usePathname().split('/').pop()!
 	const session = React.useContext(Shared.Provider.Session)!
@@ -32,5 +32,3 @@ const useLogic = () => {
 		}
 	}
 }
-
-export default useLogic

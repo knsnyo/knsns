@@ -6,7 +6,7 @@ import React from 'react'
 import Shared from 'shared'
 import { TFeedWithAuthor } from 'type/convolution'
 
-const useLogic = (feed: TFeedWithAuthor) => {
+export const useLogic = (feed: TFeedWithAuthor) => {
 	const router = useRouter()
 	const uid = React.useContext(Shared.Provider.Session)
 
@@ -42,5 +42,3 @@ const useLogic = (feed: TFeedWithAuthor) => {
 		}
 	}
 }
-
-export default useLogic

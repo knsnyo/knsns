@@ -2,10 +2,10 @@
 
 import { Bookmark, BookmarkBorder } from '@mui/icons-material'
 import { useTheme } from '@mui/material'
-import ActionButton from '../i-action-button'
+import { ActionButton } from '../i-action-button'
 import { IActionButtonImpl } from '../type'
 
-const SaveFeedButton: React.FC<IActionButtonImpl> = (props) => {
+export const SaveFeedButton: React.FC<IActionButtonImpl> = (props) => {
 	const theme = useTheme()
 
 	return (
@@ -18,5 +18,3 @@ const SaveFeedButton: React.FC<IActionButtonImpl> = (props) => {
 		/>
 	)
 }
-
-export default SaveFeedButton
