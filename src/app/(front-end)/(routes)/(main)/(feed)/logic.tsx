@@ -12,8 +12,11 @@ export const useLogic = () => {
 		handler: {
 			fetch,
 			nav: {
-				// eslint-disable-next-line arrow-body-style
-				id: (id: string) => () => router.push(`/feed/${id}`)
+				id: (id: string) => {
+					return () => {
+						return router.push(`/feed/${id}`)
+					}
+				}
 			}
 		}
 	}

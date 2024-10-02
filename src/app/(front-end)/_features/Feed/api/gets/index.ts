@@ -33,7 +33,6 @@ export const useGetFeeds = (input?: IQuery) => {
 		feeds: Infinite<TFeedWithAuthor>
 	}>(query, { variables: { input } })
 
-	// eslint-disable-next-line arrow-body-style
 	const fetch = async () => {
 		await fetchMore({
 			variables: {

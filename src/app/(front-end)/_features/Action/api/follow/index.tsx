@@ -13,8 +13,8 @@ const query = gql`
 export const useFollow = () => {
 	const [change, { loading, error }] = useMutation(query)
 
-	const mutation = (input: IAction) => {
-		change({ variables: { input } })
+	const mutation = async (input: IAction) => {
+		await change({ variables: { input } })
 	}
 
 	return { loading, error, mutation }

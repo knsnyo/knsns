@@ -18,14 +18,14 @@ export const useLogic = (feed: TFeedWithAuthor) => {
 		router.push(`/user/${feed.author.uid}`)
 	}
 
-	const like: React.MouseEventHandler = (e) => {
+	const like: React.MouseEventHandler = async (e) => {
 		e.stopPropagation()
-		likeMutation({ takeId: feed.id, giveId: uid! })
+		await likeMutation({ takeId: feed.id, giveId: uid! })
 	}
 
-	const save: React.MouseEventHandler = (e) => {
+	const save: React.MouseEventHandler = async (e) => {
 		e.stopPropagation()
-		saveMutation({ takeId: feed.id, giveId: uid! })
+		await saveMutation({ takeId: feed.id, giveId: uid! })
 	}
 
 	return {

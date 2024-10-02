@@ -17,8 +17,8 @@ const query = gql`
 export const useLogin = () => {
 	const [change, { loading, error }] = useMutation(query)
 
-	const mutation = (input: IUserInput) => {
-		change({ variables: { input } })
+	const mutation = async (input: IUserInput) => {
+		await change({ variables: { input } })
 	}
 
 	return { loading, error, mutation }

@@ -62,7 +62,7 @@ export const Info: React.FC = () => {
 					)}
 				</Stack>
 				<br />
-				<Stack direction='row' gap={2}>
+				<Stack direction='row' gap={2} onClick={handler.nav.follow}>
 					<Typography>
 						<b>{(value.user?.followed ?? []).length}</b> 팔로우 중
 					</Typography>

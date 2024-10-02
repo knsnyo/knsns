@@ -17,18 +17,21 @@ export const useLogic = () => {
 		router.push(`/user/${session}/edit`)
 	}
 
+	const navFollow = () => {
+		return router.push(`/user/${id}/follow`)
+	}
+
 	const { mutation } = Action.api.useFollow()
 
-	// eslint-disable-next-line arrow-body-style
-	const follow = () => {
-		mutation({ giveId: session, takeId: id })
+	const follow = async () => {
+		await mutation({ giveId: session, takeId: id })
 	}
 
 	return {
 		value: { user: data?.user ?? null, isMy, my: session },
 		handler: {
 			follow,
-			nav: { go }
+			nav: { go, follow: navFollow }
 		}
 	}
 }

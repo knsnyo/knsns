@@ -17,7 +17,7 @@ export const useLogic = () => {
 			providerId: user.providerId
 		}
 
-		mutation(input)
+		await mutation(input)
 	}
 	return {
 		handler: { login }

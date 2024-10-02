@@ -30,7 +30,7 @@ export const useLogic = (feed?: Feed) => {
 			image: image !== '' ? image : undefined
 		}
 
-		mutation(input)
+		await mutation(input)
 		if (error) return window.alert('retry this...')
 
 		router.replace('/')

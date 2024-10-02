@@ -27,8 +27,11 @@ export const useLogic = (id: string) => {
 			fetch,
 			tab: handleTab,
 			nav: {
-				// eslint-disable-next-line arrow-body-style
-				feed: (_id: string) => () => router.push(`/feed/${_id}`)
+				feed: (_id: string) => {
+					return () => {
+						return router.push(`/feed/${_id}`)
+					}
+				}
 			}
 		}
 	}
