@@ -5,7 +5,7 @@ import Shared from 'shared'
 import UserIdPage from '../../(detail)/user/[id]/(info)/page'
 
 const Page: React.FC = () => {
-	const id = React.useContext(Shared.Provider.Session)!
+	const id = Shared.Hooks.useUid()!
 
 	return <UserIdPage params={{ id }} />
 }

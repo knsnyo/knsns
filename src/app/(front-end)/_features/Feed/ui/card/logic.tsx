@@ -8,7 +8,7 @@ import { TFeedWithAuthor } from 'type/convolution'
 
 export const useLogic = (feed: TFeedWithAuthor) => {
 	const router = useRouter()
-	const uid = React.useContext(Shared.Provider.Session)
+	const uid = Shared.Hooks.useUid()
 
 	const { mutation: likeMutation } = Action.api.useLike()
 	const { mutation: saveMutation } = Action.api.useSave()

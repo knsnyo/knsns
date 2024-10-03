@@ -10,7 +10,7 @@ import Shared from 'shared'
 import { useLogic } from './logic'
 
 const Page: React.FC<IDetailPageParams> = (props) => {
-	const id = React.useContext(Shared.Provider.Session)
+	const id = Shared.Hooks.useUid()
 	const pathname = usePathname()
 
 	if (id === props.params.id && pathname !== '/my') {

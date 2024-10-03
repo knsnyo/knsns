@@ -1,7 +1,7 @@
 import { useInput } from './useInput'
-import { useUserSession } from './useUserSession'
+import { useUid } from './useUid'
 
 export const Hooks = {
 	useInput,
-	useUserSession
+	useUid
 }

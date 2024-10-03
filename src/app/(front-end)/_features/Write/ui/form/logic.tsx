@@ -8,7 +8,7 @@ import { api } from '../../api'
 
 export const useLogic = (feed?: Feed) => {
 	const router = useRouter()
-	const uid = React.useContext(Shared.Provider.Session)
+	const uid = Shared.Hooks.useUid()
 	const { data } = User.api.useGetUser(uid!)
 
 	const [content, setContent] = Shared.Hooks.useInput()
