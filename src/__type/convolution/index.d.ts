@@ -1,5 +1,10 @@
-import { Action, Follow } from '@prisma/client'
+import { Action, Follow, User } from '@prisma/client'
 
-export type TFeedWithAuthor = Feed & { author: User; action: Action }
+export type TFeedWithAuthor = Feed & { author?: User; action?: Action }
 
-export type TUserWithFollow = User & { follower: Follow[]; followed: Follow[] }
+export type TUserWithFollow = User & {
+	follower?: Follow[]
+	followed?: Follow[]
+}
+
+export type TFollowWithUser = Follow & { user?: User; followedUser?: User }

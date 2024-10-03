@@ -18,6 +18,16 @@ export const user = `
 		followed: [Follow]
 	}
 
+	type InfiniteUser {
+    hasNext: Boolean!
+    items: [User!]!
+  }
+
+	type InfiniteFollowUser {
+		hasNext: Boolean!
+		items: [Follow!]!
+	}
+
 	input UserInput {
 		uid: String!
 		email: String 
@@ -43,5 +53,7 @@ export const user = `
 	
 	type Query {
 		user(input: IDetail!): User
+		users(input: IQuery): InfiniteUser
+		followUsers(input: IQuery): InfiniteFollowUser
 	}
 `

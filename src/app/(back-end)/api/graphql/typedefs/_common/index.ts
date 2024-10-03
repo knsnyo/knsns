@@ -14,6 +14,8 @@ export const common = `
 		userId: String
 		likeId: String
 		saveId: String
+		followerId: String
+		followingId: String
 	}
 
 	scalar Date

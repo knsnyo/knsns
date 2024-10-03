@@ -26,6 +26,30 @@ export const query = {
 			}
 		}
 	`,
+	getFollowUsers: gql`
+		query GetFollowUser($input: IQuery) {
+			followUsers(input: $input) {
+				hasNext
+				items {
+					id
+					user {
+						uid
+						displayName
+						photoUrl
+						tagname
+						intro
+					}
+					followedUser {
+						uid
+						displayName
+						photoUrl
+						tagname
+						intro
+					}
+				}
+			}
+		}
+	`,
 	changeUser: gql`
 		mutation UpdateUser($input: UserUpdateInput!) {
 			updateUser(input: $input) {

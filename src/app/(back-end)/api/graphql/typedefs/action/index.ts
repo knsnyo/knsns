@@ -10,11 +10,15 @@ export const action = `
 	}
 
 	type Follow {
+		id: String
 		userId: String
 		followedUserId: String
 
 		createdAt: Date
 		updatedAt: Date
+
+		user: User
+		followedUser: User
 	}
 
 	type Mutation {

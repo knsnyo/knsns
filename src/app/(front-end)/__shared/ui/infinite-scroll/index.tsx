@@ -33,9 +33,7 @@ export const InfiniteScroll: React.FC<IInfiniteScrollProps> = (props) => {
 		<Stack direction='column' alignItems='center'>
 			{props.children}
 			{props.hasNext && <div ref={end} />}
-			{props.hasNext && props.loading && (
-				<CircularProgress sx={{ margin: 5 }} />
-			)}
+			{props.loading && <CircularProgress sx={{ margin: 5 }} />}
 			{props.error && <div />}
 		</Stack>
 	)

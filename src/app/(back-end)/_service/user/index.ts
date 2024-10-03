@@ -1,9 +1,66 @@
 import { User } from '@prisma/client'
 import { User as FirebaseUser } from 'firebase/auth'
 
+import { TFollowWithUser } from 'type/convolution'
 import type { IDetail } from 'type/detail'
+import { Infinite } from 'type/infinite'
 import type { IUserUpdateInput } from 'type/input/user'
+import { IQuery } from 'type/query'
 import { prisma } from '../../_prisma'
+import { utils } from '../../_utils'
+
+const getUser = async (
+	_: any,
+	{ input }: { input: IDetail }
+): Promise<User | null> => {
+	const data = await prisma.user.findUnique({
+		where: { uid: input.id },
+		include: { followed: true, follower: true }
+	})
+
+	return data
+}
+
+const getUsers = async (
+	_: any,
+	{ input }: { input: IQuery }
+): Promise<Infinite<User>> => {
+	const take = 3
+
+	const items = await prisma.user.findMany({
+		take,
+		orderBy: { createdAt: 'desc' },
+		include: {},
+		where: utils.generateWhere(input)
+	})
+
+	return {
+		hasNext: items.length === take,
+		items
+	}
+}
+
+const followUsers = async (
+	_: any,
+	{ input }: { input: IQuery }
+): Promise<Infinite<TFollowWithUser>> => {
+	const take = 3
+
+	const items = await prisma.follow.findMany({
+		take,
+		orderBy: { createdAt: 'desc' },
+		include: {
+			user: input?.followerId ? true : undefined,
+			followedUser: input.followingId ? true : undefined
+		},
+		where: utils.generateWhere(input)
+	})
+
+	return {
+		hasNext: items.length === take,
+		items
+	}
+}
 
 const create = async (
 	_: any,
@@ -25,18 +82,6 @@ const create = async (
 	}
 }
 
-const get = async (
-	_: any,
-	{ input }: { input: IDetail }
-): Promise<User | null> => {
-	const data = await prisma.user.findUnique({
-		where: { uid: input.id },
-		include: { followed: true, follower: true }
-	})
-
-	return data
-}
-
 const update = async (
 	_: any,
 	{ input }: { input: IUserUpdateInput }
@@ -46,6 +91,8 @@ const update = async (
 
 export const user = {
 	create,
-	get,
-	update
+	update,
+	getUser,
+	getUsers,
+	followUsers
 }

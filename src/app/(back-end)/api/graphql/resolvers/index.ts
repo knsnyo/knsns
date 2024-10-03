@@ -4,7 +4,9 @@ export const resolvers = {
 	Query: {
 		feed: service.feed.getFeedById,
 		feeds: service.feed.getFeeds,
-		user: service.user.get
+		user: service.user.getUser,
+		users: service.user.getUsers,
+		followUsers: service.user.followUsers
 	},
 	Mutation: {
 		createFeed: service.feed.create,
