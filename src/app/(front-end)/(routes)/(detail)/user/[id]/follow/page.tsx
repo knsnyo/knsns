@@ -18,8 +18,8 @@ const Page: React.FC<IDetailPageParams> = (props) => {
 	return (
 		<Stack>
 			<Tabs variant='fullWidth' value={value.index} onChange={handler.index}>
-				<Tab label='팔로워' value={0} />
-				<Tab label='팔로잉' value={1} />
+				<Tab label='팔로워' />
+				<Tab label='팔로잉' />
 			</Tabs>
 			<Shared.UI.InfiniteScroll
 				data={pickUser?.data?.followUsers?.items ?? []}

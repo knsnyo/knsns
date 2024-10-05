@@ -1,7 +1,5 @@
 import { User } from 'features'
 
-const Page: React.FC = () => {
-	return <User.UI.Form />
-}
+const Page: React.FC = () => <User.UI.Form />
 
 export default Page

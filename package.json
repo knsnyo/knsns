@@ -11,6 +11,7 @@
 		"format": "prettier --check --ignore-path .gitignore .",
 		"format:fix": "prettier --write --ignore-path .gitignore .",
 		"lint": "next lint",
+		"lint:fix": "eslint './src/**/*.{ts,tsx}' --fix",
 		"prisma:migrate": "prisma db push"
 	},
 	"dependencies": {

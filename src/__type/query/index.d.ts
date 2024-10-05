@@ -12,4 +12,8 @@ export interface IQuery {
 	// user
 	followerId?: string
 	followingId?: string
+
+	// search
+	keyword?: string
+	nickname?: string
 }

@@ -10,6 +10,4 @@ const client = new ApolloClient({
 
 export const ApolloClientProvider: React.FC<React.PropsWithChildren> = (
 	props
-) => {
-	return <ApolloProvider client={client}>{props.children}</ApolloProvider>
-}
+) => <ApolloProvider client={client}>{props.children}</ApolloProvider>

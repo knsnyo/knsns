@@ -16,9 +16,7 @@ export const useLogic = () => {
 		router.push(`/user/${uid}/edit`)
 	}
 
-	const navFollow = () => {
-		return router.push(`/user/${isMy ? uid : id}/follow`)
-	}
+	const navFollow = () => router.push(`/user/${isMy ? uid : id}/follow`)
 
 	const { mutation } = Action.api.useFollow()
 

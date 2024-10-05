@@ -8,7 +8,16 @@ export const generateWhere = (query?: IQuery) => {
 		...(query?.likeId ? { action: { likeUserId: { has: query.likeId } } } : {}),
 		...(query?.saveId ? { action: { saveUserId: { has: query.saveId } } } : {}),
 		...(query?.followerId ? { followedUserId: query.followerId } : {}),
-		...(query?.followingId ? { userId: query.followingId } : {})
+		...(query?.followingId ? { userId: query.followingId } : {}),
+		...(query?.keyword
+			? {
+					OR: [
+						{ author: { displayName: { contains: query?.keyword } } },
+						{ content: { contains: query?.keyword } }
+					]
+				}
+			: {}),
+		...(query?.nickname ? { displayName: { contains: query.nickname } } : {})
 	}
 	return where
 }

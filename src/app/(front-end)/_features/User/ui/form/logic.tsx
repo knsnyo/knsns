@@ -10,7 +10,7 @@ export const useLogic = () => {
 	const id = usePathname().split('/')!.at(-2)!
 	const { data } = api.useGetUser(id)
 
-	const [user, setUser] = React.useState<User | null>(data?.user)
+	const [user, setUser] = React.useState<User | undefined>(data?.user)
 
 	const isValid = user && user.uid && user.displayName
 
@@ -53,7 +53,6 @@ export const useLogic = () => {
 		}
 
 		await mutation(input)
-		if (error) return window.alert('retry this...')
 
 		router.back()
 	}

@@ -16,7 +16,7 @@ export const useLogic = () => {
 			case INDEX_MAP.home:
 				return router.push('/')
 			case INDEX_MAP.search:
-				return
+				return router.push('/search')
 			case INDEX_MAP.my:
 				return router.push(`/user/${uid}`)
 			default:

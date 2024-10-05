@@ -13,6 +13,6 @@ const theme = MUI.createTheme({
 	}
 })
 
-export const ThemeProvider: React.FC<React.PropsWithChildren> = (props) => {
-	return <MUI.ThemeProvider theme={theme}>{props.children}</MUI.ThemeProvider>
-}
+export const ThemeProvider: React.FC<React.PropsWithChildren> = (props) => (
+	<MUI.ThemeProvider theme={theme}>{props.children}</MUI.ThemeProvider>
+)

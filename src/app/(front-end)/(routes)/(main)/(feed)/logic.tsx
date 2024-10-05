@@ -12,11 +12,7 @@ export const useLogic = () => {
 		handler: {
 			fetch,
 			nav: {
-				id: (id: string) => {
-					return () => {
-						return router.push(`/feed/${id}`)
-					}
-				}
+				id: (id: string) => () => router.push(`/feed/${id}`)
 			}
 		}
 	}

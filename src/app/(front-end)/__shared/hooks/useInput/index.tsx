@@ -1,10 +1,12 @@
 import React from 'react'
 
-export const useInput = (): [
+export const useInput = (
+	init?: string
+): [
 	string,
 	React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>
 ] => {
-	const [value, setValue] = React.useState<string>('')
+	const [value, setValue] = React.useState<string>(init ?? '')
 
 	const handleValue: React.ChangeEventHandler<
 		HTMLInputElement | HTMLTextAreaElement

@@ -28,7 +28,7 @@ export const AppBar: React.FC<IAppBarProps> = (props) => {
 						<ArrowBackIosNewOutlined sx={{ fontSize: 15 }} />
 					</MUI.Box>
 				)}
-				<MUI.Typography fontWeight={700} onClick={logout}>
+				<MUI.Typography fontWeight={700} onClick={logout} width={80}>
 					{props.text ?? '쓰레기통'}
 				</MUI.Typography>
 			</MUI.Stack>

@@ -31,7 +31,6 @@ export const useLogic = (feed?: Feed) => {
 		}
 
 		await mutation(input)
-		if (error) return window.alert('retry this...')
 
 		router.replace('/')
 	}

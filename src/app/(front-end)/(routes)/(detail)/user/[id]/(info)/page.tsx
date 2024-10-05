@@ -42,13 +42,11 @@ const Page: React.FC<IDetailPageParams> = (props) => {
 				hasNext={value.data?.feeds?.hasNext ?? false}
 				refetch={handler.fetch}
 			>
-				{value.data?.feeds.items?.map((feed) => {
-					return (
-						<Box key={feed.id} onClick={handler.nav.feed(feed.id)} width='100%'>
-							<Feed.UI.Card feed={feed} />
-						</Box>
-					)
-				})}
+				{value.data?.feeds.items?.map((feed) => (
+					<Box key={feed.id} onClick={handler.nav.feed(feed.id)} width='100%'>
+						<Feed.UI.Card feed={feed} />
+					</Box>
+				))}
 			</Shared.UI.InfiniteScroll>
 		</Stack>
 	)

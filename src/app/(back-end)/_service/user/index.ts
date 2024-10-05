@@ -1,4 +1,4 @@
-import { User } from '@prisma/client'
+import { Prisma, User } from '@prisma/client'
 import { User as FirebaseUser } from 'firebase/auth'
 
 import { TFollowWithUser } from 'type/convolution'
@@ -29,9 +29,9 @@ const getUsers = async (
 
 	const items = await prisma.user.findMany({
 		take,
-		orderBy: { createdAt: 'desc' },
-		include: {},
-		where: utils.generateWhere(input)
+		orderBy: { displayName: 'desc' },
+		include: { followed: true, follower: true },
+		where: utils.generateWhere(input) as Prisma.UserWhereInput
 	})
 
 	return {
@@ -53,7 +53,7 @@ const followUsers = async (
 			user: input?.followerId ? true : undefined,
 			followedUser: input.followingId ? true : undefined
 		},
-		where: utils.generateWhere(input)
+		where: utils.generateWhere(input) as Prisma.FollowWhereInput
 	})
 
 	return {

@@ -10,12 +10,18 @@ export const common = `
 	
 	input IQuery {
 		lastId: String
+		
 		authorId: String
 		userId: String
+
 		likeId: String
 		saveId: String
+
 		followerId: String
 		followingId: String
+
+		keyword: String
+		nickname: String
 	}
 
 	scalar Date
