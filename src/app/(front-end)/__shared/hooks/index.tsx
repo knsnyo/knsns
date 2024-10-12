@@ -1,5 +1,5 @@
 import { useInput } from './useInput'
-import { useSnackbar } from './useSnackar'
+import { useSnackbar } from './useSnackbar'
 import { useUid } from './useUid'
 
 export const Hooks = {

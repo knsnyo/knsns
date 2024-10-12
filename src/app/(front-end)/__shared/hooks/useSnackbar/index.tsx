@@ -1,6 +1,5 @@
-import { SnackbarProps } from '@mui/material'
+import { Slide, SlideProps, Snackbar, SnackbarProps } from '@mui/material'
 import React from 'react'
-import { SnackBar } from '../../ui/snackbar'
 
 export const useSnackbar = (props: SnackbarProps) => {
 	const [open, setOpen] = React.useState<boolean>(false)
@@ -10,18 +9,27 @@ export const useSnackbar = (props: SnackbarProps) => {
 	return {
 		snackbar: open
 			? () => (
-					<SnackBar
+					<Snackbar
 						{...props}
 						anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
 						autoHideDuration={3000}
 						open={open}
 						onClose={onClose}
+						TransitionComponent={SlideTransition}
+						ContentProps={{
+							...props.ContentProps,
+							sx: {
+								...props.ContentProps?.sx,
+								fontWeight: 700
+							}
+						}}
 					/>
 				)
 			: () => <></>,
-		open: () => {
-			console.log('sibal')
-			setOpen(true)
-		}
+		open: () => setOpen(true)
 	}
 }
+
+const SlideTransition = (props: SlideProps) => (
+	<Slide {...props} direction='down' />
+)

@@ -1,5 +1,6 @@
 'use client'
 
+import { useTheme } from '@mui/material'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 import Shared from 'shared'
@@ -10,8 +11,12 @@ import { Action } from '../../../Action'
 export const useLogic = (feed: TFeedWithAuthor) => {
 	const router = useRouter()
 	const uid = Shared.Hooks.useUid()
+	const theme = useTheme()
 	const { snackbar, open } = Shared.Hooks.useSnackbar({
-		message: '쓰레기 던질 준비 완료'
+		message: '쓰레기 던질 준비 완료',
+		ContentProps: {
+			sx: { bgcolor: theme.palette.success.main }
+		}
 	})
 
 	const { mutation: likeMutation } = Action.api.useLike()
