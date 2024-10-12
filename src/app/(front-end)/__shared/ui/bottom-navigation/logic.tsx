@@ -19,7 +19,7 @@ export const useLogic = () => {
 				return router.push('/search')
 			case INDEX_MAP.my:
 				if (!uid) return
-				return router.push(`/user/${uid}`)
+				return router.push(`/my`)
 			default:
 				break
 		}
