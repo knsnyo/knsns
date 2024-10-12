@@ -12,7 +12,6 @@ export const AppBar: React.FC<IAppBarProps> = (props) => {
 
 	const logout = () => {
 		FirebaseAuth.Google.signOut()
-		FirebaseAuth.Session.remove()
 	}
 
 	return (

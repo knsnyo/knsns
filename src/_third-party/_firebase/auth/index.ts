@@ -1,11 +1,9 @@
 import { Google } from './google'
-import { Session } from './session'
 import { onAuth } from './state'
 
 export const FirebaseAuth = {
 	Google,
-	onAuth,
-	Session
+	onAuth
 }
 
 /**

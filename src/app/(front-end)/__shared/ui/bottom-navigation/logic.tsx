@@ -1,13 +1,13 @@
 import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
-import { Session } from '../../provider/auth'
+import Shared from 'shared'
 import { BOTTOM_NAV_URL, INDEX_MAP, URL_MAP } from './constant'
 
 export const useLogic = () => {
 	const pathname = usePathname()
 	const [index, setIndex] = React.useState(URL_MAP[pathname as BOTTOM_NAV_URL])
-	const uid = React.useContext(Session)
 	const router = useRouter()
+	const uid = Shared.Hooks.useUid()
 
 	const updateIndex = (event: React.SyntheticEvent, newValue: number) => {
 		setIndex(newValue)
@@ -18,6 +18,7 @@ export const useLogic = () => {
 			case INDEX_MAP.search:
 				return router.push('/search')
 			case INDEX_MAP.my:
+				if (!uid) return
 				return router.push(`/user/${uid}`)
 			default:
 				break

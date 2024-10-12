@@ -8,7 +8,6 @@ export const useLogic = () => {
 		const user = await FirebaseAuth.Google.signIn()
 		if (!user) return
 
-		await FirebaseAuth.Session.create(user.uid)
 		const input: IUserInput = {
 			uid: user.uid,
 			email: user.email,
