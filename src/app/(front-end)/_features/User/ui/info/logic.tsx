@@ -1,6 +1,6 @@
-import { Action } from 'features'
 import { usePathname, useRouter } from 'next/navigation'
 import Shared from 'shared'
+import { Action } from '../../../Action'
 import { api } from '../../api'
 
 export const useLogic = () => {

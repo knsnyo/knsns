@@ -37,9 +37,10 @@ export const Info: React.FC = () => {
 					) : (
 						<Shared.UI.Button
 							text={
-								(value.user?.follower ?? []).includes(value.my)
-									? '언팔로우'
-									: '팔로우'
+								// (value.user?.follower ?? []).includes(value.my)
+								// 	? '언팔로우'
+								// 	: '팔로우'
+								'팔로우'
 							}
 							variant='contained'
 							onClick={handler.follow}

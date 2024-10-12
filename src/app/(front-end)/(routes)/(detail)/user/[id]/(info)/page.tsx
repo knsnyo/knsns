@@ -23,16 +23,10 @@ const Page: React.FC<IDetailPageParams> = (props) => {
 		<Stack direction='column' gap={2}>
 			<User.UI.Info />
 
-			<Tabs
-				value={value.tab}
-				onChange={handler.tab}
-				// variant='scrollable'
-				variant='fullWidth'
-			>
+			<Tabs value={value.tab} onChange={handler.tab} variant='fullWidth'>
 				<Tab label='내 쓰레기' />
 				<Tab label='좋아한 쓰레기' />
 				<Tab label='저장한 쓰레기' />
-				{/* <Tab label='답장한 쓰레기' /> */}
 			</Tabs>
 
 			<Shared.UI.InfiniteScroll

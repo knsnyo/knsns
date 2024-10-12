@@ -2,9 +2,9 @@
 
 import { UploadFile } from '@mui/icons-material'
 import { Box, Stack, TextField } from '@mui/material'
-import { User } from 'features'
 import React from 'react'
 import Shared from 'shared'
+import { User } from '../../../User'
 import { useLogic } from './logic'
 
 export const Form: React.FC = () => {
@@ -16,7 +16,7 @@ export const Form: React.FC = () => {
 				<Shared.UI.Button text='글쓰기' onClick={handler.submit} />
 			</Stack>
 			<Stack direction='row' gap={1}>
-				<User.UI.Avatar src={value?.user?.photoUrl} />
+				<User.UI.Avatar src={value?.user?.photoUrl ?? undefined} />
 				<TextField
 					variant='standard'
 					fullWidth

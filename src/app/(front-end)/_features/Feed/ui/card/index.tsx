@@ -3,7 +3,8 @@
 import { MoreHorizRounded } from '@mui/icons-material'
 import { Box, Stack, Typography } from '@mui/material'
 
-import { Action, User } from 'features'
+import { Action } from '../../../Action'
+import { User } from '../../../User'
 import { useLogic } from './logic'
 import { IFeedCardProps } from './type'
 

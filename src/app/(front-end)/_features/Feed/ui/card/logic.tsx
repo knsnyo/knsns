@@ -1,10 +1,10 @@
 'use client'
 
-import { Action } from 'features'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 import Shared from 'shared'
 import { TFeedWithAuthor } from 'type/convolution'
+import { Action } from '../../../Action'
 
 export const useLogic = (feed: TFeedWithAuthor) => {
 	const router = useRouter()

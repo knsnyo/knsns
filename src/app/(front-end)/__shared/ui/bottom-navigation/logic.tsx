@@ -1,13 +1,13 @@
 import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
-import Shared from 'shared'
+import { Hooks } from '../../hooks'
 import { BOTTOM_NAV_URL, INDEX_MAP, URL_MAP } from './constant'
 
 export const useLogic = () => {
 	const pathname = usePathname()
 	const [index, setIndex] = React.useState(URL_MAP[pathname as BOTTOM_NAV_URL])
 	const router = useRouter()
-	const uid = Shared.Hooks.useUid()
+	const uid = Hooks.useUid()
 
 	const updateIndex = (event: React.SyntheticEvent, newValue: number) => {
 		setIndex(newValue)

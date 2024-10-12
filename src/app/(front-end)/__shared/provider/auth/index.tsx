@@ -12,13 +12,13 @@ export const Session: React.Context<TSession> = React.createContext(
 interface IProps extends React.PropsWithChildren {}
 
 export const AuthProvider: React.FC<IProps> = (props) => {
-	const uid = React.useRef<TSession>()
+	const [uid, setUid] = React.useState<TSession>()
 	const pathname = usePathname()
 	const router = useRouter()
 
 	React.useEffect(() => {
 		FirebaseAuth.onAuth((user) => {
-			uid.current = user?.uid
+			setUid(user?.uid)
 
 			if (user && pathname === '/auth') {
 				router.push('/')
@@ -28,7 +28,5 @@ export const AuthProvider: React.FC<IProps> = (props) => {
 		})
 	}, [])
 
-	return (
-		<Session.Provider value={uid.current}>{props.children}</Session.Provider>
-	)
+	return <Session.Provider value={uid}>{props.children}</Session.Provider>
 }
