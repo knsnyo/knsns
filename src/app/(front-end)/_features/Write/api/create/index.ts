@@ -1,19 +1,9 @@
 import { useMutation } from '@apollo/client'
-import gql from 'graphql-tag'
 import type { IFeedInput } from 'type/input/feed'
-
-const query = gql`
-	mutation CreateFeed($input: FeedInput!) {
-		createFeed(input: $input) {
-			authorId
-			content
-			image
-		}
-	}
-`
+import { query } from '../query'
 
 export const useWrite = () => {
-	const [change, { loading, error }] = useMutation(query)
+	const [change, { loading, error }] = useMutation(query.feed)
 
 	const mutation = async (input: IFeedInput) => {
 		await change({ variables: { input } })

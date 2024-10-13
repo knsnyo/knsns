@@ -3,6 +3,7 @@
 import { MoreHorizRounded } from '@mui/icons-material'
 import { Box, Stack, Typography } from '@mui/material'
 
+import millify from 'millify'
 import { Action } from '../../../Action'
 import { User } from '../../../User'
 import { useLogic } from './logic'
@@ -38,13 +39,12 @@ export const Card: React.FC<IFeedCardProps> = ({ feed }) => {
 						<Action.UI.LikeButton
 							onClick={handler.like}
 							isSelected={value.like}
-							text={feed.action?.likeUserId?.length ?? 0}
+							text={millify(feed.action?.likeUserId?.length ?? 0)}
 						/>
 						<Stack direction='row' gap={1}>
 							<Action.UI.SaveFeedButton
 								onClick={handler.save}
 								isSelected={value.save}
-								text={feed.action?.saveUserId?.length ?? 0}
 							/>
 							<Action.UI.SharedButton
 								isSelected={false}
