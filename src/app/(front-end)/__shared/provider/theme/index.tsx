@@ -4,8 +4,8 @@ import { colors } from '@mui/material'
 import * as MUI from '@mui/material/styles'
 
 export const ThemeProvider: React.FC<React.PropsWithChildren> = (props) => {
-	// const mode = 'dark'
-	const mode = 'light'
+	const mode = 'dark'
+	// const mode = 'light'
 	const theme = MUI.createTheme({
 		palette: {
 			primary: colors.purple,

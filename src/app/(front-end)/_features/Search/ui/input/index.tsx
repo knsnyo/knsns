@@ -9,8 +9,8 @@ export const Input: React.FC<{ init?: string; isBack?: boolean }> = (props) => {
 	return (
 		<Stack direction='row' alignItems='center'>
 			{props?.isBack && (
-				<IconButton onClick={handler.nav.back} color='primary'>
-					<ArrowBackIosNewOutlined sx={{ fontSize: 15 }} />
+				<IconButton onClick={handler.nav.back}>
+					<ArrowBackIosNewOutlined />
 				</IconButton>
 			)}
 			<Stack
@@ -30,7 +30,7 @@ export const Input: React.FC<{ init?: string; isBack?: boolean }> = (props) => {
 					onChange={handler.keyword}
 				/>
 				<IconButton onClick={handler.submit}>
-					<Search color='primary' />
+					<Search />
 				</IconButton>
 			</Stack>
 		</Stack>

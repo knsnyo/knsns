@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowBackIosNewOutlined } from '@mui/icons-material'
+import { ArrowBackIosNewOutlined, MenuOutlined } from '@mui/icons-material'
 import * as MUI from '@mui/material'
 
 import { useLogic } from './logic'
@@ -12,14 +12,18 @@ export const AppBar: React.FC<IAppBarProps> = (props) => {
 	return (
 		<MUI.AppBar position='sticky' color='inherit' elevation={0}>
 			<MUI.Stack direction='row' alignItems='center' padding={2} gap={1}>
-				{props?.back && (
+				{props?.back ? (
 					<MUI.Box
 						onClick={handler.back}
 						display='flex'
 						justifyContent='center'
 						alignItems='center'
 					>
-						<ArrowBackIosNewOutlined sx={{ fontSize: 15 }} />
+						<ArrowBackIosNewOutlined />
+					</MUI.Box>
+				) : (
+					<MUI.Box display='flex' justifyContent='center' alignItems='center'>
+						<MenuOutlined />
 					</MUI.Box>
 				)}
 				<MUI.Typography fontWeight={700} width={80}>
