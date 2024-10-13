@@ -10,7 +10,7 @@ export const AppBar: React.FC<IAppBarProps> = (props) => {
 	const { handler } = useLogic()
 
 	return (
-		<MUI.AppBar position='sticky' color='primary' enableColorOnDark>
+		<MUI.AppBar position='sticky' color='inherit' elevation={0}>
 			<MUI.Stack direction='row' alignItems='center' padding={2} gap={1}>
 				{props?.back && (
 					<MUI.Box
@@ -26,6 +26,7 @@ export const AppBar: React.FC<IAppBarProps> = (props) => {
 					{props.text ?? '쓰레기통'}
 				</MUI.Typography>
 			</MUI.Stack>
+			<MUI.Divider />
 		</MUI.AppBar>
 	)
 }
