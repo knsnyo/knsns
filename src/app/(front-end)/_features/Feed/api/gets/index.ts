@@ -1,37 +1,13 @@
 import { useQuery } from '@apollo/client'
-import gql from 'graphql-tag'
 import { TFeedWithAuthor } from 'type/convolution'
 import { Infinite } from 'type/infinite'
 import { IQuery } from 'type/query'
-
-const query = gql`
-	query GetFeeds($input: IQuery) {
-		feeds(input: $input) {
-			hasNext
-			items {
-				id
-				createdAt
-				image
-				content
-				author {
-					uid
-					displayName
-					tagname
-					photoUrl
-				}
-				action {
-					likeUserId
-					saveUserId
-				}
-			}
-		}
-	}
-`
+import { query } from '../query'
 
 export const useGetFeeds = (input?: IQuery) => {
 	const { loading, error, data, fetchMore } = useQuery<{
 		feeds: Infinite<TFeedWithAuthor>
-	}>(query, { variables: { input } })
+	}>(query.feeds, { variables: { input } })
 
 	const fetch = async () => {
 		await fetchMore({
