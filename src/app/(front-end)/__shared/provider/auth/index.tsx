@@ -26,7 +26,7 @@ export const AuthProvider: React.FC<IProps> = (props) => {
 				router.push('/auth')
 			}
 		})
-	}, [])
+	}, [uid])
 
 	return <Session.Provider value={uid}>{props.children}</Session.Provider>
 }
