@@ -1,10 +1,11 @@
 'use client'
 
 import { EditRounded } from '@mui/icons-material'
-import { Fab } from '@mui/material'
+import { Fab, useTheme } from '@mui/material'
 import { useLogic } from './logic'
 
 export const FAB: React.FC = () => {
+	const theme = useTheme()
 	const { handler } = useLogic()
 
 	return (
@@ -20,7 +21,7 @@ export const FAB: React.FC = () => {
 			}}
 			onClick={handler.navigate}
 		>
-			<EditRounded />
+			<EditRounded sx={{ color: theme.palette.background.default }} />
 		</Fab>
 	)
 }

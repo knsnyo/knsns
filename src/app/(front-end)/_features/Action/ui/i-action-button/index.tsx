@@ -25,7 +25,7 @@ export const ActionButton: React.FC<IActionButton> = (props) => {
 						}
 					)
 				}}
-				bgcolor={value.isHover ? `${props.color}1A` : undefined}
+				bgcolor={value.isHover ? `${props.color}80` : undefined}
 				borderRadius='50%'
 				padding={1}
 				marginLeft={-1}
@@ -35,7 +35,7 @@ export const ActionButton: React.FC<IActionButton> = (props) => {
 				) : (
 					<props.unSelectIcon
 						sx={{
-							color: value.isHover ? `${props.color}BF` : theme.palette.divider,
+							color: value.isHover ? `${props.color}FF` : theme.palette.divider,
 							transition: theme.transitions.create(['color', 'transform'], {
 								duration: theme.transitions.duration.short
 							})
@@ -46,7 +46,7 @@ export const ActionButton: React.FC<IActionButton> = (props) => {
 			<Typography
 				marginLeft={-1}
 				sx={{
-					color: value.isHover ? `${props.color}BF` : theme.palette.divider,
+					color: value.isHover ? `${props.color}FF` : theme.palette.divider,
 					transition: theme.transitions.create(['color', 'transform'], {
 						duration: theme.transitions.duration.short
 					})

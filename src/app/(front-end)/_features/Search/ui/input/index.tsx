@@ -10,11 +10,12 @@ export const Input: React.FC<{ init?: string; isBack?: boolean }> = (props) => {
 		<Stack direction='row' alignItems='center'>
 			{props?.isBack && (
 				<IconButton onClick={handler.nav.back}>
-					<ArrowBackIosNewOutlined />
+					<ArrowBackIosNewOutlined color='primary' />
 				</IconButton>
 			)}
 			<Stack
 				direction='row'
+				border={`1px solid ${theme.palette.primary.main}`}
 				bgcolor={theme.palette.background.default}
 				marginX={2}
 				marginY={1}
@@ -22,6 +23,7 @@ export const Input: React.FC<{ init?: string; isBack?: boolean }> = (props) => {
 				flex={1}
 			>
 				<InputBase
+					autoFocus
 					color='primary'
 					placeholder='분리수거'
 					fullWidth
@@ -30,7 +32,7 @@ export const Input: React.FC<{ init?: string; isBack?: boolean }> = (props) => {
 					onChange={handler.keyword}
 				/>
 				<IconButton onClick={handler.submit}>
-					<Search />
+					<Search color='primary' />
 				</IconButton>
 			</Stack>
 		</Stack>
