@@ -1,11 +1,6 @@
 'use client'
 
-import {
-	ContrastOutlined,
-	DarkMode,
-	LightMode,
-	Palette
-} from '@mui/icons-material'
+import { ContrastOutlined, DarkMode, LightMode, Palette } from '@mui/icons-material'
 import {
 	colors,
 	List,

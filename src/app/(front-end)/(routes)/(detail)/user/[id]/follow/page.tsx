@@ -11,9 +11,7 @@ const Page: React.FC<IDetailPageParams> = (props) => {
 	const { value, handler } = useLogic(props.params.id)
 
 	const pickUser = { 0: value.follower, 1: value.following }[value.index]
-	const pickUserFetch = { 0: handler.follower, 1: handler.following }[
-		value.index
-	]
+	const pickUserFetch = { 0: handler.follower, 1: handler.following }[value.index]
 
 	return (
 		<Stack>
@@ -31,11 +29,7 @@ const Page: React.FC<IDetailPageParams> = (props) => {
 				{(pickUser?.data?.followUsers.items ?? []).map((follow, index) => {
 					const user = follow[value.index === 0 ? 'followedUser' : 'user']!
 					return (
-						<Box
-							key={user.id}
-							width='100%'
-							onClick={handler.nav.user(user.uid)}
-						>
+						<Box key={user.id} width='100%' onClick={handler.nav.user(user.uid)}>
 							<User.UI.Card user={user} />
 						</Box>
 					)

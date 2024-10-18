@@ -9,21 +9,12 @@ export const ActionButton: React.FC<IActionButton> = (props) => {
 	const { value } = useLogic()
 
 	return (
-		<Stack
-			direction='row'
-			alignItems='center'
-			gap={1}
-			ref={value.hoverRef}
-			onClick={props.onClick}
-		>
+		<Stack direction='row' alignItems='center' gap={1} ref={value.hoverRef} onClick={props.onClick}>
 			<Stack
 				sx={{
-					transition: theme.transitions.create(
-						['background-color', 'transform'],
-						{
-							duration: theme.transitions.duration.short
-						}
-					)
+					transition: theme.transitions.create(['background-color', 'transform'], {
+						duration: theme.transitions.duration.short
+					})
 				}}
 				bgcolor={value.isHover ? `${props.color}80` : undefined}
 				borderRadius='50%'

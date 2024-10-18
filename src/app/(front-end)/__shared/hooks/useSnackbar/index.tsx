@@ -30,6 +30,4 @@ export const useSnackbar = (props: SnackbarProps) => {
 	}
 }
 
-const SlideTransition = (props: SlideProps) => (
-	<Slide {...props} direction='down' />
-)
+const SlideTransition = (props: SlideProps) => <Slide {...props} direction='down' />

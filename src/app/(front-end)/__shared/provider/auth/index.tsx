@@ -5,9 +5,7 @@ import React from 'react'
 import { FirebaseAuth } from 'third-party/_firebase/auth'
 import { TSession } from 'type/session'
 
-export const Session: React.Context<TSession> = React.createContext(
-	undefined as TSession
-)
+export const Session: React.Context<TSession> = React.createContext(undefined as TSession)
 
 interface IProps extends React.PropsWithChildren {}
 

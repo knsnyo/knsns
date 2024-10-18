@@ -10,10 +10,7 @@ export const useThemeStore = () => {
 		throw new Error('ThemeProvider 안에서 사용해 주세요.')
 	}
 
-	const state = React.useSyncExternalStore(
-		themeStore.subscribe,
-		themeStore.getState
-	)
+	const state = React.useSyncExternalStore(themeStore.subscribe, themeStore.getState)
 
 	return {
 		value: { state },

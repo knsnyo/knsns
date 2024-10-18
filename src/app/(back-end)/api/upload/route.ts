@@ -2,10 +2,7 @@ import fs from 'fs'
 import { NextRequest, NextResponse } from 'next/server'
 import path from 'path'
 
-const UPLOAD_DIR = path.resolve(
-	'/Users/knsn/workspace/side/knsns',
-	'public/uploads'
-)
+const UPLOAD_DIR = path.resolve('/Users/knsn/workspace/side/knsns', 'public/uploads')
 
 export const POST = async (req: NextRequest) => {
 	const formData = await req.formData()

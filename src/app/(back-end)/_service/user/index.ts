@@ -9,10 +9,7 @@ import { IQuery } from 'type/query'
 import { prisma } from '../../_prisma'
 import { utils } from '../../_utils'
 
-const getUser = async (
-	_: any,
-	{ input }: { input: IDetail }
-): Promise<User | null> => {
+const getUser = async (_: any, { input }: { input: IDetail }): Promise<User | null> => {
 	const data = await prisma.user.findUnique({
 		where: { uid: input.id },
 		include: { followed: true, follower: true }
@@ -21,10 +18,7 @@ const getUser = async (
 	return data
 }
 
-const getUsers = async (
-	_: any,
-	{ input }: { input: IQuery }
-): Promise<Infinite<User>> => {
+const getUsers = async (_: any, { input }: { input: IQuery }): Promise<Infinite<User>> => {
 	const take = 3
 
 	const items = await prisma.user.findMany({
@@ -62,10 +56,7 @@ const followUsers = async (
 	}
 }
 
-const create = async (
-	_: any,
-	{ input }: { input: FirebaseUser }
-): Promise<void> => {
+const create = async (_: any, { input }: { input: FirebaseUser }): Promise<void> => {
 	try {
 		const data = {
 			uid: input.uid,
@@ -82,10 +73,7 @@ const create = async (
 	}
 }
 
-const update = async (
-	_: any,
-	{ input }: { input: IUserUpdateInput }
-): Promise<void> => {
+const update = async (_: any, { input }: { input: IUserUpdateInput }): Promise<void> => {
 	await prisma.user.update({ where: { uid: input.uid }, data: input })
 }
 

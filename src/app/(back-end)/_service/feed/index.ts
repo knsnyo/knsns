@@ -7,17 +7,11 @@ import { IQuery } from 'type/query'
 import { prisma } from '../../_prisma'
 import { utils } from '../../_utils'
 
-const create = async (
-	_: any,
-	{ input }: { input: IFeedInput }
-): Promise<void> => {
+const create = async (_: any, { input }: { input: IFeedInput }): Promise<void> => {
 	await prisma.feed.create({ data: input })
 }
 
-const getFeeds = async (
-	_: any,
-	{ input }: { input: IQuery }
-): Promise<Infinite<Feed>> => {
+const getFeeds = async (_: any, { input }: { input: IQuery }): Promise<Infinite<Feed>> => {
 	const take = 3
 
 	const items = await prisma.feed.findMany({
@@ -33,10 +27,7 @@ const getFeeds = async (
 	}
 }
 
-const getFeedById = async (
-	_: any,
-	{ input }: { input: IDetail }
-): Promise<Feed | null> => {
+const getFeedById = async (_: any, { input }: { input: IDetail }): Promise<Feed | null> => {
 	const feed = await prisma.feed.findFirst({
 		where: { id: input.id, isDeleted: false },
 		include: { author: true, action: true }

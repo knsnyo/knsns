@@ -20,10 +20,7 @@ export const useGetSearchUsers = (input: IQuery) => {
 				return {
 					users: {
 						...fetchMoreResult.users,
-						items: [
-							...(prev?.users?.items ?? []),
-							...fetchMoreResult.users.items
-						]
+						items: [...(prev?.users?.items ?? []), ...fetchMoreResult.users.items]
 					}
 				}
 			}

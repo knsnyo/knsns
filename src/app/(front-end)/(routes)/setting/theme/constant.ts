@@ -8,15 +8,7 @@ export const MODE_TEXT: Record<THandleMode, string> = {
 	dark: '어두운 화면'
 }
 
-export const PALETTE: TColor[] = [
-	'red',
-	'orange',
-	'yellow',
-	'green',
-	'blue',
-	'purple',
-	'grey'
-]
+export const PALETTE: TColor[] = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'grey']
 
 export const PALETTE_TEXT: Record<TColor, string> = {
 	red: '빨강',

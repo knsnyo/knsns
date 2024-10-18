@@ -6,9 +6,7 @@ const THEME_COLOR = 'trash-theme-color'
 export const createThemeStore = () => {
 	let state: { mode: TMode; color: TColor } = {
 		mode: (window?.localStorage.getItem(THEME_MODE) ||
-			(window.matchMedia('(prefers-color-scheme: dark)').matches
-				? 'dark'
-				: 'light')) as TMode,
+			(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')) as TMode,
 		color: (window?.localStorage.getItem(THEME_COLOR) ?? 'purple') as TColor
 	}
 
@@ -26,9 +24,7 @@ export const createThemeStore = () => {
 		let value = mode
 		switch (mode) {
 			case 'system':
-				value = window.matchMedia('(prefers-color-scheme: dark)').matches
-					? 'dark'
-					: 'light'
+				value = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 
 				break
 			default:

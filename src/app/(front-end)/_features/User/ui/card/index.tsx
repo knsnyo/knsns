@@ -7,12 +7,7 @@ import { Nickname } from '../nickname'
 import { Tagname } from '../tagname'
 
 export const Card: React.FC<{ user: User }> = (props) => (
-	<Stack
-		direction='row'
-		width='100%'
-		justifyContent='space-between'
-		padding={1}
-	>
+	<Stack direction='row' width='100%' justifyContent='space-between' padding={1}>
 		<Stack direction='row' gap={1}>
 			<Avatar src={props.user?.photoUrl ?? undefined} />
 			<Stack direction='column' justifyContent='center'>

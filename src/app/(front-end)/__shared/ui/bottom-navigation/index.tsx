@@ -1,11 +1,6 @@
 'use client'
 
-import {
-	Alarm,
-	HomeOutlined,
-	PersonOutline,
-	SearchOutlined
-} from '@mui/icons-material'
+import { Alarm, HomeOutlined, PersonOutline, SearchOutlined } from '@mui/icons-material'
 import * as MUI from '@mui/material'
 import React from 'react'
 import { useLogic } from './logic'

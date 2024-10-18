@@ -20,10 +20,7 @@ export const useGetFeeds = (input?: IQuery) => {
 				return {
 					feeds: {
 						...fetchMoreResult.feeds,
-						items: [
-							...(prev?.feeds?.items ?? []),
-							...fetchMoreResult.feeds.items
-						]
+						items: [...(prev?.feeds?.items ?? []), ...fetchMoreResult.feeds.items]
 					}
 				}
 			}

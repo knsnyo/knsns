@@ -29,17 +29,11 @@ export const Info: React.FC = () => {
 				>
 					<ProfileImage src={value.user?.photoUrl ?? undefined} />
 					{value.isMy ? (
-						<Shared.UI.Button
-							text='프로필 수정'
-							variant='contained'
-							onClick={handler.nav.go}
-						/>
+						<Shared.UI.Button text='프로필 수정' variant='contained' onClick={handler.nav.go} />
 					) : (
 						<Shared.UI.Button
 							text={
-								(
-									value.user?.follower?.map((f) => f.followedUserId) ?? []
-								).includes(value.my)
+								(value.user?.follower?.map((f) => f.followedUserId) ?? []).includes(value.my)
 									? '언팔로우'
 									: '팔로우'
 							}

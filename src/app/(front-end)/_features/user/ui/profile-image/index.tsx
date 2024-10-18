@@ -2,10 +2,7 @@ import { Image } from '@mui/icons-material'
 import { Box } from '@mui/material'
 
 export const ProfileImage: React.FC<
-	React.DetailedHTMLProps<
-		React.ImgHTMLAttributes<HTMLImageElement>,
-		HTMLImageElement
-	>
+	React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>
 > = (props) => {
 	if (!props.src) {
 		return (

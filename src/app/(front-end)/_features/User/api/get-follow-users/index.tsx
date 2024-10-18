@@ -20,10 +20,7 @@ export const useGetFollowUsers = (input?: IQuery) => {
 				return {
 					followUsers: {
 						...fetchMoreResult.followUsers,
-						items: [
-							...(prev?.followUsers?.items ?? []),
-							...fetchMoreResult.followUsers.items
-						]
+						items: [...(prev?.followUsers?.items ?? []), ...fetchMoreResult.followUsers.items]
 					}
 				}
 			}

@@ -42,14 +42,8 @@ export const Card: React.FC<IFeedCardProps> = ({ feed }) => {
 							text={millify(feed.action?.likeUserId?.length ?? 0)}
 						/>
 						<Stack direction='row' gap={1}>
-							<Action.UI.SaveFeedButton
-								onClick={handler.save}
-								isSelected={value.save}
-							/>
-							<Action.UI.SharedButton
-								isSelected={false}
-								onClick={handler.share}
-							/>
+							<Action.UI.SaveFeedButton onClick={handler.save} isSelected={value.save} />
+							<Action.UI.SharedButton isSelected={false} onClick={handler.share} />
 						</Stack>
 					</Stack>
 				</Stack>
