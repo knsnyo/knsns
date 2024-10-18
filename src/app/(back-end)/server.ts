@@ -12,8 +12,7 @@ const handle = app.getRequestHandler()
 app.prepare().then(() => {
 	createServer(async (req: IncomingMessage, res: ServerResponse) => {
 		try {
-			// 'url.parse()' 사용하여 'parsedUrl' 생성
-			const parsedUrl = parse(req.url!, true) // 'true'로 설정하여 query 객체 자동 파싱
+			const parsedUrl = parse(req.url!, true)
 
 			// Next.js 핸들러 호출
 			await handle(req as NextApiRequest, res as NextApiResponse, parsedUrl)
@@ -22,6 +21,6 @@ app.prepare().then(() => {
 			res.end('Internal Server Error')
 		}
 	}).listen(port, () => {
-		console.log(`> Ready on http://${hostname}:${port}`)
+		console.log(`http://${hostname}:${port}`)
 	})
 })
