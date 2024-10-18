@@ -1,6 +1,8 @@
 {
+	"type": "module",
 	"private": true,
 	"scripts": {
+		"dev-1": "node ./src/app/server.cjs",
 		"dev": "next dev -p 7469",
 		"build": "next build",
 		"start": "next start",
@@ -74,7 +76,6 @@
 		"prettier": "^3.3.2",
 		"prisma": "^5.20.0",
 		"storybook": "^8.1.9",
-		"ts-node": "^10.9.2",
 		"typescript": "5.3.3"
 	}
 }
