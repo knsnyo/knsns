@@ -5,11 +5,11 @@ const THEME_COLOR = 'trash-theme-color'
 
 export const createThemeStore = () => {
 	let state: { mode: TMode; color: TColor } = {
-		mode: (window.localStorage.getItem(THEME_MODE) ||
+		mode: (window?.localStorage.getItem(THEME_MODE) ||
 			(window.matchMedia('(prefers-color-scheme: dark)').matches
 				? 'dark'
 				: 'light')) as TMode,
-		color: (window.localStorage.getItem(THEME_COLOR) ?? 'purple') as TColor
+		color: (window?.localStorage.getItem(THEME_COLOR) ?? 'purple') as TColor
 	}
 
 	const listeners = new Set<() => void>()
@@ -39,13 +39,13 @@ export const createThemeStore = () => {
 			mode: value as TMode
 		}
 
-		window.localStorage.setItem(THEME_MODE, value)
+		window?.localStorage.setItem(THEME_MODE, value)
 		emitChange()
 	}
 
 	const setColor = (color: TColor) => {
 		state = { ...state, color }
-		window.localStorage.setItem(THEME_COLOR, color)
+		window?.localStorage.setItem(THEME_COLOR, color)
 		emitChange()
 	}
 

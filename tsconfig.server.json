@@ -1,0 +1,37 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"noEmit": true,
+		"esModuleInterop": true,
+		"module": "CommonJS",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"jsx": "preserve",
+		"preserveValueImports": false,
+		"incremental": true,
+		"types": ["@testing-library/jest-dom"],
+		"paths": {
+			"type/*": ["./src/__type/*"],
+			"third-party/*": ["./src/_third-party/*"],
+			"service": ["./src/app/(back-end)/_service/."]
+		},
+		"plugins": [
+			{
+				"name": "next"
+			}
+		]
+	},
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		"types.d.ts",
+		".next/types/**/*.ts"
+	],
+	"exclude": ["node_modules"]
+}
