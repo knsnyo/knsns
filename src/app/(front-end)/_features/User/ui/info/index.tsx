@@ -2,6 +2,7 @@
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Stack, Typography } from '@mui/material'
+import NextLink from 'next/link'
 import Shared from 'shared'
 import { BackgroundImage } from '../background-image'
 import { CreatedAt } from '../created-at'
@@ -51,7 +52,17 @@ export const Info: React.FC = () => {
 				<Intro>{value.user?.intro}</Intro>
 				<br />
 				<Stack direction='row' gap={2} flexWrap='wrap'>
-					{value.user?.link && <Link>{value.user?.link}</Link>}
+					{value.user?.link && (
+						<Link>
+							<NextLink
+								style={{ textDecoration: 'none', color: 'inherit' }}
+								target='_blank'
+								href={value.user?.link}
+							>
+								{value.user?.link}
+							</NextLink>
+						</Link>
+					)}
 					{/* <Birthday /> */}
 					{value.user?.createdAt && (
 						<CreatedAt>{Shared.Utils.yyyyMMdd(value.user.createdAt)}</CreatedAt>

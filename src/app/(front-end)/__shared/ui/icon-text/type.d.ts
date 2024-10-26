@@ -1,5 +1,5 @@
 export interface IIconTextProps {
-	text: string
+	text: string | React.ReactNode
 	icon: SvgIconComponent
 	textColor?: string
 }
