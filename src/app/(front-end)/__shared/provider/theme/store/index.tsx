@@ -1,3 +1,5 @@
+'use client'
+
 import { TColor, THandleMode, TMode } from 'type/theme'
 
 const THEME_MODE = 'trash-theme-mode'

@@ -6,16 +6,11 @@
 
 import { ApolloServer } from '@apollo/server'
 import { startServerAndCreateNextHandler } from '@as-integrations/next'
-import { makeExecutableSchema } from '@graphql-tools/schema'
 import { NextRequest } from 'next/server'
 import { context } from './context'
-import { resolvers } from './resolvers'
-import typeDefs from './typedefs'
+import { schema } from './schema'
 
-const schema = makeExecutableSchema({ typeDefs, resolvers })
+const apolloServer = new ApolloServer({ schema })
 
-const server = new ApolloServer({ schema })
-
-const handler = startServerAndCreateNextHandler<NextRequest>(server, { context })
-
+const handler = startServerAndCreateNextHandler<NextRequest>(apolloServer, { context })
 export { handler as GET, handler as POST }

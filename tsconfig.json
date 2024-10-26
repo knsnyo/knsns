@@ -8,24 +8,22 @@
 		"forceConsistentCasingInFileNames": true,
 		"noEmit": true,
 		"esModuleInterop": true,
-		"module": "esnext",
-		"moduleResolution": "bundler",
+		"module": "CommonJS",
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"jsx": "preserve",
+		"preserveValueImports": false,
 		"incremental": true,
 		"types": ["@testing-library/jest-dom"],
 		"paths": {
 			"type/*": ["./src/__type/*"],
 			"third-party/*": ["./src/_third-party/*"],
 			"service": ["./src/app/(back-end)/_service/."],
+			"shared": ["./src/app/(front-end)/__shared/."],
 			"features": ["./src/app/(front-end)/_features/."]
 		},
-		"plugins": [
-			{
-				"name": "next"
-			}
-		]
+		"plugins": [{ "name": "next" }],
+		"moduleResolution": "node"
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types.d.ts", ".next/types/**/*.ts"],
 	"exclude": ["node_modules"]

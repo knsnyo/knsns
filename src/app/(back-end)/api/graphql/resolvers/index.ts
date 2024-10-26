@@ -1,4 +1,7 @@
-import { service } from 'service'
+import { PubSub } from 'graphql-subscriptions'
+import { service } from '../../../_service'
+
+const pubsub = new PubSub()
 
 export const resolvers = {
 	Query: {
@@ -14,6 +17,12 @@ export const resolvers = {
 		updateUser: service.user.update,
 		like: service.action.like,
 		save: service.action.save,
-		follow: service.action.follow
+		follow: service.action.follow,
+		hello: () => pubsub.publish('HELLO', {})
+	},
+	Subscription: {
+		hello: {
+			subscribe: () => pubsub.asyncIterator(['HELLO'])
+		}
 	}
 }
