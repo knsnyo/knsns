@@ -22,7 +22,7 @@ export const AppBar: React.FC<IAppBarProps> = (props) => {
 						<ArrowBackIosNewOutlined color='primary' />
 					</MUI.Box>
 				)}
-				<MUI.Typography fontWeight={700} width={80} color='primary'>
+				<MUI.Typography fontWeight={700} width={80}>
 					{props.text ?? '쓰레기통'}
 				</MUI.Typography>
 				<MUI.Box flex={1} />
@@ -33,7 +33,7 @@ export const AppBar: React.FC<IAppBarProps> = (props) => {
 						justifyContent='center'
 						alignItems='center'
 					>
-						<Settings color='primary' />
+						<Settings />
 					</MUI.Box>
 				)}
 			</MUI.Stack>
